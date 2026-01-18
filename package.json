@@ -1,0 +1,19 @@
+{
+  "name": "eurovision-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint .",
+    "dev:backend": "npm --prefix backend run dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "@stylistic/eslint-plugin": "^5.7.0",
+    "@types/eslint__js": "^8.42.3",
+    "eslint": "^9.39.2",
+    "typescript-eslint": "^8.53.0"
+  }
+}
