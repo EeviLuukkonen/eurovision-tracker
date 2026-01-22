@@ -1,0 +1,68 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id          Int         @id @default(autoincrement())
+  email       String      @unique
+  password    String
+  rankings Ranking[]
+}
+
+model Entry {
+  id          Int             @id @default(autoincrement())
+  year        Int
+  country     String
+  artist      String
+  song        String
+  youtubeUrl  String?
+  results     OfficialResult?
+  rankingEntries RankingEntry[]
+
+  @@unique([year, country])
+}
+
+model OfficialResult {
+  id             Int    @id @default(autoincrement())
+  entry          Entry  @relation(fields: [entryId], references: [id])
+  entryId        Int
+  rank           Int
+  juryPoints     Int
+  televotePoints Int
+  totalPoints    Int
+
+  @@unique([entryId])
+}
+
+model Ranking {
+  id        Int          @id @default(autoincrement())
+  user      User         @relation(fields: [userId], references: [id])
+  userId    Int
+  year      Int
+  entries   RankingEntry[]
+  createdAt DateTime     @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, year])
+}
+
+model RankingEntry {
+  id           Int        @id @default(autoincrement())
+  ranking   Ranking @relation(fields: [rankingId], references: [id])
+  rankingId Int
+  entry        Entry      @relation(fields: [entryId], references: [id])
+  entryId      Int
+  position     Int
+
+  @@unique([rankingId, position])
+}
