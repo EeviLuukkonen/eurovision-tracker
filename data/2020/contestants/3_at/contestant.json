@@ -1,0 +1,32 @@
+{
+  "id": 3,
+  "country": "AT",
+  "artist": "Vincent Bueno",
+  "song": "Alive",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/cOuiTJlBC50"
+  ],
+  "bpm": 116,
+  "tone": "C# minor",
+  "artistPeople": [
+    "Vincent Bueno"
+  ],
+  "backings": null,
+  "dancers": null,
+  "stageDirector": null,
+  "composers": [
+    "Artur Aigner",
+    "David Yang",
+    "Felix van Göns",
+    "Vincent Bueno"
+  ],
+  "conductor": null,
+  "lyricists": [
+    "Vincent Bueno"
+  ],
+  "writers": null,
+  "broadcaster": "ORF",
+  "commentators": null,
+  "jury": null,
+  "spokesperson": null
+}

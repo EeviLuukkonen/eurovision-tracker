@@ -1,0 +1,47 @@
+{
+  "id": 32,
+  "country": "NL",
+  "artist": "Trijntje Oosterhuis",
+  "song": "Walk Along",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/O_fs4SPGyF0",
+    "https://www.youtube-nocookie.com/embed/eSZwKW3RqT0",
+    "https://www.youtube-nocookie.com/embed/_W2jgj8ijdA",
+    "https://www.youtube-nocookie.com/embed/WA_9UZKgz0I",
+    "https://www.youtube-nocookie.com/embed/sEBeLw2xO_I"
+  ],
+  "bpm": 86,
+  "tone": "F# major",
+  "artistPeople": [
+    "Judith Katrijntje Oosterhuis"
+  ],
+  "backings": [
+    "Jenny Lane",
+    "Lesley van der Aa",
+    "Michelle Oudeman",
+    "Patt Riley"
+  ],
+  "dancers": null,
+  "stageDirector": "Hans Pannecoucke",
+  "composers": [
+    "Tobias Karlsson"
+  ],
+  "conductor": null,
+  "lyricists": [
+    "Anouk Teeuwe"
+  ],
+  "writers": null,
+  "broadcaster": "AVROTROS",
+  "commentators": [
+    "Cornald Maas",
+    "Jan Smit"
+  ],
+  "jury": [
+    "Carolina Dijkhuizen",
+    "Dominique Rijpma",
+    "Florent Luyckx",
+    "Gijs Staverman",
+    "Maurice Wijnen"
+  ],
+  "spokesperson": "Edsilia Rombley"
+}

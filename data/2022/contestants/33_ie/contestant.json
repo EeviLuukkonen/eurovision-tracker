@@ -1,0 +1,48 @@
+{
+  "id": 33,
+  "country": "IE",
+  "artist": "Brooke",
+  "song": "That's Rich",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/Kq2AJrWm04s",
+    "https://www.youtube-nocookie.com/embed/QFizedo48SI",
+    "https://www.youtube-nocookie.com/embed/ggfpCbb9NdY",
+    "https://www.youtube-nocookie.com/embed/ZjssCjX0X8E",
+    "https://www.youtube-nocookie.com/embed/pkHzvy-Pscw",
+    "https://www.youtube-nocookie.com/embed/AeRbnNFowwo",
+    "https://www.youtube-nocookie.com/embed/s4KuLYWVBnU"
+  ],
+  "bpm": 123,
+  "tone": "A minor",
+  "artistPeople": [
+    "Brooke Scullion"
+  ],
+  "backings": null,
+  "dancers": [
+    "Amy Ford",
+    "Amy Whearity",
+    "Lizzy Benham",
+    "Sophie Kavanagh"
+  ],
+  "stageDirector": "Emer Walsh",
+  "composers": null,
+  "conductor": null,
+  "lyricists": null,
+  "writers": [
+    "Brooke Scullion",
+    "Izzy Warner",
+    "Karl Zine"
+  ],
+  "broadcaster": "RTÉ",
+  "commentators": [
+    "Marty Whelan"
+  ],
+  "jury": [
+    "Bláthnaid Treacy",
+    "Deirdre Crookes",
+    "Julian Vignoles",
+    "Niamh Kavanagh",
+    "Phillip McMahon"
+  ],
+  "spokesperson": "Linda Martin"
+}

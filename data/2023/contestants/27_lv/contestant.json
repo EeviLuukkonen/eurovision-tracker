@@ -1,0 +1,49 @@
+{
+  "id": 27,
+  "country": "LV",
+  "artist": "Sudden Lights",
+  "song": "Aijā",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/SEykwl9X9SY",
+    "https://www.youtube-nocookie.com/embed/xAjVA3qwqGk",
+    "https://www.youtube-nocookie.com/embed/PQkKJNLuO_Y",
+    "https://www.youtube-nocookie.com/embed/UUQn7poXPNc",
+    "https://www.youtube-nocookie.com/embed/EqrWPqPcJG8",
+    "https://www.youtube-nocookie.com/embed/Vb5oI9DZsCw",
+    "https://www.youtube-nocookie.com/embed/7zzlRY2tZk0"
+  ],
+  "bpm": 160,
+  "tone": "A minor",
+  "artistPeople": [
+    "Andrejs Reinis Zitmanis",
+    "Kārlis Matīss Zitmanis",
+    "Kārlis Vārtiņš",
+    "Mārtiņš Matīss Zemītis"
+  ],
+  "backings": null,
+  "dancers": null,
+  "stageDirector": null,
+  "composers": [
+    "Andrejs Reinis Zitmanis",
+    "Kārlis Matīss Zitmanis",
+    "Kārlis Vārtiņš",
+    "Mārtiņš Matīss Zemītis"
+  ],
+  "conductor": null,
+  "lyricists": [
+    "Andrejs Reinis Zitmanis"
+  ],
+  "writers": null,
+  "broadcaster": "LTV",
+  "commentators": [
+    "Lauris Reiniks",
+    "Toms Grēviņš"
+  ],
+  "jury": [
+    "Aminata",
+    "Asnate Rancāne",
+    "Jānis Stībelis",
+    "Kristaps Vanadziņš"
+  ],
+  "spokesperson": "Jānis Pētersons"
+}

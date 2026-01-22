@@ -1,0 +1,44 @@
+{
+  "id": 28,
+  "country": "GE",
+  "artist": "Iru",
+  "song": "Echo",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/HNvGZeEQvfc",
+    "https://www.youtube-nocookie.com/embed/E8kO-QPippo",
+    "https://www.youtube-nocookie.com/embed/vMK4rTAGvj4",
+    "https://www.youtube-nocookie.com/embed/SfxiVscQsiI",
+    "https://www.youtube-nocookie.com/embed/iS1hQyXbKnE",
+    "https://www.youtube-nocookie.com/embed/Ub_bwvOnxYU",
+    "https://www.youtube-nocookie.com/embed/F9AP5DSA9tc"
+  ],
+  "bpm": 145,
+  "tone": "G minor",
+  "artistPeople": [
+    "Irina Khechanovi (ირინა ხეჩანოვი)"
+  ],
+  "backings": null,
+  "dancers": null,
+  "stageDirector": "Marvin Dietmann",
+  "composers": [
+    "George Kukhianidze"
+  ],
+  "conductor": null,
+  "lyricists": [
+    "Beni Kadagidze",
+    "Iru Khechanovi"
+  ],
+  "writers": null,
+  "broadcaster": "GPB",
+  "commentators": [
+    "Nika Lobiladze"
+  ],
+  "jury": [
+    "Anri Jokhadze",
+    "David Tsintsadze",
+    "Giorgi Toradze",
+    "Lana Kutateladze",
+    "Sophiko Khalvashi"
+  ],
+  "spokesperson": "Iago Waitman"
+}

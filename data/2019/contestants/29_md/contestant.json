@@ -1,0 +1,49 @@
+{
+  "id": 29,
+  "country": "MD",
+  "artist": "Anna Odobescu",
+  "song": "Stay",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/-mo207V5Z2o",
+    "https://www.youtube-nocookie.com/embed/p3OC8qhZBWQ",
+    "https://www.youtube-nocookie.com/embed/areV6tnq3po",
+    "https://www.youtube-nocookie.com/embed/ZIYghHE-9R0",
+    "https://www.youtube-nocookie.com/embed/OOnPFsjkhbs",
+    "https://www.youtube-nocookie.com/embed/X3RauAppvCQ",
+    "https://www.youtube-nocookie.com/embed/dv1eBFZ-p5E"
+  ],
+  "bpm": 155,
+  "tone": "Ab major",
+  "artistPeople": [
+    "Anna Odobescu"
+  ],
+  "backings": [
+    "Andreea Portarescu",
+    "Andrei Ștefăneț",
+    "Mihaela Andrei"
+  ],
+  "dancers": null,
+  "stageDirector": "Kseniya Simonova",
+  "composers": null,
+  "conductor": null,
+  "lyricists": null,
+  "writers": [
+    "Georgios Kalpakidis",
+    "Jeppe Reil",
+    "Maria Broberg",
+    "Thomas Reil"
+  ],
+  "broadcaster": "TRM",
+  "commentators": [
+    "Daniela Crudu",
+    "Doina Stimpovschi"
+  ],
+  "jury": [
+    "Corneliu Botgros",
+    "Geta Burlacu",
+    "Igor Munteanu",
+    "Otilia Lozovanu",
+    "Vasile Olaru"
+  ],
+  "spokesperson": "Doina Stimpovschi"
+}

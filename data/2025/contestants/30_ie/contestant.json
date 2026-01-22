@@ -1,0 +1,52 @@
+{
+  "id": 30,
+  "country": "IE",
+  "artist": "Emmy",
+  "song": "Laika Party",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/3MB628Kanzo",
+    "https://www.youtube-nocookie.com/embed/1nPxNykJ34U",
+    "https://www.youtube-nocookie.com/embed/cZnusVb7yjs",
+    "https://www.youtube-nocookie.com/embed/7wClGhiRTz4",
+    "https://www.youtube-nocookie.com/embed/nnK5TOTmHbU",
+    "https://www.youtube-nocookie.com/embed/L6rTsbkAmvw",
+    "https://www.youtube-nocookie.com/embed/QRhxW4s1tU8"
+  ],
+  "bpm": 132,
+  "tone": "D minor",
+  "artistPeople": [
+    "Emmy Kristine Guttulsrud Kristiansen"
+  ],
+  "backings": [
+    "Erlend Guttulsrud Kristiansen"
+  ],
+  "dancers": [
+    "Christiane Bergersen",
+    "Karin Aaeng Stuge",
+    "Kristiane Lindvik",
+    "Vilde Skorstad"
+  ],
+  "stageDirector": "Marvin Dietmann",
+  "composers": null,
+  "conductor": null,
+  "lyricists": null,
+  "writers": [
+    "Emmy Kristine Guttulsrud Kristiansen",
+    "Erlend Guttulsrud Kristiansen",
+    "Henrik Østlund",
+    "Larissa Tormey",
+    "Truls Marius Aarra"
+  ],
+  "broadcaster": "RTÉ",
+  "commentators": [
+    "Marty Whelan"
+  ],
+  "jury": [
+    "Dermot McEvoy",
+    "Ed Porter",
+    "Helen Jordan Guthrie",
+    "Kofi Appiah",
+    "Tara Murray"
+  ],
+  "spokesperson": "Nicky Byrne"
+}

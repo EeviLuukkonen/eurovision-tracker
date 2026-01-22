@@ -1,0 +1,34 @@
+{
+  "id": 35,
+  "country": "SI",
+  "artist": "Ana Soklič",
+  "song": "Voda",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/weLeotNwexg",
+    "https://www.youtube-nocookie.com/embed/JOdI-gFrYaQ",
+    "https://www.youtube-nocookie.com/embed/PLy9DujswzM",
+    "https://www.youtube-nocookie.com/embed/Tkyk7kmPyTk"
+  ],
+  "bpm": 128,
+  "tone": "D minor",
+  "artistPeople": [
+    "Ana Soklič"
+  ],
+  "backings": null,
+  "dancers": null,
+  "stageDirector": null,
+  "composers": [
+    "Ana Soklič",
+    "Bojan Simončič",
+    "Žiga Pirnat"
+  ],
+  "conductor": null,
+  "lyricists": [
+    "Ana Soklič"
+  ],
+  "writers": null,
+  "broadcaster": "RTVSLO",
+  "commentators": null,
+  "jury": null,
+  "spokesperson": null
+}

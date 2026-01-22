@@ -1,0 +1,50 @@
+{
+  "id": 28,
+  "country": "BY",
+  "artist": "Ivan",
+  "song": "Help You Fly",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/pM07r57QqGg",
+    "https://www.youtube-nocookie.com/embed/-13I_VF5d4k",
+    "https://www.youtube-nocookie.com/embed/2TN4qlUy8gE",
+    "https://www.youtube-nocookie.com/embed/7WzHg-RIw1M",
+    "https://www.youtube-nocookie.com/embed/gQ0JAvLF-MM",
+    "https://www.youtube-nocookie.com/embed/4sMTY2QOKgo"
+  ],
+  "bpm": 93,
+  "tone": "D minor",
+  "artistPeople": [
+    "Alexander Ivanov (Алякса́ндр Івано́ў)"
+  ],
+  "backings": [
+    "Anna Linnéa Isbäck",
+    "Herman Gardarfve",
+    "Jimmy Claeson",
+    "Ksenia Pavroz",
+    "Melanie My Rosas"
+  ],
+  "dancers": null,
+  "stageDirector": "Viktor Drobysh",
+  "composers": [
+    "Viktor Drobysh"
+  ],
+  "conductor": null,
+  "lyricists": [
+    "Alexander Ivanov",
+    "Mary Susan Applegate",
+    "Timofei Leontiev"
+  ],
+  "writers": null,
+  "broadcaster": "BTRC",
+  "commentators": [
+    "Evgeny Perlin"
+  ],
+  "jury": [
+    "Alexander Kapyonkin",
+    "Gennady Markevich",
+    "Olga Drozdova",
+    "Olga Plotnikova",
+    "Teo"
+  ],
+  "spokesperson": "Uzari"
+}

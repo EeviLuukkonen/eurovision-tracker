@@ -1,0 +1,52 @@
+{
+  "id": 40,
+  "country": "CH",
+  "artist": "Rykka",
+  "song": "The Last of Our Kind",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/HZI0_aR7BuA",
+    "https://www.youtube-nocookie.com/embed/S4s8UdJmgQc",
+    "https://www.youtube-nocookie.com/embed/96ENe3EYBE0",
+    "https://www.youtube-nocookie.com/embed/ZyrVrJFoPq4",
+    "https://www.youtube-nocookie.com/embed/y7kxmMyFB9I"
+  ],
+  "bpm": 162,
+  "tone": "A major",
+  "artistPeople": [
+    "Christina Maria Rieder"
+  ],
+  "backings": [
+    "Brandy Butler",
+    "Nyssina Swerissen",
+    "Tanja Dankner"
+  ],
+  "dancers": null,
+  "stageDirector": null,
+  "composers": null,
+  "conductor": null,
+  "lyricists": null,
+  "writers": [
+    "Jeff Dawson",
+    "Mike James",
+    "Rykka",
+    "Warne Livesey"
+  ],
+  "broadcaster": "SSR SRG",
+  "commentators": [
+    "Clarissa Tami",
+    "Gabriel Vetter",
+    "Jean-Marc Richard",
+    "Michele Carobbio",
+    "Nicolas Tanner",
+    "Peter Schneider",
+    "Sven Epiney"
+  ],
+  "jury": [
+    "Charlie Roe",
+    "Luca Hänni",
+    "Ramon Rey",
+    "Tshanda Sangwa",
+    "Viola Tami"
+  ],
+  "spokesperson": "Sebalter"
+}

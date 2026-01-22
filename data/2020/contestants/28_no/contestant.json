@@ -1,0 +1,32 @@
+{
+  "id": 28,
+  "country": "NO",
+  "artist": "Ulrikke",
+  "song": "Attention",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/o9atJbnqhJU",
+    "https://www.youtube-nocookie.com/embed/Yhi21SuuJMs",
+    "https://www.youtube-nocookie.com/embed/WVVYi0jOkWU",
+    "https://www.youtube-nocookie.com/embed/BPXP8iS5gzg"
+  ],
+  "bpm": 128,
+  "tone": "F minor",
+  "artistPeople": [
+    "Ulrikke Brandstorp"
+  ],
+  "backings": null,
+  "dancers": null,
+  "stageDirector": null,
+  "composers": null,
+  "conductor": null,
+  "lyricists": null,
+  "writers": [
+    "Christian Ingebrigtsen",
+    "Kjetil Mørland",
+    "Ulrikke Brandstorp"
+  ],
+  "broadcaster": "NRK",
+  "commentators": null,
+  "jury": null,
+  "spokesperson": null
+}

@@ -1,0 +1,48 @@
+{
+  "id": 40,
+  "country": "IE",
+  "artist": "Sarah McTernan",
+  "song": "22",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/lX7DT9GMHQM",
+    "https://www.youtube-nocookie.com/embed/LXBIDYh_UE4",
+    "https://www.youtube-nocookie.com/embed/Nh8iFJTxVHI",
+    "https://www.youtube-nocookie.com/embed/P_SehZvRaVk",
+    "https://www.youtube-nocookie.com/embed/JXHqe5CofPM"
+  ],
+  "bpm": 125,
+  "tone": "C major",
+  "artistPeople": [
+    "Sarah McTernan"
+  ],
+  "backings": [
+    "Ciara O'Connor",
+    "Fiona Harte",
+    "Michael Hopkins"
+  ],
+  "dancers": [
+    "Adele Dempsey",
+    "Rhianna Binns"
+  ],
+  "stageDirector": null,
+  "composers": null,
+  "conductor": null,
+  "lyricists": null,
+  "writers": [
+    "Janieck Devy",
+    "Misha",
+    "Roel Rats"
+  ],
+  "broadcaster": "RTÉ",
+  "commentators": [
+    "Marty Whelan"
+  ],
+  "jury": [
+    "Aidan O'Connor",
+    "Emma Reynolds",
+    "Jennifer O'Brien",
+    "Paddy McKenna",
+    "Ronan Hardiman"
+  ],
+  "spokesperson": "Sinéad Kennedy"
+}

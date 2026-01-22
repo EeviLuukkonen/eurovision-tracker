@@ -1,0 +1,51 @@
+{
+  "id": 38,
+  "country": "LT",
+  "artist": "Fusedmarc",
+  "song": "Rain Of Revolution",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/-7WpnSMEPjc",
+    "https://www.youtube-nocookie.com/embed/fAbwssQ-HWc",
+    "https://www.youtube-nocookie.com/embed/x8fU6SbbCro",
+    "https://www.youtube-nocookie.com/embed/B_47ckdMjcw",
+    "https://www.youtube-nocookie.com/embed/mzaWIR4wzrU"
+  ],
+  "bpm": 101,
+  "tone": "C minor",
+  "artistPeople": [
+    "Viktorija Ivanovskaja",
+    "Denisas Zujevas"
+  ],
+  "backings": [
+    "Jekaterina Pranevič",
+    "Kristina Žaldokaitė",
+    "Laura Rakauskaitė",
+    "Vaiva Adomaitytė"
+  ],
+  "dancers": null,
+  "stageDirector": "Povilas Varvuolis",
+  "composers": [
+    "Ciiliia",
+    "Denis Zujev",
+    "Michail Levin"
+  ],
+  "conductor": null,
+  "lyricists": [
+    "Denis Zujev",
+    "Michail Levin"
+  ],
+  "writers": null,
+  "broadcaster": "LRT",
+  "commentators": [
+    "Darius Užkuraitis",
+    "Gerūta Griniūtė"
+  ],
+  "jury": [
+    "Giedrė Kilčiauskienė",
+    "Rafailas Karpis",
+    "Vaidas Stackevičius",
+    "Viktorija Navickaitė",
+    "Vytenis Pauliukaitis"
+  ],
+  "spokesperson": "Eglė Daugėlaitė"
+}

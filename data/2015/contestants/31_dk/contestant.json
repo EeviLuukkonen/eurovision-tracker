@@ -1,0 +1,46 @@
+{
+  "id": 31,
+  "country": "DK",
+  "artist": "Anti Social Media",
+  "song": "The Way You Are",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/J--Tgi_iZQ8",
+    "https://www.youtube-nocookie.com/embed/hASaICVH5Sg",
+    "https://www.youtube-nocookie.com/embed/vnSiyaJ4rUk",
+    "https://www.youtube-nocookie.com/embed/XcCBzFMnGSM",
+    "https://www.youtube-nocookie.com/embed/psm6HAOjTxs"
+  ],
+  "bpm": 125,
+  "tone": "C major",
+  "artistPeople": [
+    "David Rønne Vang",
+    "Emil Vissing Christensen",
+    "Nikolaj Tøth Andersen",
+    "Philip Thornhill"
+  ],
+  "backings": [
+    "Johanna Beijbom",
+    "Nellie Ettison"
+  ],
+  "dancers": null,
+  "stageDirector": "Birgitte Næss-Schmidt",
+  "composers": null,
+  "conductor": null,
+  "lyricists": null,
+  "writers": [
+    "Chief 1",
+    "Remee"
+  ],
+  "broadcaster": "DR",
+  "commentators": [
+    "Ole Tøpholm"
+  ],
+  "jury": [
+    "Anna David",
+    "Jonas Schrøder",
+    "Lotte Feder",
+    "Søren Poppe",
+    "Tamra Rosanes"
+  ],
+  "spokesperson": "Basim"
+}

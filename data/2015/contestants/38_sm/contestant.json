@@ -1,0 +1,48 @@
+{
+  "id": 38,
+  "country": "SM",
+  "artist": "Michele Perniola & Anita Simoncini",
+  "song": "Chain Of Lights",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/FE1KJYNvVAE",
+    "https://www.youtube-nocookie.com/embed/l5of_gx0kjA",
+    "https://www.youtube-nocookie.com/embed/msJrcIbv5R8",
+    "https://www.youtube-nocookie.com/embed/pzlo4wGb-S8"
+  ],
+  "bpm": 154,
+  "tone": "F minor",
+  "artistPeople": [
+    "Anita Simoncini",
+    "Michele Perniola"
+  ],
+  "backings": [
+    "Julian Feifel",
+    "Katrin Schild von Spannenberg",
+    "Pat Lawson",
+    "Ron van Lankeren"
+  ],
+  "dancers": null,
+  "stageDirector": "Antonello Carozza",
+  "composers": [
+    "Ralph Siegel"
+  ],
+  "conductor": null,
+  "lyricists": [
+    "John O'Flynn"
+  ],
+  "writers": null,
+  "broadcaster": "SMRTV",
+  "commentators": [
+    "Gigi Restivo",
+    "John Kennedy O'Connor",
+    "Lia Fiorio"
+  ],
+  "jury": [
+    "Barbara Andreini",
+    "Ilaria Ercolani",
+    "Katalin Pribelszki",
+    "Matteo Venturini",
+    "Nicola Della Valle"
+  ],
+  "spokesperson": "Valentina Monetta"
+}

@@ -1,0 +1,49 @@
+{
+  "id": 37,
+  "country": "BG",
+  "artist": "Intelligent Music Project",
+  "song": "Intention",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/EwZTI5AoTg4",
+    "https://www.youtube-nocookie.com/embed/HySI2igCcx4",
+    "https://www.youtube-nocookie.com/embed/C9U-WZ1-ZZw",
+    "https://www.youtube-nocookie.com/embed/eO2BnKrU7ZI",
+    "https://www.youtube-nocookie.com/embed/dcmmuzIH57o",
+    "https://www.youtube-nocookie.com/embed/El0tD8jm440",
+    "https://www.youtube-nocookie.com/embed/lDNgXXlSBM4"
+  ],
+  "bpm": 162,
+  "tone": "D major",
+  "artistPeople": [
+    "Bisser Ivanov",
+    "Dimiter Sirakov",
+    "Ivo Stefanov",
+    "Ronnie Romero",
+    "Slavin Slavchev",
+    "Stoyan Yankoulov"
+  ],
+  "backings": [
+    "Slavin Slavchev"
+  ],
+  "dancers": null,
+  "stageDirector": "Andrea Celi",
+  "composers": null,
+  "conductor": null,
+  "lyricists": null,
+  "writers": [
+    "Milen Vrabevski"
+  ],
+  "broadcaster": "BNT",
+  "commentators": [
+    "Elena Rosberg",
+    "Petko Kralev"
+  ],
+  "jury": [
+    "JJ",
+    "Mary",
+    "Nelly Rangelova",
+    "VenZy",
+    "Zdravko Tzokov Zheljazkov"
+  ],
+  "spokesperson": "Janan Dural"
+}

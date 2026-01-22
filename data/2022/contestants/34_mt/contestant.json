@@ -1,0 +1,46 @@
+{
+  "id": 34,
+  "country": "MT",
+  "artist": "Emma Muscat",
+  "song": "I Am What I Am",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/DFCFM5qtvms",
+    "https://www.youtube-nocookie.com/embed/df-fks-Pj-8",
+    "https://www.youtube-nocookie.com/embed/d8_kFinz_cQ",
+    "https://www.youtube-nocookie.com/embed/CdMwk6_Wf8Q",
+    "https://www.youtube-nocookie.com/embed/B1b5_tLLCsw",
+    "https://www.youtube-nocookie.com/embed/YYNtkJwsYpM"
+  ],
+  "bpm": 98,
+  "tone": "G major",
+  "artistPeople": [
+    "Emma Muscat"
+  ],
+  "backings": [
+    "Frank Ksey",
+    "Giulia Santoriello",
+    "Lorenzo De Rosa",
+    "Shadia Taghi"
+  ],
+  "dancers": null,
+  "stageDirector": "Gordon Bonello",
+  "composers": null,
+  "conductor": null,
+  "lyricists": null,
+  "writers": [
+    "Dino Medanhodzic",
+    "Emma Muscat",
+    "Julie Aagaard",
+    "Stine Kinck"
+  ],
+  "broadcaster": "TVM",
+  "commentators": null,
+  "jury": [
+    "Antoine Faure",
+    "Claudia Faniello",
+    "Daniel D’Anastasi",
+    "Gaia Cauchi",
+    "Maria Abdilla"
+  ],
+  "spokesperson": "Aidan Cassar"
+}

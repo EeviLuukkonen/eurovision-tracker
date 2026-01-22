@@ -1,0 +1,48 @@
+{
+  "id": 36,
+  "country": "SM",
+  "artist": "Piqued Jacks",
+  "song": "Like An Animal",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/pIdHjcqyLfo",
+    "https://www.youtube-nocookie.com/embed/oYvSh-Aj_SY",
+    "https://www.youtube-nocookie.com/embed/Hjfq-T-8WHw",
+    "https://www.youtube-nocookie.com/embed/42jtKXpsU7c",
+    "https://www.youtube-nocookie.com/embed/QyX7WNurXsk",
+    "https://www.youtube-nocookie.com/embed/XEPd0-Y-n3A",
+    "https://www.youtube-nocookie.com/embed/F9AP5DSA9tc"
+  ],
+  "bpm": 128,
+  "tone": "C major",
+  "artistPeople": [
+    "Andrea Lazzeretti",
+    "Tommaso Oliveri",
+    "Francesco Bini",
+    "Marco Sgaramella"
+  ],
+  "backings": null,
+  "dancers": null,
+  "stageDirector": "Nick Marianos",
+  "composers": null,
+  "conductor": null,
+  "lyricists": null,
+  "writers": [
+    "Andrea Lazzeretti",
+    "Tommaso Oliveri",
+    "Francesco Bini",
+    "Marco Sgaramella"
+  ],
+  "broadcaster": "SMRTV",
+  "commentators": [
+    "Gigi Restivo",
+    "Lia Fiorio"
+  ],
+  "jury": [
+    "Barbara Andreini",
+    "Francesco Stefanelli",
+    "Lewis Busignani",
+    "Luca Zucchi",
+    "Sabrina Minguzzi"
+  ],
+  "spokesperson": "John Kennedy O'Connor"
+}

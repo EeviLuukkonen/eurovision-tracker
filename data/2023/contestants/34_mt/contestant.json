@@ -1,0 +1,47 @@
+{
+  "id": 34,
+  "country": "MT",
+  "artist": "The Busker",
+  "song": "Dance (Our Own Party)",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/zVmVt9qmg9g",
+    "https://www.youtube-nocookie.com/embed/Apqwl0ayL6A",
+    "https://www.youtube-nocookie.com/embed/h5wfKv4p8uA",
+    "https://www.youtube-nocookie.com/embed/PsrX0Tm5omM",
+    "https://www.youtube-nocookie.com/embed/9k0l7U9SAA0",
+    "https://www.youtube-nocookie.com/embed/BsLE9H7taWM",
+    "https://www.youtube-nocookie.com/embed/XASeTePlkQw"
+  ],
+  "bpm": 103,
+  "tone": "F minor",
+  "artistPeople": [
+    "David Meilak",
+    "Jean Paul Borg",
+    "Sean Meachen"
+  ],
+  "backings": null,
+  "dancers": null,
+  "stageDirector": null,
+  "composers": [
+    "David Meilak",
+    "Jean Paul Borg",
+    "Matthew James Borg",
+    "Michael Joe Cini",
+    "Sean Meachen"
+  ],
+  "conductor": null,
+  "lyricists": [
+    "David Meilak"
+  ],
+  "writers": null,
+  "broadcaster": "PBS",
+  "commentators": null,
+  "jury": [
+    "Brooke Borg",
+    "Emil Calleja Bayliss",
+    "Gerard James Borg",
+    "Ludwig Galea",
+    "Moira Stafrace"
+  ],
+  "spokesperson": "Ryan Hili"
+}

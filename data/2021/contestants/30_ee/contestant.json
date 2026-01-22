@@ -1,0 +1,49 @@
+{
+  "id": 30,
+  "country": "EE",
+  "artist": "Uku Suviste",
+  "song": "The Lucky One",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/mhMZQyv_Fhw",
+    "https://www.youtube-nocookie.com/embed/E35RMFfjRZ4",
+    "https://www.youtube-nocookie.com/embed/tfuQkhNECXQ",
+    "https://www.youtube-nocookie.com/embed/VeNWQBMU7BY",
+    "https://www.youtube-nocookie.com/embed/VN5aOBbEwMc",
+    "https://www.youtube-nocookie.com/embed/z4-qw0ta2fc",
+    "https://www.youtube-nocookie.com/embed/zOHwiWElR1A"
+  ],
+  "bpm": 88,
+  "tone": "E major",
+  "artistPeople": [
+    "Uku Suviste"
+  ],
+  "backings": [
+    "Kaarel Orumägi",
+    "Laura-Liisa Veiler"
+  ],
+  "dancers": null,
+  "stageDirector": "Dan Shipton, Marvin Dietmann",
+  "composers": [
+    "Uku Suviste"
+  ],
+  "conductor": null,
+  "lyricists": [
+    "Sharon Vaughn",
+    "Uku Suviste"
+  ],
+  "writers": null,
+  "broadcaster": "ERR",
+  "commentators": [
+    "Aleksandr Hobotov",
+    "Julia Kalenda",
+    "Marko Reikop"
+  ],
+  "jury": [
+    "Birgit Sarrap",
+    "Dave Benton",
+    "Elina Born",
+    "Karl-Ander Reismann",
+    "Stig Rästa"
+  ],
+  "spokesperson": "Sissi"
+}

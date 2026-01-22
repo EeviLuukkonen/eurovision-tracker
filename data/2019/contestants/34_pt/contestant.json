@@ -1,0 +1,47 @@
+{
+  "id": 34,
+  "country": "PT",
+  "artist": "Conan Osíris",
+  "song": "Telemóveis",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/SIGn9_yMLn4",
+    "https://www.youtube-nocookie.com/embed/DWoA-7kF5R4",
+    "https://www.youtube-nocookie.com/embed/xSbp8lwCQp8",
+    "https://www.youtube-nocookie.com/embed/5IrNfYeWZWI",
+    "https://www.youtube-nocookie.com/embed/RRbrL_eXGZg",
+    "https://www.youtube-nocookie.com/embed/Q1tkstZdEjU",
+    "https://www.youtube-nocookie.com/embed/K0Oj8N03rZg"
+  ],
+  "bpm": 123,
+  "tone": "F minor",
+  "artistPeople": [
+    "Tiago Miranda"
+  ],
+  "backings": [
+    "Patrícia Antunes",
+    "Patrícia Silveira"
+  ],
+  "dancers": [
+    "João Reis"
+  ],
+  "stageDirector": null,
+  "composers": null,
+  "conductor": null,
+  "lyricists": null,
+  "writers": [
+    "Conan Osíris"
+  ],
+  "broadcaster": "RTP",
+  "commentators": [
+    "José Carlos Malato",
+    "Nuno Galopim"
+  ],
+  "jury": [
+    "Ana Cláudia",
+    "Ana Paulo",
+    "Matay",
+    "Paulo Castelo",
+    "Renato Júnior"
+  ],
+  "spokesperson": "Inês Lopes Gonçalves"
+}

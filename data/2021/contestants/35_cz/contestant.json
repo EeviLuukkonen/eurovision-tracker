@@ -1,0 +1,50 @@
+{
+  "id": 35,
+  "country": "CZ",
+  "artist": "Benny Cristo",
+  "song": "Omaga",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/cgGRCTUPsqY",
+    "https://www.youtube-nocookie.com/embed/zOHwiWElR1A",
+    "https://www.youtube-nocookie.com/embed/E1r3euYaq4Q",
+    "https://www.youtube-nocookie.com/embed/8i653SJk_Sk",
+    "https://www.youtube-nocookie.com/embed/ToN78rEqfRs",
+    "https://www.youtube-nocookie.com/embed/5dM9Fe9Qc9M"
+  ],
+  "bpm": 122,
+  "tone": "F# major",
+  "artistPeople": [
+    "Ben da Silva Cristóvão"
+  ],
+  "backings": [
+    "Filip Vlček"
+  ],
+  "dancers": [
+    "Alberto Gola",
+    "Aneta Prchalová",
+    "Anna Lipoldová",
+    "DJ Fuuse"
+  ],
+  "stageDirector": "Dan Shipton, Marvin Dietmann",
+  "composers": [
+    "Filip Vlček"
+  ],
+  "conductor": null,
+  "lyricists": [
+    "Benny Cristo"
+  ],
+  "writers": null,
+  "broadcaster": "ČT",
+  "commentators": [
+    "Albert Černý",
+    "Jan Maxián"
+  ],
+  "jury": [
+    "Boris Carloff",
+    "Debbi",
+    "Elis Mraz",
+    "Miro Žbirka",
+    "Tonya Graves"
+  ],
+  "spokesperson": "Taťána Kuchařová"
+}

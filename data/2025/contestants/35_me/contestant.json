@@ -1,0 +1,45 @@
+{
+  "id": 35,
+  "country": "ME",
+  "artist": "Nina Žižić",
+  "song": "Dobrodošli",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/QxpOxioeZJw",
+    "https://www.youtube-nocookie.com/embed/ydMkpaB0CWk",
+    "https://www.youtube-nocookie.com/embed/Q-mHdlAaOV0",
+    "https://www.youtube-nocookie.com/embed/_zs0yq39aFA",
+    "https://www.youtube-nocookie.com/embed/-E9O8oskzFA",
+    "https://www.youtube-nocookie.com/embed/L9MNHACTvT0",
+    "https://www.youtube-nocookie.com/embed/HIniFViPpLA"
+  ],
+  "bpm": 82,
+  "tone": "D minor",
+  "artistPeople": [
+    "Nina Žižić"
+  ],
+  "backings": null,
+  "dancers": null,
+  "stageDirector": "Aleksandar Maričić, Boris Subotić, Dalibor Ivanković",
+  "composers": [
+    "Boris Subotić",
+    "Darko Dimitrov"
+  ],
+  "conductor": null,
+  "lyricists": [
+    "Boris Subotić",
+    "Violeta Mihajlovska"
+  ],
+  "writers": null,
+  "broadcaster": "RTCG",
+  "commentators": [
+    "Dražen Bauković"
+  ],
+  "jury": [
+    "Bojana Nenezić",
+    "Gavrilo Radunović",
+    "Jelena Bozović",
+    "Marija Bozović",
+    "Željko Vukčević"
+  ],
+  "spokesperson": "Marko Vukčević"
+}

@@ -1,0 +1,46 @@
+{
+  "id": 31,
+  "country": "LV",
+  "artist": "Citi Zēni",
+  "song": "Eat Your Salad",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/TM0_0WfuxSk",
+    "https://www.youtube-nocookie.com/embed/DbDj9mBI4g0",
+    "https://www.youtube-nocookie.com/embed/Z3Th6yJA7ZM",
+    "https://www.youtube-nocookie.com/embed/Bno10845GT8",
+    "https://www.youtube-nocookie.com/embed/Xx8dewrt1y4",
+    "https://www.youtube-nocookie.com/embed/IfY7isqFlqY",
+    "https://www.youtube-nocookie.com/embed/ld1OkfLf8eQ"
+  ],
+  "bpm": 115,
+  "tone": "B minor",
+  "artistPeople": [
+    "Toms Kagainis"
+  ],
+  "backings": null,
+  "dancers": null,
+  "stageDirector": "Beāte Svarinska",
+  "composers": [
+    "Jānis Jačmenkins",
+    "Roberts Memmēns"
+  ],
+  "conductor": null,
+  "lyricists": [
+    "Dagnis Roziņš",
+    "Jānis Pētersons"
+  ],
+  "writers": null,
+  "broadcaster": "LTV",
+  "commentators": [
+    "Lauris Reiniks",
+    "Toms Grēviņš"
+  ],
+  "jury": [
+    "Anna Platpire",
+    "Girts Lusis",
+    "Ikars Ruņģis",
+    "Kaspars Ansons",
+    "Laura Jēkabsone"
+  ],
+  "spokesperson": "Samanta Tīna"
+}

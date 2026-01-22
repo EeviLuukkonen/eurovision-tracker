@@ -1,0 +1,41 @@
+{
+  "id": 33,
+  "country": "CZ",
+  "artist": "Marta Jandová & Václav Noid Bárta",
+  "song": "Hope Never Dies",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/SLz6VeSPXjA",
+    "https://www.youtube-nocookie.com/embed/P_o44RdxYTY",
+    "https://www.youtube-nocookie.com/embed/JTQKXYc7wHw",
+    "https://www.youtube-nocookie.com/embed/96sUZruqI54"
+  ],
+  "bpm": 183,
+  "tone": "D minor",
+  "artistPeople": [
+    "Marta Jandová",
+    "Václav Bárta"
+  ],
+  "backings": null,
+  "dancers": null,
+  "stageDirector": null,
+  "composers": [
+    "Václav Noid Bárta"
+  ],
+  "conductor": null,
+  "lyricists": [
+    "Tereza Šoralová"
+  ],
+  "writers": null,
+  "broadcaster": "ČT",
+  "commentators": [
+    "Aleš Háma"
+  ],
+  "jury": [
+    "Honza Dědek",
+    "Jan Maxián",
+    "Jaroslav Špulák",
+    "Jitka Benešová",
+    "Vladimír Bár"
+  ],
+  "spokesperson": "Daniela Písařovicová"
+}

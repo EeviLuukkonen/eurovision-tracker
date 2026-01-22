@@ -1,0 +1,47 @@
+{
+  "id": 30,
+  "country": "IE",
+  "artist": "Brendan Murray",
+  "song": "Dying To Try",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/EOpZikqrfOA",
+    "https://www.youtube-nocookie.com/embed/g0qTZaBTPRs",
+    "https://www.youtube-nocookie.com/embed/0WXCk_7v6zo",
+    "https://www.youtube-nocookie.com/embed/7mTRVjX44r4",
+    "https://www.youtube-nocookie.com/embed/rMm3xWVuLEU",
+    "https://www.youtube-nocookie.com/embed/qglb2vro94w"
+  ],
+  "bpm": 164,
+  "tone": "F minor",
+  "artistPeople": [
+    "Brendan Murray"
+  ],
+  "backings": [
+    "Alison Vard Miller",
+    "Graham Kelly",
+    "Jules Edwards",
+    "Margot Daly",
+    "Shane McDaid"
+  ],
+  "dancers": null,
+  "stageDirector": "Nicoline Refsing",
+  "composers": null,
+  "conductor": null,
+  "lyricists": null,
+  "writers": [
+    "James Newman",
+    "Jörgen Elofsson"
+  ],
+  "broadcaster": "RTÉ",
+  "commentators": [
+    "Marty Whelan"
+  ],
+  "jury": [
+    "Amanda Lane",
+    "Dayl Cronin",
+    "Greg French",
+    "Louise Macnamara",
+    "Suzanne Doyle"
+  ],
+  "spokesperson": "Nicky Byrne"
+}

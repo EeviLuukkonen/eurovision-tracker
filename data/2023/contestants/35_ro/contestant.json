@@ -1,0 +1,51 @@
+{
+  "id": 35,
+  "country": "RO",
+  "artist": "Theodor Andrei",
+  "song": "D.G.T. (Off and On)",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/Bf3iPXU1RYU",
+    "https://www.youtube-nocookie.com/embed/B0fvqAyKPss",
+    "https://www.youtube-nocookie.com/embed/NRxv-AUCinQ",
+    "https://www.youtube-nocookie.com/embed/8E1qj7jX1E8",
+    "https://www.youtube-nocookie.com/embed/zOeM5JCcYW8",
+    "https://www.youtube-nocookie.com/embed/FvwvIMd1xs4",
+    "https://www.youtube-nocookie.com/embed/cB7BCFYPkPw"
+  ],
+  "bpm": 110,
+  "tone": "A minor",
+  "artistPeople": [
+    "Theodor Octavian Andrei"
+  ],
+  "backings": null,
+  "dancers": [
+    "Diana Colea"
+  ],
+  "stageDirector": null,
+  "composers": [
+    "Luca Udățeanu",
+    "Theodor Andrei",
+    "Xjahed"
+  ],
+  "conductor": null,
+  "lyricists": [
+    "Luca De Mezzo",
+    "Luca Udățeanu",
+    "Theodor Andrei",
+    "Xjahed"
+  ],
+  "writers": null,
+  "broadcaster": "TVR",
+  "commentators": [
+    "Bogdan Stănescu",
+    "Kyrie Mendel"
+  ],
+  "jury": [
+    "Alexandra Cepraga",
+    "Bogdan Stratula",
+    "Christina Nicoleta Savulescu",
+    "Monica Anghel",
+    "Razvan Petre"
+  ],
+  "spokesperson": "Eda Marcus"
+}

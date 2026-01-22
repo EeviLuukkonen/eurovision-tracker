@@ -1,0 +1,31 @@
+{
+  "id": 36,
+  "country": "ES",
+  "artist": "Blas Cantó",
+  "song": "Universo",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/zuDdex1st-Y"
+  ],
+  "bpm": 92,
+  "tone": "F major",
+  "artistPeople": [
+    "Blas Cantó Moreno"
+  ],
+  "backings": null,
+  "dancers": null,
+  "stageDirector": null,
+  "composers": [
+    "Ashley Hicklin",
+    "Blas Cantó",
+    "Dan Hammond",
+    "Daniel Ortega",
+    "Mikołaj Trybulec"
+  ],
+  "conductor": null,
+  "lyricists": null,
+  "writers": null,
+  "broadcaster": "TVE",
+  "commentators": null,
+  "jury": null,
+  "spokesperson": null
+}

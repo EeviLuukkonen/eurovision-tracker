@@ -1,0 +1,30 @@
+{
+  "id": 40,
+  "country": "GB",
+  "artist": "James Newman",
+  "song": "My Last Breath",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/6iS-lV909T4"
+  ],
+  "bpm": 90,
+  "tone": "Ab minor",
+  "artistPeople": [
+    "James Richard Newman"
+  ],
+  "backings": null,
+  "dancers": null,
+  "stageDirector": null,
+  "composers": null,
+  "conductor": null,
+  "lyricists": null,
+  "writers": [
+    "Adam Argyle",
+    "Ed Drewett",
+    "Iain Farquharson",
+    "James Newman"
+  ],
+  "broadcaster": "BBC",
+  "commentators": null,
+  "jury": null,
+  "spokesperson": null
+}

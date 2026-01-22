@@ -1,0 +1,31 @@
+{
+  "id": 22,
+  "country": "LV",
+  "artist": "Samanta Tīna",
+  "song": "Still Breathing",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/ELr6U2fOrnE",
+    "https://www.youtube-nocookie.com/embed/-KoJfSgBZQ0",
+    "https://www.youtube-nocookie.com/embed/OqrkXrO8-YA",
+    "https://www.youtube-nocookie.com/embed/96waCajhffA"
+  ],
+  "bpm": 156,
+  "tone": "F minor",
+  "artistPeople": [
+    "Samanta Poļakova"
+  ],
+  "backings": null,
+  "dancers": null,
+  "stageDirector": null,
+  "composers": null,
+  "conductor": null,
+  "lyricists": null,
+  "writers": [
+    "Aminata",
+    "Samanta Tīna"
+  ],
+  "broadcaster": "LTV",
+  "commentators": null,
+  "jury": null,
+  "spokesperson": null
+}

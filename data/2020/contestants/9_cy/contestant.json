@@ -1,0 +1,36 @@
+{
+  "id": 9,
+  "country": "CY",
+  "artist": "Sandro",
+  "song": "Running",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/Jl_qEw_4OK0"
+  ],
+  "bpm": 150,
+  "tone": "B minor",
+  "artistPeople": [
+    "Alessandro Rütten"
+  ],
+  "backings": null,
+  "dancers": null,
+  "stageDirector": null,
+  "composers": [
+    "Alfie Arcuri",
+    "Octavian",
+    "Sandro Nicolas",
+    "Sebastian Rickards",
+    "Teo DK"
+  ],
+  "conductor": null,
+  "lyricists": [
+    "Alfie Arcuri",
+    "Octavian",
+    "Sandro Nicolas",
+    "Sebastian Rickards"
+  ],
+  "writers": null,
+  "broadcaster": "CyBC",
+  "commentators": null,
+  "jury": null,
+  "spokesperson": null
+}

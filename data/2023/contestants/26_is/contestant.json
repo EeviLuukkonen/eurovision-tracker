@@ -1,0 +1,42 @@
+{
+  "id": 26,
+  "country": "IS",
+  "artist": "Diljá",
+  "song": "Power",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/lzlTcA0OC5s",
+    "https://www.youtube-nocookie.com/embed/BhlJXcCv7gw",
+    "https://www.youtube-nocookie.com/embed/GHFrKbXD9ck",
+    "https://www.youtube-nocookie.com/embed/FXprRtvM8yw",
+    "https://www.youtube-nocookie.com/embed/Pp9UAyBnNNw",
+    "https://www.youtube-nocookie.com/embed/uQkKk9kW43w",
+    "https://www.youtube-nocookie.com/embed/TNjWUDb3_JM"
+  ],
+  "bpm": 160,
+  "tone": "F minor",
+  "artistPeople": [
+    "Diljá Pétursdóttir"
+  ],
+  "backings": null,
+  "dancers": null,
+  "stageDirector": null,
+  "composers": null,
+  "conductor": null,
+  "lyricists": null,
+  "writers": [
+    "Diljá Pétursdóttir",
+    "Pálmi Ragnar Ásgeirsson"
+  ],
+  "broadcaster": "RÚV",
+  "commentators": [
+    "Gísli Marteinn Baldursson"
+  ],
+  "jury": [
+    "Arnar Eggert Thoroddsen",
+    "Heiða Eiríksdóttir",
+    "Kristjana Stefánsdóttir",
+    "Lovísa Rut Kristjánsdóttir",
+    "Sigurjón Örn Böðvarsson"
+  ],
+  "spokesperson": "Einar Hrafn Stefánsson"
+}

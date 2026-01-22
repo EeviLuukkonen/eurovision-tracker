@@ -1,0 +1,45 @@
+{
+  "id": 28,
+  "country": "DK",
+  "artist": "Saba",
+  "song": "Sand",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/4f_phiGot7w",
+    "https://www.youtube-nocookie.com/embed/6ekwBrQ_Ol4",
+    "https://www.youtube-nocookie.com/embed/3pCtdFnv9eQ",
+    "https://www.youtube-nocookie.com/embed/3SFruUcGWDg",
+    "https://www.youtube-nocookie.com/embed/0Vvk2vs3F7E",
+    "https://www.youtube-nocookie.com/embed/rWHmlPXT65Y",
+    "https://www.youtube-nocookie.com/embed/rcGD8ZDEmag"
+  ],
+  "bpm": 114,
+  "tone": "E minor",
+  "artistPeople": [
+    "Anna Saba Lykke Oehlenschlæger"
+  ],
+  "backings": [
+    "Melanie Wehbe"
+  ],
+  "dancers": null,
+  "stageDirector": null,
+  "composers": null,
+  "conductor": null,
+  "lyricists": null,
+  "writers": [
+    "Jonas Thander",
+    "Melanie Wehbe",
+    "Pil Kalinka Nygaard Jeppesen"
+  ],
+  "broadcaster": "DR",
+  "commentators": [
+    "Ole Tøpholm"
+  ],
+  "jury": [
+    "Ihan Haydar",
+    "Jesper Groth",
+    "Las Thomsen",
+    "Søren Torpegaard Lund",
+    "Vicky Leander"
+  ],
+  "spokesperson": "Stéphanie Surrugue"
+}

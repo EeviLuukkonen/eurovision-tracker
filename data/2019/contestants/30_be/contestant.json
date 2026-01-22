@@ -1,0 +1,48 @@
+{
+  "id": 30,
+  "country": "BE",
+  "artist": "Eliot",
+  "song": "Wake Up",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/iFB9NnjU4ns",
+    "https://www.youtube-nocookie.com/embed/17QXkQEckE4",
+    "https://www.youtube-nocookie.com/embed/aJrLcRkCBo4",
+    "https://www.youtube-nocookie.com/embed/T5o9-9Uo3yQ",
+    "https://www.youtube-nocookie.com/embed/ndo1uDzV1ck",
+    "https://www.youtube-nocookie.com/embed/hDSe8qZnc-8"
+  ],
+  "bpm": 145,
+  "tone": "Bb major",
+  "artistPeople": [
+    "Eliot Vassamillet"
+  ],
+  "backings": [
+    "Elya Lufwa",
+    "Julien Michel",
+    "Mahdy Coulibaly",
+    "Renato Bennardo"
+  ],
+  "dancers": null,
+  "stageDirector": "Jean-Jacques Marotte",
+  "composers": null,
+  "conductor": null,
+  "lyricists": null,
+  "writers": [
+    "Eliot Vassamillet",
+    "Pierre Dumoulin"
+  ],
+  "broadcaster": "RTBF",
+  "commentators": [
+    "Jean-Louis Lahaye",
+    "Maureen Louys",
+    "Peter Van de Veire"
+  ],
+  "jury": [
+    "Alex Germys",
+    "Hakima Darhmouch",
+    "Joelle Morane",
+    "Olivier Biron",
+    "Pierre Bertinchamps"
+  ],
+  "spokesperson": "David Jeanmotte"
+}

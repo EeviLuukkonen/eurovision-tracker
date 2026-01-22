@@ -1,0 +1,46 @@
+{
+  "id": 28,
+  "country": "DK",
+  "artist": "Fyr og Flamme",
+  "song": "Øve os på hinanden",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/w2ytONrRyww",
+    "https://www.youtube-nocookie.com/embed/l03uV7u4zzA",
+    "https://www.youtube-nocookie.com/embed/wxKPinzits8",
+    "https://www.youtube-nocookie.com/embed/zOHwiWElR1A",
+    "https://www.youtube-nocookie.com/embed/gKaS_T7MnTc",
+    "https://www.youtube-nocookie.com/embed/ivXrG0GpCZE"
+  ],
+  "bpm": 124,
+  "tone": "C major",
+  "artistPeople": [
+    "Jesper Groth",
+    "Laurits Emanuel Graae"
+  ],
+  "backings": [
+    "Line Krogholm",
+    "Marcel Mark Gbekle",
+    "Tilde Vinther"
+  ],
+  "dancers": null,
+  "stageDirector": "Birgitte Næss-Schmidt",
+  "composers": null,
+  "conductor": null,
+  "lyricists": null,
+  "writers": [
+    "Laurits Emanuel"
+  ],
+  "broadcaster": "DR",
+  "commentators": [
+    "Henrik Milling",
+    "Nicolai Molbech"
+  ],
+  "jury": [
+    "Jonas Schrøder",
+    "Kill J",
+    "Lise Cabble",
+    "Peter Düring",
+    "Tanne Amanda Balcells"
+  ],
+  "spokesperson": "Tina Müller"
+}

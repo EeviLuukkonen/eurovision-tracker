@@ -1,0 +1,55 @@
+{
+  "id": 31,
+  "country": "CH",
+  "artist": "Zibbz",
+  "song": "Stones",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/wJGTVsluHkw",
+    "https://www.youtube-nocookie.com/embed/1mlydzkGFXM",
+    "https://www.youtube-nocookie.com/embed/eyZQ95XxeOw",
+    "https://www.youtube-nocookie.com/embed/DjWCZCh2z9o",
+    "https://www.youtube-nocookie.com/embed/s8u4TLgz9Lk",
+    "https://www.youtube-nocookie.com/embed/tTF0Yq0GUiQ",
+    "https://www.youtube-nocookie.com/embed/mqPsjRzllns"
+  ],
+  "bpm": 166,
+  "tone": "F major",
+  "artistPeople": [
+    "Corinne Gfeller"
+  ],
+  "backings": [
+    "Laurell Barker",
+    "Nita Fernandes",
+    "Sabrina Kern",
+    "Stee Gfeller"
+  ],
+  "dancers": null,
+  "stageDirector": "Hans Pannecoucke",
+  "composers": [
+    "Corinne Gfeller",
+    "Laurell Barker",
+    "Stefan Gfeller"
+  ],
+  "conductor": null,
+  "lyricists": [
+    "Corinne Gfeller",
+    "Laurell Barker"
+  ],
+  "writers": null,
+  "broadcaster": "SSR SRG",
+  "commentators": [
+    "Clarissa Tami",
+    "Jean-Marc Richard",
+    "Nicolas Tanner",
+    "Sebalter",
+    "Sven Epiney"
+  ],
+  "jury": [
+    "Alizé Oswald",
+    "Eva Bellomo",
+    "Georg Schlunegger",
+    "Michael Kinzer",
+    "Nickless"
+  ],
+  "spokesperson": "Letícia Carvalho"
+}

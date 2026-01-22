@@ -1,0 +1,40 @@
+{
+  "id": 29,
+  "country": "GR",
+  "artist": "Victor Vernicos",
+  "song": "What They Say",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/gJSZA0Zh2xU",
+    "https://www.youtube-nocookie.com/embed/qL0EkId_sTY",
+    "https://www.youtube-nocookie.com/embed/EkJ2tOKyaLI",
+    "https://www.youtube-nocookie.com/embed/sLdOzS0bJDc",
+    "https://www.youtube-nocookie.com/embed/F9AP5DSA9tc"
+  ],
+  "bpm": 91,
+  "tone": "C major",
+  "artistPeople": [
+    "Victor Vernicos Jørgensen"
+  ],
+  "backings": null,
+  "dancers": null,
+  "stageDirector": "Konstantinos Rigos",
+  "composers": null,
+  "conductor": null,
+  "lyricists": null,
+  "writers": [
+    "Victor Vernicos"
+  ],
+  "broadcaster": "ERT",
+  "commentators": [
+    "Jenny Melita",
+    "Maria Kozakou"
+  ],
+  "jury": [
+    "Christos Giakoumopoulos",
+    "Claudia Matola",
+    "Evanthia Theotokatou",
+    "Fotios Giannoutsos",
+    "Nikos"
+  ],
+  "spokesperson": "Fotis Sergoulopoulos"
+}

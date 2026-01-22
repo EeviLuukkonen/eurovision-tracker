@@ -1,0 +1,49 @@
+{
+  "id": 26,
+  "country": "HR",
+  "artist": "Albina",
+  "song": "Tick-Tock",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/vKdxjoNluzY",
+    "https://www.youtube-nocookie.com/embed/zOHwiWElR1A",
+    "https://www.youtube-nocookie.com/embed/IHS_2GpNwmA",
+    "https://www.youtube-nocookie.com/embed/CX9fBSTjUfk",
+    "https://www.youtube-nocookie.com/embed/oQK60vU6GSM",
+    "https://www.youtube-nocookie.com/embed/7-8TPw14B5A",
+    "https://www.youtube-nocookie.com/embed/k8sJBAQIfG8"
+  ],
+  "bpm": 126,
+  "tone": "E minor",
+  "artistPeople": [
+    "Albina Grčić"
+  ],
+  "backings": null,
+  "dancers": [
+    "Devin Juraj",
+    "Luciano Plazibat",
+    "Marko Marić",
+    "Stjepan Cutvarić"
+  ],
+  "stageDirector": "Dan Shipton, Marvin Dietmann",
+  "composers": [
+    "Branimir Mihaljević"
+  ],
+  "conductor": null,
+  "lyricists": [
+    "Max Cinnamon",
+    "Tihana Buklijaš Bakić"
+  ],
+  "writers": null,
+  "broadcaster": "HRT",
+  "commentators": [
+    "Duško Ćurlić"
+  ],
+  "jury": [
+    "Denis Dumančić",
+    "Luka Nižetić",
+    "Monika Lelas Halambek",
+    "Nika Turković",
+    "Tonka"
+  ],
+  "spokesperson": "Ivan Dorian Molnar"
+}

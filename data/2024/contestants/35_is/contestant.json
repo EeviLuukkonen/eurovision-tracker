@@ -1,0 +1,50 @@
+{
+  "id": 35,
+  "country": "IS",
+  "artist": "Hera Björk",
+  "song": "Scared of Heights",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/VChBgcycVl8",
+    "https://www.youtube-nocookie.com/embed/JG4JxXWzHGw",
+    "https://www.youtube-nocookie.com/embed/OouUsCZ3xkM",
+    "https://www.youtube-nocookie.com/embed/93ZhyLj9GAA",
+    "https://www.youtube-nocookie.com/embed/5nX7T4wD_hA",
+    "https://www.youtube-nocookie.com/embed/k4jeG9zUZ0s",
+    "https://www.youtube-nocookie.com/embed/fdd7YaT5iGc"
+  ],
+  "bpm": 128,
+  "tone": "A minor",
+  "artistPeople": [
+    "Hera Björk Þórhallsdóttir"
+  ],
+  "backings": [
+    "Ágústa Ósk Óskarsdottir",
+    "Arnar Jónsson",
+    "Íris Hólm Jónsdóttir",
+    "Ragna Björg Ársælsdóttir",
+    "Villi Ósk"
+  ],
+  "dancers": null,
+  "stageDirector": null,
+  "composers": null,
+  "conductor": null,
+  "lyricists": null,
+  "writers": [
+    "Ásdís María Viðarsdóttir",
+    "Ferras Alqaisi",
+    "Jaro Omar",
+    "Michael Burek"
+  ],
+  "broadcaster": "RÚV",
+  "commentators": [
+    "Gunna Dís Emilsdóttir"
+  ],
+  "jury": [
+    "Diljá Pétursdóttir",
+    "Ívar Guðmundsson",
+    "Marino Geir Lilliendahl",
+    "Þórður Helgi Þórðarson",
+    "Þórunn Erna Clausen"
+  ],
+  "spokesperson": "Friðrik Ómar Hjörleifsson"
+}

@@ -1,0 +1,33 @@
+{
+  "id": 37,
+  "country": "SE",
+  "artist": "The Mamas",
+  "song": "Move",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/7EpSBDPlZn4",
+    "https://www.youtube-nocookie.com/embed/djQS9dm5mdY",
+    "https://www.youtube-nocookie.com/embed/iN-Z1x-zpoc"
+  ],
+  "bpm": 103,
+  "tone": "A major",
+  "artistPeople": [
+    "Ashley Haynes",
+    "Dinah Yonas Manna",
+    "Louise Lamotte"
+  ],
+  "backings": null,
+  "dancers": null,
+  "stageDirector": null,
+  "composers": null,
+  "conductor": null,
+  "lyricists": null,
+  "writers": [
+    "Herman Gardarfve",
+    "Melanie Wehbe",
+    "Patrik Jean"
+  ],
+  "broadcaster": "SVT",
+  "commentators": null,
+  "jury": null,
+  "spokesperson": null
+}

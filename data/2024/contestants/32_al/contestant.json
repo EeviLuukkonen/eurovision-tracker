@@ -1,0 +1,53 @@
+{
+  "id": 32,
+  "country": "AL",
+  "artist": "Besa",
+  "song": "Titan",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/aQG22XJIdWw",
+    "https://www.youtube-nocookie.com/embed/nrjFhjpm7D8",
+    "https://www.youtube-nocookie.com/embed/I7qCO7Ml2jI",
+    "https://www.youtube-nocookie.com/embed/98f8GTo3dWw",
+    "https://www.youtube-nocookie.com/embed/AEe5Ki5dmvM",
+    "https://www.youtube-nocookie.com/embed/6RE4lN3MBDI",
+    "https://www.youtube-nocookie.com/embed/7rEDP1lSoDQ"
+  ],
+  "bpm": 82,
+  "tone": "G major",
+  "artistPeople": [
+    "Besa Kokëdhima"
+  ],
+  "backings": [
+    "Kevon",
+    "Sofia Mountassir"
+  ],
+  "dancers": [
+    "Riina Harju",
+    "Sofia Ruija",
+    "Yasmin Janatuinen"
+  ],
+  "stageDirector": "Fredrik Rydman, Melissa Thompson, Reija Wäre",
+  "composers": [
+    "Alias Lj",
+    "Besa Kokëdhima",
+    "Gia Koka",
+    "Kledi Bahiti"
+  ],
+  "conductor": null,
+  "lyricists": [
+    "Gia Koka"
+  ],
+  "writers": null,
+  "broadcaster": "RTSH",
+  "commentators": [
+    "Andri Xhahu"
+  ],
+  "jury": [
+    "Erina Seitllari",
+    "Julian Bulku",
+    "Olimpia Smajlaj",
+    "Rael Hoxha",
+    "Zana Prela"
+  ],
+  "spokesperson": "Andri Xhahu"
+}

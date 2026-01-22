@@ -1,0 +1,48 @@
+{
+  "id": 39,
+  "country": "MD",
+  "artist": "Lidia Isac",
+  "song": "Falling Stars",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/LlhV-E6leTI",
+    "https://www.youtube-nocookie.com/embed/wXcDKy97BHk",
+    "https://www.youtube-nocookie.com/embed/1o4yNoXLcuI",
+    "https://www.youtube-nocookie.com/embed/YXmYHiHfoy0",
+    "https://www.youtube-nocookie.com/embed/9U7vma7QC4g",
+    "https://www.youtube-nocookie.com/embed/CoywHrxRST4"
+  ],
+  "bpm": 126,
+  "tone": "Ab major",
+  "artistPeople": [
+    "Lidia Isac"
+  ],
+  "backings": [
+    "Ellen Berg Tollbom",
+    "Gabriel Alares"
+  ],
+  "dancers": [
+    "Iuri Rîbac"
+  ],
+  "stageDirector": "Maru Petrova",
+  "composers": null,
+  "conductor": null,
+  "lyricists": null,
+  "writers": [
+    "Ellen Berg",
+    "Gabriel Alares",
+    "Leonid Gutkin",
+    "Sebastian Lestapier"
+  ],
+  "broadcaster": "TRM",
+  "commentators": [
+    "Gloria Gorceag"
+  ],
+  "jury": [
+    "Adriano Marian",
+    "Georgeta Voinovan",
+    "Ion Brătescu",
+    "Iurie Mahovici",
+    "Lidia Scarlat"
+  ],
+  "spokesperson": "Olivia Furtună"
+}

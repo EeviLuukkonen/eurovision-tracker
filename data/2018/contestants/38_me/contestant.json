@@ -1,0 +1,49 @@
+{
+  "id": 38,
+  "country": "ME",
+  "artist": "Vanja Radovanović",
+  "song": "Inje",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/XEi080yOuB8",
+    "https://www.youtube-nocookie.com/embed/qxJoxbo9lCQ",
+    "https://www.youtube-nocookie.com/embed/Lh9TXUf1CLo",
+    "https://www.youtube-nocookie.com/embed/A35uAK8K2xQ",
+    "https://www.youtube-nocookie.com/embed/LBCZa_y6-5o",
+    "https://www.youtube-nocookie.com/embed/0HY5VldrFUU",
+    "https://www.youtube-nocookie.com/embed/7AjohOiBMmc"
+  ],
+  "bpm": 79,
+  "tone": "F# minor",
+  "artistPeople": [
+    "Vladimir Radovanović"
+  ],
+  "backings": [
+    "Ana Mašulović",
+    "Bole Martinović",
+    "Ivana Vladović",
+    "Jelena Đurić-Mitić",
+    "Lena Kuzmanović"
+  ],
+  "dancers": null,
+  "stageDirector": "Gojko Berkuljan",
+  "composers": null,
+  "conductor": null,
+  "lyricists": null,
+  "writers": [
+    "Vanja Radovanović"
+  ],
+  "broadcaster": "RTCG",
+  "commentators": [
+    "Ajda Šufta",
+    "Dražen Bauković",
+    "Tijana Mišković"
+  ],
+  "jury": [
+    "Kaća Šćekić",
+    "Nina Žižić",
+    "Predrag Nedeljković",
+    "Senad Drešević",
+    "Zoja Đurović"
+  ],
+  "spokesperson": "Nataša Šotra"
+}

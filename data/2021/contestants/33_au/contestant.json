@@ -1,0 +1,48 @@
+{
+  "id": 33,
+  "country": "AU",
+  "artist": "Montaigne",
+  "song": "Technicolour",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/CoUTzNXQud0",
+    "https://www.youtube-nocookie.com/embed/bX_y759_F_U",
+    "https://www.youtube-nocookie.com/embed/IMZDCMrEjMQ",
+    "https://www.youtube-nocookie.com/embed/E6VGAdtc5Yw",
+    "https://www.youtube-nocookie.com/embed/dBHXV4oByPE"
+  ],
+  "bpm": 119,
+  "tone": "F major",
+  "artistPeople": [
+    "Jessica Alyssa Cerro"
+  ],
+  "backings": [
+    "Christine Muscat",
+    "Reigan Derry"
+  ],
+  "dancers": [
+    "Crystal Russell",
+    "Paris Cavanagh",
+    "Shivawn Joubert"
+  ],
+  "stageDirector": "Marko Panzic",
+  "composers": null,
+  "conductor": null,
+  "lyricists": null,
+  "writers": [
+    "Dave Hammer",
+    "Jessica Alyssa Cerro"
+  ],
+  "broadcaster": "SBS",
+  "commentators": [
+    "Joel Creasey",
+    "Myf Warhurst"
+  ],
+  "jury": [
+    "Ash London",
+    "Brooke Boney",
+    "Jack Vidgen",
+    "Kamahl",
+    "Millie Millgate"
+  ],
+  "spokesperson": "Joel Creasey"
+}

@@ -1,0 +1,46 @@
+{
+  "id": 27,
+  "country": "MK",
+  "artist": "Kaliopi",
+  "song": "Dona",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/uIIzwFoE6ME",
+    "https://www.youtube-nocookie.com/embed/fd8WHhNWp4c",
+    "https://www.youtube-nocookie.com/embed/l8T5z22VjJ0",
+    "https://www.youtube-nocookie.com/embed/iQGl6R1lS-g"
+  ],
+  "bpm": 132,
+  "tone": "G major",
+  "artistPeople": [
+    "Kaliopi Bukle (Калиопи Букле)"
+  ],
+  "backings": [
+    "Goran Mihajlovski",
+    "Julija Karamitrova-Ognenoska",
+    "Kalina Velkovska",
+    "Maja Sazdanovska",
+    "Marija Naumovska"
+  ],
+  "dancers": null,
+  "stageDirector": null,
+  "composers": [
+    "Romeo Grill"
+  ],
+  "conductor": null,
+  "lyricists": [
+    "Kaliopi"
+  ],
+  "writers": null,
+  "broadcaster": "MKRTV",
+  "commentators": [
+    "Karolina Petkovska"
+  ],
+  "jury": [
+    "Aleksandar Ristovski",
+    "Goran Naumovski",
+    "Miyatta",
+    "Nade Talevska",
+    "Vanco Dimitrov"
+  ],
+  "spokesperson": "Dijana Gogova"
+}

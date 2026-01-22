@@ -1,0 +1,48 @@
+{
+  "id": 37,
+  "country": "FI",
+  "artist": "Pertti Kurikan Nimipäivät",
+  "song": "Aina mun pitää",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/v4Y0HOPL5GU",
+    "https://www.youtube-nocookie.com/embed/zEiM6l5meQI",
+    "https://www.youtube-nocookie.com/embed/RuwAopsrExg",
+    "https://www.youtube-nocookie.com/embed/uXFdnHxANbo",
+    "https://www.youtube-nocookie.com/embed/Wu8JuhAd7Mk"
+  ],
+  "bpm": 96,
+  "tone": "D minor",
+  "artistPeople": [
+    "Kari Aalto",
+    "Pertti Kurikka",
+    "Sami Helle",
+    "Toni Välitalo"
+  ],
+  "backings": null,
+  "dancers": null,
+  "stageDirector": "Reija Wäre",
+  "composers": null,
+  "conductor": null,
+  "lyricists": null,
+  "writers": [
+    "Kari Aalto",
+    "Pertti Kurikka",
+    "Sami Helle",
+    "Toni Välitalo"
+  ],
+  "broadcaster": "YLE",
+  "commentators": [
+    "Aino Töllinen",
+    "Cristal Snow",
+    "Eva Frantz",
+    "Johan Lindroos"
+  ],
+  "jury": [
+    "Aija Puurtinen",
+    "Jukka Immonen",
+    "Laura Haimila",
+    "Mikko Pykäri",
+    "Pekka Eronen"
+  ],
+  "spokesperson": "Krista Siegfrids"
+}

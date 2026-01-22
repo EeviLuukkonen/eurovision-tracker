@@ -1,0 +1,31 @@
+{
+  "id": 25,
+  "country": "MD",
+  "artist": "Natalia Gordienko",
+  "song": "Prison",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/RnD1ApDo5_k",
+    "https://www.youtube-nocookie.com/embed/D0qc6GKVw5M",
+    "https://www.youtube-nocookie.com/embed/spHzNyVVQUE"
+  ],
+  "bpm": 103,
+  "tone": "E minor",
+  "artistPeople": [
+    "Natalia Gordienko"
+  ],
+  "backings": null,
+  "dancers": null,
+  "stageDirector": null,
+  "composers": null,
+  "conductor": null,
+  "lyricists": null,
+  "writers": [
+    "Dimitris Kontopoulos",
+    "Philipp Kirkorov",
+    "Sharon Vaughn"
+  ],
+  "broadcaster": "TRM",
+  "commentators": null,
+  "jury": null,
+  "spokesperson": null
+}

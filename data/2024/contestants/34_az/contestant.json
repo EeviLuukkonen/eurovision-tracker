@@ -1,0 +1,47 @@
+{
+  "id": 34,
+  "country": "AZ",
+  "artist": "Fahree feat. Ilkin Dovlatov",
+  "song": "Özünlə apar",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/QhN9r8TH2Hw",
+    "https://www.youtube-nocookie.com/embed/SUNM6dawXq8",
+    "https://www.youtube-nocookie.com/embed/NNhAk4rVgNc",
+    "https://www.youtube-nocookie.com/embed/ovmfEC65Taw",
+    "https://www.youtube-nocookie.com/embed/eziSZIKWbMk",
+    "https://www.youtube-nocookie.com/embed/_ZOMBovHT9M"
+  ],
+  "bpm": 96,
+  "tone": "G minor",
+  "artistPeople": [
+    "Fakhri Ismayilov (Fəxri İsmayılov)",
+    "İlkin Dövlətov"
+  ],
+  "backings": null,
+  "dancers": null,
+  "stageDirector": "Evgeni Timokhin",
+  "composers": [
+    "Edgar Ravin",
+    "Fakhri Ismayilov",
+    "Hasan Heydar",
+    "Mila Miles"
+  ],
+  "conductor": null,
+  "lyricists": [
+    "Fakhri Ismayilov",
+    "Mado Salikh"
+  ],
+  "writers": null,
+  "broadcaster": "İctimai",
+  "commentators": [
+    "Nurlana Jafarova"
+  ],
+  "jury": [
+    "Aynishan Guliyeva",
+    "Emil Guliyev",
+    "Konul Arif Shukurova",
+    "Nikki",
+    "Vagif Gerayzada"
+  ],
+  "spokesperson": "Aysel Teymurzadə"
+}

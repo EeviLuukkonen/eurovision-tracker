@@ -1,0 +1,62 @@
+{
+  "id": 33,
+  "country": "MT",
+  "artist": "Sarah Bonnici",
+  "song": "Loop",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/uG-JHeia13c",
+    "https://www.youtube-nocookie.com/embed/l6eS60n4wg8",
+    "https://www.youtube-nocookie.com/embed/JwFwkHqKjDQ",
+    "https://www.youtube-nocookie.com/embed/vKT0Qxv9zDQ",
+    "https://www.youtube-nocookie.com/embed/RgJKoWjsS9U",
+    "https://www.youtube-nocookie.com/embed/jsDE89SWZbQ",
+    "https://www.youtube-nocookie.com/embed/Z3-FFghN9tY"
+  ],
+  "bpm": 110,
+  "tone": "Ab minor",
+  "artistPeople": [
+    "Sarah Bonnici"
+  ],
+  "backings": [
+    "Pamela Bezzina"
+  ],
+  "dancers": [
+    "Jamie Bell",
+    "Matt Jordan",
+    "Victor Allen",
+    "William Almeida"
+  ],
+  "stageDirector": "Steven Levi Vella",
+  "composers": [
+    "John Emil Johansson",
+    "Joy Deb",
+    "Kevin Lee",
+    "Leire Gotxi Angel",
+    "Linnea Deb",
+    "Matthew James Borg",
+    "Michael Joe Cini",
+    "Sarah Bonnici",
+    "Sebastian Pritchard-James"
+  ],
+  "conductor": null,
+  "lyricists": [
+    "Joy Deb",
+    "Kevin Lee",
+    "Leire Gotxi Angel",
+    "Linnea Deb",
+    "Michael Joe Cini",
+    "Sarah Bonnici",
+    "Sebastian Pritchard-James"
+  ],
+  "writers": null,
+  "broadcaster": "PBS",
+  "commentators": null,
+  "jury": [
+    "Cipryan Cassar",
+    "Gail Attard",
+    "Haley Azzopardi",
+    "Muxu",
+    "Paul Abela"
+  ],
+  "spokesperson": "Matt Blxck"
+}

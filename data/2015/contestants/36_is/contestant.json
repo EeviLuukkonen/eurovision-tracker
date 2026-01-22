@@ -1,0 +1,52 @@
+{
+  "id": 36,
+  "country": "IS",
+  "artist": "María Ólafsdóttir",
+  "song": "Unbroken",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/0Jl-Hr137uM",
+    "https://www.youtube-nocookie.com/embed/sov_pE1cdFY",
+    "https://www.youtube-nocookie.com/embed/iJ-buMRXXKM",
+    "https://www.youtube-nocookie.com/embed/xFcXMv55rX8",
+    "https://www.youtube-nocookie.com/embed/WqbwWOt7GbY"
+  ],
+  "bpm": 97,
+  "tone": "C# major",
+  "artistPeople": [
+    "María Ólafsdóttir"
+  ],
+  "backings": [
+    "Alma Rut Kristinsdóttir",
+    "Ásgeir Orri Ásgeirsson",
+    "Friðrik Dór",
+    "Hera Björk",
+    "Íris Hólm Jónsdóttir"
+  ],
+  "dancers": null,
+  "stageDirector": null,
+  "composers": [
+    "Ásgeir Orri Ásgeirsson",
+    "Pálmi Ragnar Ásgeirsson",
+    "Sæþór Kristjánsson"
+  ],
+  "conductor": null,
+  "lyricists": [
+    "Ásgeir Orri Ásgeirsson",
+    "María Ólafsdóttir",
+    "Pálmi Ragnar Ásgeirsson",
+    "Sæþór Kristjánsson"
+  ],
+  "writers": null,
+  "broadcaster": "RÚV",
+  "commentators": [
+    "Felix Bergsson"
+  ],
+  "jury": [
+    "Birgitta Haukdal Brynjarsdóttir",
+    "Einar Bárðarson",
+    "Heiðar Örn Kristjánsson",
+    "Unnur Sara Eldjárn",
+    "Vedis Hervör Arnadottir"
+  ],
+  "spokesperson": "Sigríður Halldórsdóttir"
+}

@@ -1,0 +1,53 @@
+{
+  "id": 35,
+  "country": "IS",
+  "artist": "Svala",
+  "song": "Paper",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/UPlm18-AlGg",
+    "https://www.youtube-nocookie.com/embed/9CHsdrtqSqw",
+    "https://www.youtube-nocookie.com/embed/UZR7Oc3q_Oc",
+    "https://www.youtube-nocookie.com/embed/J_vBrOeTfj0",
+    "https://www.youtube-nocookie.com/embed/_2AflM9eUBs",
+    "https://www.youtube-nocookie.com/embed/QFAW00KPmVY",
+    "https://www.youtube-nocookie.com/embed/hv6PmOzF13c"
+  ],
+  "bpm": 108,
+  "tone": "Bb major",
+  "artistPeople": [
+    "Svala Björgvinsdóttir"
+  ],
+  "backings": [
+    "Anna Sigríður Snorradóttir",
+    "Fanny Kristín Tryggvadóttir",
+    "Hrönn Svansdóttir",
+    "Íris Guðmundsdóttir",
+    "Óskar Einarsson"
+  ],
+  "dancers": null,
+  "stageDirector": "Einar Egilsson",
+  "composers": [
+    "Einar Egilsson",
+    "Lester Mendez",
+    "Lily Elise",
+    "Svala Björgvinsdóttir"
+  ],
+  "conductor": null,
+  "lyricists": [
+    "Lily Elise",
+    "Svala Björgvinsdóttir"
+  ],
+  "writers": null,
+  "broadcaster": "RÚV",
+  "commentators": [
+    "Gísli Marteinn Baldursson"
+  ],
+  "jury": [
+    "Helga Möller",
+    "Hildur Guðný",
+    "Pétur Örn Guðmundsson",
+    "Stefanía Svavarsdóttir",
+    "Viddi"
+  ],
+  "spokesperson": "Björgvin Halldórsson"
+}

@@ -1,0 +1,49 @@
+{
+  "id": 32,
+  "country": "PL",
+  "artist": "Gromee feat. Lukas Meijer",
+  "song": "Light Me Up",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/oyoiCyP4Bkg",
+    "https://www.youtube-nocookie.com/embed/hQLmYaSCDYw",
+    "https://www.youtube-nocookie.com/embed/9e9aW3GhwtM",
+    "https://www.youtube-nocookie.com/embed/TnZptlk_0CQ",
+    "https://www.youtube-nocookie.com/embed/0TuWtBFBcaE",
+    "https://www.youtube-nocookie.com/embed/B0-8xyocOew",
+    "https://www.youtube-nocookie.com/embed/uv2huujdst0"
+  ],
+  "bpm": 122,
+  "tone": "G major",
+  "artistPeople": [
+    "Lukas Meijer"
+  ],
+  "backings": [
+    "Christian Rabb",
+    "Kasia Dereń",
+    "Mahan Moin",
+    "Sara Chmiel-Gromala"
+  ],
+  "dancers": null,
+  "stageDirector": "Konrad Smuga",
+  "composers": null,
+  "conductor": null,
+  "lyricists": null,
+  "writers": [
+    "Christian Rabb",
+    "Andrzej Gromala",
+    "Lukas Meijer",
+    "Mahan Moin"
+  ],
+  "broadcaster": "TVP",
+  "commentators": [
+    "Artur Orzech"
+  ],
+  "jury": [
+    "Dorota Szpetkowska",
+    "Michał Grott",
+    "Michał Szpak",
+    "Natalia Szroeder",
+    "Sławomir Uniatowski"
+  ],
+  "spokesperson": "Mateusz Szymkowiak"
+}

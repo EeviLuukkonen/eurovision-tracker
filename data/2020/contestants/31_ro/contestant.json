@@ -1,0 +1,33 @@
+{
+  "id": 31,
+  "country": "RO",
+  "artist": "Roxen",
+  "song": "Alcohol You",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/TmqSU3v_Mtw",
+    "https://www.youtube-nocookie.com/embed/TS_MsOdCyAM",
+    "https://www.youtube-nocookie.com/embed/qkK2XbNMGLk"
+  ],
+  "bpm": 128,
+  "tone": "D minor",
+  "artistPeople": [
+    "Larisa Roxana Giurgiu"
+  ],
+  "backings": null,
+  "dancers": null,
+  "stageDirector": null,
+  "composers": [
+    "Ionut Armas",
+    "Viky Red"
+  ],
+  "conductor": null,
+  "lyricists": [
+    "Breyan Isaac",
+    "Ionut Armas"
+  ],
+  "writers": null,
+  "broadcaster": "TVR",
+  "commentators": null,
+  "jury": null,
+  "spokesperson": null
+}

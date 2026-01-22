@@ -1,0 +1,52 @@
+{
+  "id": 39,
+  "country": "SM",
+  "artist": "Jessika feat. Jenifer Brening",
+  "song": "Who We Are",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/66D0pKVdA-4",
+    "https://www.youtube-nocookie.com/embed/XiszoSeUYqY",
+    "https://www.youtube-nocookie.com/embed/ZNflc1Zcw2A",
+    "https://www.youtube-nocookie.com/embed/VKhV86evhgk",
+    "https://www.youtube-nocookie.com/embed/0IgDLVVWkxM",
+    "https://www.youtube-nocookie.com/embed/ZWtrd-kYL84",
+    "https://www.youtube-nocookie.com/embed/0W4XJ8k4PdY"
+  ],
+  "bpm": 127,
+  "tone": "F# major",
+  "artistPeople": [
+    "Jenifer Brening",
+    "Jessika Muscat"
+  ],
+  "backings": [
+    "Basti Schmidt",
+    "Leni Sommer"
+  ],
+  "dancers": [
+    "Carlota de Bastos Carreira",
+    "Joana de Lima"
+  ],
+  "stageDirector": null,
+  "composers": null,
+  "conductor": null,
+  "lyricists": null,
+  "writers": [
+    "Christof Straub",
+    "Lorenzo Salvatori",
+    "Mathias Strasser",
+    "Zoë Straub"
+  ],
+  "broadcaster": "SMRTV",
+  "commentators": [
+    "Gigi Restivo",
+    "Lia Fiorio"
+  ],
+  "jury": [
+    "Augusto Ciavatta",
+    "Claudio Podeschi",
+    "Ilaria Ercolani",
+    "Lo Strego",
+    "Veronica Conti"
+  ],
+  "spokesperson": "John Kennedy O'Connor"
+}

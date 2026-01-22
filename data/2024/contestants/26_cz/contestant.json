@@ -1,0 +1,51 @@
+{
+  "id": 26,
+  "country": "CZ",
+  "artist": "Aiko",
+  "song": "Pedestal",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/RiItbHRF1BY",
+    "https://www.youtube-nocookie.com/embed/_iTcX6NlAqA",
+    "https://www.youtube-nocookie.com/embed/Hpt7gEGr0x4",
+    "https://www.youtube-nocookie.com/embed/Ve0pUjbTp7Q",
+    "https://www.youtube-nocookie.com/embed/5DbRldMKFUU",
+    "https://www.youtube-nocookie.com/embed/BjWwexb0HTI",
+    "https://www.youtube-nocookie.com/embed/SerAOHWumq4"
+  ],
+  "bpm": 150,
+  "tone": "F# minor",
+  "artistPeople": [
+    "Alena Shirmanova-Kostebelova"
+  ],
+  "backings": [
+    "Nikol Držmíšková"
+  ],
+  "dancers": [
+    "Daša Nemcová",
+    "Eva Kučíková",
+    "Lucia Gomolová",
+    "Lus Juklova"
+  ],
+  "stageDirector": "Matyáš Vorda, Vítek Bělohradský",
+  "composers": null,
+  "conductor": null,
+  "lyricists": null,
+  "writers": [
+    "Alena Shirmanova-Kostebelova",
+    "Steven Ansell"
+  ],
+  "broadcaster": "ČT",
+  "commentators": [
+    "Dominika Hasek",
+    "Patricie Kaňok Fuxová",
+    "Vašek Matějovský"
+  ],
+  "jury": [
+    "Bára Juránková",
+    "Jaroslav Špulák",
+    "Kristyna Koreis",
+    "Marek Slabý",
+    "Ondřej Bambas"
+  ],
+  "spokesperson": "Radka Rosická"
+}

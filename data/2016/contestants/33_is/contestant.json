@@ -1,0 +1,45 @@
+{
+  "id": 33,
+  "country": "IS",
+  "artist": "Greta Salóme",
+  "song": "Hear Them Calling",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/6osxLLPLUDk",
+    "https://www.youtube-nocookie.com/embed/7xQxQRdZasQ",
+    "https://www.youtube-nocookie.com/embed/BO6Mku4vFB4",
+    "https://www.youtube-nocookie.com/embed/366dFFxh4hc",
+    "https://www.youtube-nocookie.com/embed/7d3DEbpNzpk"
+  ],
+  "bpm": 133,
+  "tone": "F major",
+  "artistPeople": [
+    "Greta Salóme Stefánsdóttir"
+  ],
+  "backings": [
+    "Gisli Magnason",
+    "Hafsteinn Þórólfsson",
+    "Kristján Gíslason",
+    "Lilja Björk Runólfsdóttir",
+    "Pétur Örn Guðmundsson"
+  ],
+  "dancers": null,
+  "stageDirector": "Ásgeir Helgi Magnússon, Jonathan Duffy",
+  "composers": null,
+  "conductor": null,
+  "lyricists": null,
+  "writers": [
+    "Greta Salóme Stefánsdóttir"
+  ],
+  "broadcaster": "RÚV",
+  "commentators": [
+    "Gísli Marteinn Baldursson"
+  ],
+  "jury": [
+    "Björgvin Ívar Baldursson",
+    "Kristín Björg Þorsteinsdóttir",
+    "Kristjana Stefánsdóttir",
+    "Magnús Jón Kjartansson",
+    "Vera Hjördis Matsdóttir"
+  ],
+  "spokesperson": "Unnsteinn Manuel Stefánsson"
+}

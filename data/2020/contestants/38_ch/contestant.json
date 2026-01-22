@@ -1,0 +1,32 @@
+{
+  "id": 38,
+  "country": "CH",
+  "artist": "Gjon's Tears",
+  "song": "Répondez-moi",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/O9GAfFHZE-E",
+    "https://www.youtube-nocookie.com/embed/VXMp3V2cI2Q",
+    "https://www.youtube-nocookie.com/embed/GQxyvIHq0WM"
+  ],
+  "bpm": 104,
+  "tone": "Eb minor",
+  "artistPeople": [
+    "Gjon Muharremaj"
+  ],
+  "backings": null,
+  "dancers": null,
+  "stageDirector": null,
+  "composers": null,
+  "conductor": null,
+  "lyricists": null,
+  "writers": [
+    "Alizé Oswald",
+    "Gjon's Tears",
+    "Jeroen Swinnen",
+    "Xavier Michel"
+  ],
+  "broadcaster": "SSR SRG",
+  "commentators": null,
+  "jury": null,
+  "spokesperson": null
+}

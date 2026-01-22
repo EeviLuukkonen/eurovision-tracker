@@ -1,0 +1,52 @@
+{
+  "id": 30,
+  "country": "DK",
+  "artist": "Reddi",
+  "song": "The Show",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/cVg6MpVR2Pw",
+    "https://www.youtube-nocookie.com/embed/xqakAZP4D24",
+    "https://www.youtube-nocookie.com/embed/_6oJE6nImaI",
+    "https://www.youtube-nocookie.com/embed/kjZnFKceS3M",
+    "https://www.youtube-nocookie.com/embed/h8XcQVkDdfM"
+  ],
+  "bpm": 185,
+  "tone": "C major",
+  "artistPeople": [
+    "Agnes Roslund",
+    "Ida Bergkvist",
+    "Ihan Haydar",
+    "Siggy Savery"
+  ],
+  "backings": [
+    "Jeanette Bonde"
+  ],
+  "dancers": null,
+  "stageDirector": "Birgitte Næss-Schmidt",
+  "composers": [
+    "Chief 1",
+    "Ihan Haydar",
+    "Remee",
+    "Siggy Savery"
+  ],
+  "conductor": null,
+  "lyricists": [
+    "Ihan Haydar",
+    "Julia Fabrin",
+    "Siggy Savery"
+  ],
+  "writers": null,
+  "broadcaster": "DR",
+  "commentators": [
+    "Henrik Milling",
+    "Nicolai Molbech"
+  ],
+  "jury": [
+    "DJ Speakr",
+    "Kirstine Stubbe Teglbjærg",
+    "Lars Trillingsgaard",
+    "Mekdes",
+    "Rasmussen"
+  ],
+  "spokesperson": "Tina Müller"
+}

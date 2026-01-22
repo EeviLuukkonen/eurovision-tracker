@@ -1,0 +1,50 @@
+{
+  "id": 36,
+  "country": "AM",
+  "artist": "Srbuk",
+  "song": "Walking Out",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/avBwSUYlTtI",
+    "https://www.youtube-nocookie.com/embed/q_46dy4yJwg",
+    "https://www.youtube-nocookie.com/embed/hKHsNcgfMk8",
+    "https://www.youtube-nocookie.com/embed/5oKqBnWIDv4",
+    "https://www.youtube-nocookie.com/embed/1KhKaGj4imY",
+    "https://www.youtube-nocookie.com/embed/ZtyT9IN2QcY"
+  ],
+  "bpm": 130,
+  "tone": "F minor",
+  "artistPeople": [
+    "Srbuhi Sargsyan (Սրբուհի Սարգսյան)"
+  ],
+  "backings": [
+    "Arevik Grigoryan",
+    "David Badalyan",
+    "Julieta Grigoryan",
+    "Saro Gevorgyan"
+  ],
+  "dancers": null,
+  "stageDirector": "Arthur Manukyan",
+  "composers": [
+    "Ashot Petrosyan",
+    "Tokionine",
+    "Hovhannes Hovhannisyan"
+  ],
+  "conductor": null,
+  "lyricists": [
+    "Garik Papoyan"
+  ],
+  "writers": null,
+  "broadcaster": "AMPTV",
+  "commentators": [
+    "Aram MP3",
+    "Avet Barseghyan"
+  ],
+  "jury": [
+    "Erik Karapetyan",
+    "Lilith Navasardyan",
+    "Ruben Shahinyan",
+    "Sona Rubenyan",
+    "Tigran Petrosyan"
+  ],
+  "spokesperson": "Aram MP3"
+}

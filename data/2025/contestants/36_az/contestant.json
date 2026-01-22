@@ -1,0 +1,49 @@
+{
+  "id": 36,
+  "country": "AZ",
+  "artist": "Mamagama",
+  "song": "Run With U",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/wk1CUjaRKyo",
+    "https://www.youtube-nocookie.com/embed/upbiPJ9uA70",
+    "https://www.youtube-nocookie.com/embed/JCINqs4d2lI",
+    "https://www.youtube-nocookie.com/embed/icuRMuLOLww",
+    "https://www.youtube-nocookie.com/embed/hNU6AUS6mBw",
+    "https://www.youtube-nocookie.com/embed/QEM0RQaoubY"
+  ],
+  "bpm": 116,
+  "tone": "G minor",
+  "artistPeople": [
+    "Safael Mishi"
+  ],
+  "backings": [
+    "Melissa Kanza",
+    "Quincy Denzel Sedney",
+    "Valentina Dekker"
+  ],
+  "dancers": null,
+  "stageDirector": "Ace Bowerman",
+  "composers": [
+    "Asef Mishiyev",
+    "Hasan Heydar",
+    "Roman Zee"
+  ],
+  "conductor": null,
+  "lyricists": [
+    "Asef Mishiyev"
+  ],
+  "writers": null,
+  "broadcaster": "İctimai",
+  "commentators": [
+    "Aga Nadirov",
+    "Elnara Khalilova"
+  ],
+  "jury": [
+    "Azer Rauf Aydemir",
+    "Ramil Adigozal Gasimov",
+    "Tural Bağmanov",
+    "Ulviyya Firudin Babirli",
+    "Ulviyya Ogtay Kerimova"
+  ],
+  "spokesperson": "Safura Alizadeh"
+}

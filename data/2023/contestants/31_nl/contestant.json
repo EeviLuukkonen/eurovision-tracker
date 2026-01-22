@@ -1,0 +1,51 @@
+{
+  "id": 31,
+  "country": "NL",
+  "artist": "Mia Nicolai & Dion Cooper",
+  "song": "Burning Daylight",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/3XAsam043OY",
+    "https://www.youtube-nocookie.com/embed/UOf-oKDlO6A",
+    "https://www.youtube-nocookie.com/embed/gSgkpB0Xbrs",
+    "https://www.youtube-nocookie.com/embed/dlTy7mqTzQA",
+    "https://www.youtube-nocookie.com/embed/J4Azpsh5oGo",
+    "https://www.youtube-nocookie.com/embed/plnuRY3iT-c",
+    "https://www.youtube-nocookie.com/embed/6OuJo85hxKI"
+  ],
+  "bpm": 75,
+  "tone": "Eb major",
+  "artistPeople": [
+    "Dion Cuiper",
+    "Michaja Nicolaï"
+  ],
+  "backings": [
+    "Katie van Steenis",
+    "Kris Rietveld",
+    "Rachell Melanie"
+  ],
+  "dancers": null,
+  "stageDirector": "Marnix Kaart",
+  "composers": null,
+  "conductor": null,
+  "lyricists": null,
+  "writers": [
+    "Dion Cooper",
+    "Duncan Laurence",
+    "Jordan Garfield",
+    "Loek van der Grinten",
+    "Mia Nicolai"
+  ],
+  "broadcaster": "AVROTROS",
+  "commentators": [
+    "Cornald Maas",
+    "Jan Smit"
+  ],
+  "jury": [
+    "Froukje Veenstra",
+    "Jeroen Kijk in de Vegte",
+    "Rob DeKay",
+    "Samya Hafsaoui",
+    "Sjamke de Voogd"
+  ],
+  "spokesperson": "Stien den Hollander"
+}

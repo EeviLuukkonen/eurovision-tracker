@@ -1,0 +1,50 @@
+{
+  "id": 38,
+  "country": "DK",
+  "artist": "Lighthouse X",
+  "song": "Soldiers of Love",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/jGz12i-wGd0",
+    "https://www.youtube-nocookie.com/embed/Zlm0b9AI3rk",
+    "https://www.youtube-nocookie.com/embed/abiss5VZn14",
+    "https://www.youtube-nocookie.com/embed/LwbH4pX0G4E",
+    "https://www.youtube-nocookie.com/embed/2tRyFX7kJQo"
+  ],
+  "bpm": 127,
+  "tone": "Ab major",
+  "artistPeople": [
+    "Johannes Nymark",
+    "Martin Palme Skriver",
+    "Søren Bjørrild Bregendal"
+  ],
+  "backings": [
+    "Anders Ørsager",
+    "Christoffer Brodersen",
+    "Søren Okholm"
+  ],
+  "dancers": null,
+  "stageDirector": "Birgitte Næss-Schmidt",
+  "composers": null,
+  "conductor": null,
+  "lyricists": null,
+  "writers": [
+    "Daniel Lund Jørgensen",
+    "Johannes Nymark",
+    "Katrine Klith Andersen",
+    "Martin Skriver",
+    "Sebastian F. Ovens",
+    "Søren Bregendal"
+  ],
+  "broadcaster": "DR",
+  "commentators": [
+    "Ole Tøpholm"
+  ],
+  "jury": [
+    "Basim",
+    "Hilda Heick",
+    "Jimmy Jørgensen",
+    "Kaya Brüel",
+    "Morten Specht Larsen"
+  ],
+  "spokesperson": "Ulla Essendrop"
+}

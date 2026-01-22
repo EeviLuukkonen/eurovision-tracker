@@ -1,0 +1,50 @@
+{
+  "id": 27,
+  "country": "AU",
+  "artist": "Go-Jo",
+  "song": "Milkshake Man",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/EJ0RdIU_G8g",
+    "https://www.youtube-nocookie.com/embed/_08I6mjHSLA",
+    "https://www.youtube-nocookie.com/embed/0x2a1y3p-ow",
+    "https://www.youtube-nocookie.com/embed/svlS5zCVKI0",
+    "https://www.youtube-nocookie.com/embed/Rgfd2PEXAEw",
+    "https://www.youtube-nocookie.com/embed/KG7ZcJd-Fd4",
+    "https://www.youtube-nocookie.com/embed/fwEaBxeeIQw"
+  ],
+  "bpm": 154,
+  "tone": "C major",
+  "artistPeople": [
+    "Marty Zambotto"
+  ],
+  "backings": [
+    "George Sheppard"
+  ],
+  "dancers": [
+    "Jeannine Bruderer",
+    "Jenaya Okpalanze"
+  ],
+  "stageDirector": "Marvin Dietmann",
+  "composers": null,
+  "conductor": null,
+  "lyricists": null,
+  "writers": [
+    "Amy Sheppard",
+    "George Sheppard",
+    "Marty Zambotto",
+    "Jason Bovino"
+  ],
+  "broadcaster": "SBS",
+  "commentators": [
+    "Courtney Act",
+    "Tony Armstrong"
+  ],
+  "jury": [
+    "Andrew Lambrou",
+    "Claire Rebecca Howell",
+    "Kylie Alexandra Burtland",
+    "Robbie Alexander Buck",
+    "Simone Dow"
+  ],
+  "spokesperson": "Silia Kapsis"
+}

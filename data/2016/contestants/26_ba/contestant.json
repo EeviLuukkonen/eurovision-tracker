@@ -1,0 +1,48 @@
+{
+  "id": 26,
+  "country": "BA",
+  "artist": "Dalal & Deen feat. Ana Rucner & Jala",
+  "song": "Ljubav je",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/QLrXmTB8OaY",
+    "https://www.youtube-nocookie.com/embed/MFmLfeMzgrc",
+    "https://www.youtube-nocookie.com/embed/715RAsaN-OI",
+    "https://www.youtube-nocookie.com/embed/u8-b63UcWrM",
+    "https://www.youtube-nocookie.com/embed/lcqw85a5KHI"
+  ],
+  "bpm": 172,
+  "tone": "Eb major",
+  "artistPeople": [
+    "Ana Rucner",
+    "Dalal Midhat-Talakić",
+    "Fuad Backović",
+    "Jasmin Fazlić"
+  ],
+  "backings": [
+    "Ena Đapo",
+    "Zorana Guja"
+  ],
+  "dancers": null,
+  "stageDirector": "Haris Pašović",
+  "composers": [
+    "Almir Ajanović"
+  ],
+  "conductor": null,
+  "lyricists": [
+    "Almir Ajanović",
+    "Jasmin Fazlić"
+  ],
+  "writers": null,
+  "broadcaster": "BHRT",
+  "commentators": [
+    "Dejan Kukrić"
+  ],
+  "jury": [
+    "Alma Čardžić",
+    "Amir Misirlić",
+    "Ana Babić",
+    "Đorđe Jovančić",
+    "Elvir Hadžijamaković"
+  ],
+  "spokesperson": "Ivana Crnogorac"
+}

@@ -1,0 +1,47 @@
+{
+  "id": 31,
+  "country": "RS",
+  "artist": "Princ",
+  "song": "Mila",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/WlCoZ0UOXoY",
+    "https://www.youtube-nocookie.com/embed/FsCBHvjQznw",
+    "https://www.youtube-nocookie.com/embed/18BCbtvDcag",
+    "https://www.youtube-nocookie.com/embed/7f4RjDunEjQ",
+    "https://www.youtube-nocookie.com/embed/aiOHYXpnuLM",
+    "https://www.youtube-nocookie.com/embed/kU5A81Bri84",
+    "https://www.youtube-nocookie.com/embed/IUpEO9rvyKo"
+  ],
+  "bpm": 140,
+  "tone": "G minor",
+  "artistPeople": [
+    "Princ",
+    "Princ od Vranje"
+  ],
+  "backings": null,
+  "dancers": [
+    "Danilo Fatić",
+    "Dejan Bošković",
+    "Diego Siqueira",
+    "Just Daniels"
+  ],
+  "stageDirector": "Milica Soldatović Mikić",
+  "composers": null,
+  "conductor": null,
+  "lyricists": null,
+  "writers": [
+    "Dušan Bačić"
+  ],
+  "broadcaster": "RTS",
+  "commentators": [
+    "Duška Vučinić-Lučić"
+  ],
+  "jury": [
+    "Aleksandar Habic",
+    "Bojana Stamenov",
+    "Ivana Peters",
+    "Luka Jovanović",
+    "Olga Bisercic"
+  ],
+  "spokesperson": "Dragana Kosjerina"
+}

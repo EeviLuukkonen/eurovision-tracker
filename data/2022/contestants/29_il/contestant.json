@@ -1,0 +1,48 @@
+{
+  "id": 29,
+  "country": "IL",
+  "artist": "Michael Ben David",
+  "song": "I.M",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/XgXjPUsjx4Y",
+    "https://www.youtube-nocookie.com/embed/WNFeohWlA20",
+    "https://www.youtube-nocookie.com/embed/vvzKZFXmng0",
+    "https://www.youtube-nocookie.com/embed/nqu3-CHeOWM",
+    "https://www.youtube-nocookie.com/embed/KJgM6E2SRec",
+    "https://www.youtube-nocookie.com/embed/6k3OIj-e79w"
+  ],
+  "bpm": 120,
+  "tone": "Ab minor",
+  "artistPeople": [
+    "Michael Ben David"
+  ],
+  "backings": null,
+  "dancers": [
+    "Bar Benjamin",
+    "Eyal Levy",
+    "Moty Pilas",
+    "Tomer Tenenboym"
+  ],
+  "stageDirector": "Dan Shipton, Marvin Dietmann, Moshe Kepten",
+  "composers": null,
+  "conductor": null,
+  "lyricists": null,
+  "writers": [
+    "Asi Tal",
+    "Chen Aharoni",
+    "Lidor Saadia"
+  ],
+  "broadcaster": "KAN",
+  "commentators": [
+    "Akiva Novik",
+    "Asaf Liberman"
+  ],
+  "jury": [
+    "Dafna Armoni",
+    "Diana Golbi",
+    "Liron Lev",
+    "Shai Lahav",
+    "Yahel Doron"
+  ],
+  "spokesperson": "Daniel Styopin"
+}

@@ -1,0 +1,50 @@
+{
+  "id": 36,
+  "country": "ME",
+  "artist": "Slavko Kalezić",
+  "song": "Space",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/rQ1BXJpfa4I",
+    "https://www.youtube-nocookie.com/embed/TWtqWD3TlaA",
+    "https://www.youtube-nocookie.com/embed/TicG-QBKx_A",
+    "https://www.youtube-nocookie.com/embed/tduXEwOih_c",
+    "https://www.youtube-nocookie.com/embed/wTJhPbP-wLI"
+  ],
+  "bpm": 120,
+  "tone": "A minor",
+  "artistPeople": [
+    "Slavko Kalezić"
+  ],
+  "backings": [
+    "Igor Stanojević",
+    "Marko Nikolić",
+    "Oliver Katić"
+  ],
+  "dancers": null,
+  "stageDirector": "Dejan Milićević",
+  "composers": [
+    "Momčilo Zeković Zeko"
+  ],
+  "conductor": null,
+  "lyricists": [
+    "Adis Eminić",
+    "Iva Boršić",
+    "Momčilo Zeković Zeko"
+  ],
+  "writers": null,
+  "broadcaster": "RTCG",
+  "commentators": [
+    "Ajda Šufta",
+    "Dražen Bauković",
+    "Tijana Mišković"
+  ],
+  "jury": [
+    "Anita Popović",
+    "Božo Bulatović",
+    "Branislav Nedović",
+    "Dragan Bulajić",
+    "Draško Đurović",
+    "Ivana Pekić"
+  ],
+  "spokesperson": "Tijana Mišković"
+}

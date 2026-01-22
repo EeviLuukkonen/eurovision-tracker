@@ -1,0 +1,44 @@
+{
+  "id": 34,
+  "country": "MK",
+  "artist": "Vasil",
+  "song": "Here I Stand",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/WRcSHPb_Qwc",
+    "https://www.youtube-nocookie.com/embed/zOHwiWElR1A",
+    "https://www.youtube-nocookie.com/embed/nd4YfjVWrro",
+    "https://www.youtube-nocookie.com/embed/Z3NeYgbcw1I",
+    "https://www.youtube-nocookie.com/embed/LR2aKaL5yb0",
+    "https://www.youtube-nocookie.com/embed/s19KtKXwTcg"
+  ],
+  "bpm": 138,
+  "tone": "G major",
+  "artistPeople": [
+    "Vasil Garvanliev (Васил Гарванлиев)"
+  ],
+  "backings": null,
+  "dancers": null,
+  "stageDirector": "Mari Ryberger, Tine Matulessy",
+  "composers": [
+    "Borče Kuzmanovski",
+    "Davor Jordanovski",
+    "Vasil Garvanliev"
+  ],
+  "conductor": null,
+  "lyricists": [
+    "Vasil Garvanliev"
+  ],
+  "writers": null,
+  "broadcaster": "MKRTV",
+  "commentators": [
+    "Eli Tanaskovska"
+  ],
+  "jury": [
+    "Darko Tasev",
+    "Erhan Shukri",
+    "Ile Spasev",
+    "Lara Ivanova",
+    "Robert Bilbilov"
+  ],
+  "spokesperson": "Vane Markoski"
+}

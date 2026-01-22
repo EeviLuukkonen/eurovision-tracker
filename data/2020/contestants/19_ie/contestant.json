@@ -1,0 +1,30 @@
+{
+  "id": 19,
+  "country": "IE",
+  "artist": "Lesley Roy",
+  "song": "Story Of My Life",
+  "videoUrls": [
+    "https://www.youtube-nocookie.com/embed/HLgE0Ayl5Hc"
+  ],
+  "bpm": 132,
+  "tone": "G major",
+  "artistPeople": [
+    "Lesley Roy"
+  ],
+  "backings": null,
+  "dancers": null,
+  "stageDirector": null,
+  "composers": null,
+  "conductor": null,
+  "lyricists": null,
+  "writers": [
+    "Catt Gravitt",
+    "Lesley Roy",
+    "Robert Marvin",
+    "Tom Shapiro"
+  ],
+  "broadcaster": "RÉ",
+  "commentators": null,
+  "jury": null,
+  "spokesperson": null
+}
