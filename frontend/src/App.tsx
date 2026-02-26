@@ -1,9 +1,7 @@
-function App() {
-  return (
-    <div>
-      <h1>Eurovision Tracker</h1>
-    </div>
-  )
-}
+import HomePage from './pages/HomePage';
+
+const App = () => {
+  return <HomePage />;
+};
 
 export default App

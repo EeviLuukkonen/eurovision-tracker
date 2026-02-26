@@ -1,5 +1,6 @@
 import express from 'express';
 import yearsRouter from './routes/years';
+import { errorHandler } from './middleware/errorHandler';
 
 const app = express();
 app.use(express.json());
@@ -11,6 +12,8 @@ app.get('/ping', (_req, res) => {
 });
 
 app.use('/api/years', yearsRouter);
+
+app.use(errorHandler);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
