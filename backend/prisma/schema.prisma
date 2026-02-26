@@ -66,3 +66,13 @@ model RankingEntry {
 
   @@unique([rankingId, position])
 }
+model Contest {
+  id       Int    @id @default(autoincrement())
+  year     Int    @unique
+  country  String
+  city     String
+  arena    String
+  slogan   String
+  
+  @@index([year])
+}

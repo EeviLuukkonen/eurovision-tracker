@@ -4,8 +4,6 @@ import fs from "fs";
 import path from "path";
 import { PrismaPg } from '@prisma/adapter-pg';
 
-console.log(process.env.DATABASE_URL);
-
 const adapter = new PrismaPg({
   connectionString: process.env.DATABASE_URL!,
 });
@@ -23,9 +21,30 @@ async function main() {
 
   const baseDir = path.join(__dirname, "../../", "data");
 
+  // Delete existing data
+  await prisma.contest.deleteMany();
   await prisma.entry.deleteMany();
 
   for (const year of years) {
+    // Seed contest information
+    const contestPath = path.join(baseDir, year, "contest.json");
+    if (fs.existsSync(contestPath)) {
+      const contestData = JSON.parse(fs.readFileSync(contestPath, "utf-8"));
+      
+      await prisma.contest.create({
+        data: {
+          year: Number(year),
+          country: contestData.country,
+          city: contestData.city,
+          arena: contestData.arena,
+          slogan: contestData.slogan,
+        },
+      });
+
+      console.log(`Inserted contest: ${year} - ${contestData.city}, ${contestData.country}`);
+    }
+
+    // Seed contestants
     const contestantsDir = path.join(baseDir, year, "contestants");
     const contestantFolders = fs.readdirSync(contestantsDir);
 

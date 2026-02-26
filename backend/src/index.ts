@@ -1,13 +1,16 @@
 import express from 'express';
+import yearsRouter from './routes/years';
+
 const app = express();
 app.use(express.json());
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.get('/ping', (_req, res) => {
-  console.log('someone pinged here');
-  res.send('pong');
+  res.json({ success: true, message: 'pong' });
 });
+
+app.use('/api/years', yearsRouter);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
