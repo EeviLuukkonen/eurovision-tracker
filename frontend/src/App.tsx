@@ -1,7 +1,11 @@
 import HomePage from './pages/HomePage';
 
 const App = () => {
-  return <HomePage />;
+  return (
+    <div className="min-h-screen font-sans text-white">
+      <HomePage />
+    </div>
+  );
 };
 
-export default App
+export default App;

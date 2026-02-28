@@ -36,14 +36,14 @@ const HomePage = () => {
   }, []);
 
   return (
-    <main style={{ maxWidth: 720, margin: '2rem auto', fontFamily: 'sans-serif' }}>
-      <h1>ESCoreboard</h1>
+    <main className="max-w-3xl mx-auto px-4 py-8">
+      <h1 className="text-4xl font-bold mb-8">ESCoreboard</h1>
       
-      {isLoading && <p>Loading years...</p>}
-      {error && <p style={{ color: 'crimson' }}>Error: {error}</p>}
+      {isLoading && <p className="text-white/70">Loading years...</p>}
+      {error && <p className="text-destructive font-medium">Error: {error}</p>}
 
       {!isLoading && !error && (
-        <div style={{ display: 'grid', gap: '0.5rem' }}>
+        <div className="flex flex-col gap-3">
           {years.map((item) => (
             <YearButton key={item.id} item={item} />
           ))}
