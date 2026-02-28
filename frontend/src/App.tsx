@@ -7,7 +7,7 @@ import OfficialResultsPage from './pages/OfficialResultsPage';
 const App = () => {
   return (
     <BrowserRouter>
-      <div className="min-h-screen font-sans text-white">
+      <div className="min-h-screen text-white">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/year/:year" element={<YearPage />} />

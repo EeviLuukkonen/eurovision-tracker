@@ -84,7 +84,7 @@
     --background: oklch(0.36 0.18 300);        /* deep purple base */
     --foreground: oklch(0.98 0 0);
 
-    --card: oklch(0.42 0.15 305);              /* slightly lighter purple */
+    --card: oklch(1 0 0 / 5%);                 /* transparent white overlay */
     --card-foreground: oklch(0.98 0 0);
 
     --primary: oklch(0.62 0.27 315);           /* bright magenta accent */
@@ -93,10 +93,13 @@
     --secondary: oklch(0.40 0.14 300);
     --secondary-foreground: oklch(0.98 0 0);
 
+    --muted: oklch(0.97 0 0);
+    --muted-foreground: oklch(1 0 0 / 65%);    /* lighter for better visibility */
+
     --accent: oklch(0.62 0.27 315);
     --accent-foreground: oklch(0.98 0 0);
 
-    --border: oklch(1 0 0 / 10%);
+    --border: oklch(1 0 0 / 20%);              /* slightly more visible borders */
     --input: oklch(1 0 0 / 15%);
     --ring: oklch(0.62 0.27 315);
 }
@@ -107,6 +110,7 @@
     }
   body {
     @apply text-foreground;
+    font-family: 'Montserrat', sans-serif;
     background:
       radial-gradient(ellipse at center, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%),
       linear-gradient(180deg, #581C87 0%, #C026D3 50%, #4C1D95 100%);
