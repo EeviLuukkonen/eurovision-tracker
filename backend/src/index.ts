@@ -1,5 +1,6 @@
 import express from 'express';
 import yearsRouter from './routes/years';
+import entrysRouter from './routes/entrys';
 import { errorHandler } from './middleware/errorHandler';
 
 const app = express();
@@ -12,6 +13,7 @@ app.get('/ping', (_req, res) => {
 });
 
 app.use('/api/years', yearsRouter);
+app.use('/api/entrys', entrysRouter);
 
 app.use(errorHandler);
 

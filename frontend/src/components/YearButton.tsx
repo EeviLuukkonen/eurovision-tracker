@@ -1,4 +1,5 @@
 import ReactCountryFlag from 'react-country-flag';
+import { Link } from 'react-router-dom';
 import type { ContestYear } from '../types/year';
 
 type YearButtonProps = {
@@ -6,13 +7,9 @@ type YearButtonProps = {
 };
 
 const YearButton = ({ item }: YearButtonProps) => {
-  const onClick = () => {
-    console.log(`Clicked year ${item.year}`);
-  };
-
   return (
-    <button 
-      onClick={onClick} 
+    <Link 
+      to={`/year/${item.year}`}
       className="w-full p-4 text-left cursor-pointer flex items-center gap-4 border-2 border-white/20 rounded-lg hover:border-primary hover:bg-white/10 transition-all duration-200 shadow-sm hover:shadow-md"
     >
       <div className="flex-shrink-0 opacity-90">
@@ -28,7 +25,7 @@ const YearButton = ({ item }: YearButtonProps) => {
         <span className="text-white/40 text-xl">-</span>
         <span className="text-lg text-white/70">{item.city}</span>
       </div>
-    </button>
+    </Link>
   );
 };
 
