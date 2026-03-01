@@ -8,5 +8,6 @@
 | 26.2.  | 2h   |  adding contest data, creating backend stucture and first endpoint /years |
 | 27.2.  | 3h   | creating front page, taking tailwind and shadcn/ui into use, designing UI |
 | 28.2.  | 1h   | router, more pages, entrys endpoint |
+| 1.3.   | 3h   | drag and drop ranking feature |
 
-total: 14
+total: 18

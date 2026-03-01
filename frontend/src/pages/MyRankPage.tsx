@@ -1,17 +1,21 @@
 import { fetchEntriesByYear } from '@/api/entries';
 import type { Entry } from '@/types/entry';
 import { closestCenter, DndContext, type DragEndEvent } from '@dnd-kit/core';
+import { restrictToVerticalAxis } from '@dnd-kit/modifiers';
 import { arrayMove, SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { useSortable } from '@dnd-kit/sortable';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { EntryCard } from '../components/EntryCard';
 
 type SortableEntryItemProps = {
   entry: Entry;
+  onOpenVideo: (videoUrl: string, title: string) => void;
+  index: number;
 };
 
-const SortableEntryItem = ({ entry }: SortableEntryItemProps) => {
+const SortableEntryItem = ({ entry, onOpenVideo, index }: SortableEntryItemProps) => {
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
     id: entry.id,
   });
@@ -28,12 +32,9 @@ const SortableEntryItem = ({ entry }: SortableEntryItemProps) => {
       style={style}
       {...attributes}
       {...listeners}
-      className="p-4 border rounded mb-2 bg-background cursor-grab active:cursor-grabbing touch-none"
+      className="px-4 py-1.5 border rounded mb-1 bg-background cursor-grab active:cursor-grabbing touch-none"
     >
-      <h2 className="text-xl font-semibold">{entry.country}</h2>
-      <p>
-        {entry.artist} - {entry.song}
-      </p>
+      <EntryCard entry={entry} onOpenVideo={onOpenVideo} index={index} />
     </div>
   );
 };
@@ -41,6 +42,8 @@ const SortableEntryItem = ({ entry }: SortableEntryItemProps) => {
 const MyRankPage = () => {
   const { year } = useParams<{ year: string }>();
   const [rankedEntries, setRankedEntries] = useState<Entry[]>([]);
+  const [activeVideoUrl, setActiveVideoUrl] = useState<string | null>(null);
+  const [activeVideoTitle, setActiveVideoTitle] = useState<string>('');
 
   useEffect(() => {
     const fetchEntries = async () => {
@@ -76,21 +79,73 @@ const MyRankPage = () => {
     });
   };
 
+  const handleOpenVideo = (videoUrl: string, title: string) => {
+    setActiveVideoUrl(videoUrl);
+    setActiveVideoTitle(title);
+  };
+
+  const handleCloseVideo = () => {
+    setActiveVideoUrl(null);
+    setActiveVideoTitle('');
+  };
+
   return (
     <main className="max-w-4xl mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold mb-8">Create Rank - Eurovision {year}</h1>
-      <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
+      <DndContext
+        collisionDetection={closestCenter}
+        modifiers={[restrictToVerticalAxis]}
+        onDragEnd={handleDragEnd}
+      >
         <SortableContext
           items={rankedEntries.map((entry) => entry.id)}
           strategy={verticalListSortingStrategy}
         >
           <div>
-            {rankedEntries.map((entry) => (
-              <SortableEntryItem key={entry.id} entry={entry} />
+            {rankedEntries.map((entry, index) => (
+              <SortableEntryItem
+                key={entry.id}
+                entry={entry}
+                onOpenVideo={handleOpenVideo}
+                index={index}
+              />
             ))}
           </div>
         </SortableContext>
       </DndContext>
+
+      {activeVideoUrl && (
+        <div
+          className="fixed inset-0 flex items-center justify-center bg-black/70"
+          onClick={handleCloseVideo}
+        >
+          <div
+            className="w-full max-w-4xl rounded-lg border border-white/20 bg-background p-5"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div className="mb-3 flex items-center justify-between gap-2">
+              <h2 className="text-lg font-semibold">{activeVideoTitle}</h2>
+              <button
+                type="button"
+                onClick={handleCloseVideo}
+                className="rounded border border-white/20 px-3 py-1 text-sm hover:bg-white/10"
+              >
+                Close
+              </button>
+            </div>
+
+            <div className="aspect-video w-full overflow-hidden rounded border border-white/20 bg-black">
+              <iframe
+                src={activeVideoUrl}
+                title={activeVideoTitle}
+                className="h-full w-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 };
