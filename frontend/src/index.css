@@ -78,30 +78,40 @@
     --sidebar-accent-foreground: oklch(0.205 0 0);
     --sidebar-border: oklch(0.922 0 0);
     --sidebar-ring: oklch(0.708 0 0);
+
+    --bg-glow: rgba(255, 255, 255, 0.12);
+    --bg-gradient-start: #581c87;
+    --bg-gradient-mid: #c026d3;
+    --bg-gradient-end: #4c1d95;
 }
 
 .dark {
-    --background: oklch(0.36 0.18 300);        /* deep purple base */
+    --background: oklch(0.23 0.08 304);
     --foreground: oklch(0.98 0 0);
 
-    --card: oklch(1 0 0 / 5%);                 /* transparent white overlay */
+    --card: oklch(0.28 0.05 304 / 60%);
     --card-foreground: oklch(0.98 0 0);
 
-    --primary: oklch(0.62 0.27 315);           /* bright magenta accent */
+    --primary: oklch(0.64 0.22 322);
     --primary-foreground: oklch(0.98 0 0);
 
-    --secondary: oklch(0.40 0.14 300);
+    --secondary: oklch(0.33 0.09 300);
     --secondary-foreground: oklch(0.98 0 0);
 
-    --muted: oklch(0.97 0 0);
-    --muted-foreground: oklch(1 0 0 / 65%);    /* lighter for better visibility */
+    --muted: oklch(0.31 0.03 300);
+    --muted-foreground: oklch(0.88 0 0 / 75%);
 
-    --accent: oklch(0.62 0.27 315);
+    --accent: oklch(0.58 0.18 320);
     --accent-foreground: oklch(0.98 0 0);
 
-    --border: oklch(1 0 0 / 20%);              /* slightly more visible borders */
-    --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.62 0.27 315);
+    --border: oklch(0.95 0 0 / 20%);
+    --input: oklch(0.95 0 0 / 16%);
+    --ring: oklch(0.64 0.22 322);
+
+    --bg-glow: rgba(255, 206, 242, 0.2);
+    --bg-gradient-start: #2b1141;
+    --bg-gradient-mid: #8a2b7a;
+    --bg-gradient-end: #3a1462;
 }
 
 @layer base {
@@ -112,8 +122,8 @@
     @apply text-foreground;
     font-family: 'Montserrat', sans-serif;
     background:
-      radial-gradient(ellipse at center, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%),
-      linear-gradient(180deg, #581C87 0%, #C026D3 50%, #4C1D95 100%);
-    background-attachment: fixed;;
+      radial-gradient(ellipse at center, var(--bg-glow) 0%, rgba(255,255,255,0) 70%),
+      linear-gradient(180deg, var(--bg-gradient-start) 0%, var(--bg-gradient-mid) 50%, var(--bg-gradient-end) 100%);
+    background-attachment: fixed;
     }
 }
