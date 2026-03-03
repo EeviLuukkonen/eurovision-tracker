@@ -16,7 +16,7 @@ const YearButton = ({ item }: YearButtonProps) => {
       className="w-full h-auto p-4 justify-start gap-4 hover:border-primary hover:bg-white/10"
     >
       <Link to={`/year/${item.year}`}>
-        <div className="flex-shrink-0 opacity-90">
+        <div className="shrink-0 opacity-90">
           <ReactCountryFlag 
             countryCode={item.country} 
             svg 
