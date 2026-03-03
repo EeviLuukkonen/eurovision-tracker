@@ -1,4 +1,5 @@
 import express from 'express';
+import cookieParser from 'cookie-parser';
 import yearsRouter from './routes/years';
 import entrysRouter from './routes/entrys';
 import authRouter from './routes/auth';
@@ -6,6 +7,7 @@ import { errorHandler } from './middleware/errorHandler';
 
 const app = express();
 app.use(express.json());
+app.use(cookieParser());
 
 const PORT = process.env.PORT || 3000;
 

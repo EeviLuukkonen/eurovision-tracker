@@ -1,9 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { ApiResponse } from '../types/index.js';
-
-type HttpError = Error & {
-  statusCode?: number;
-};
+import { HttpError } from '../utils/httpError';
 
 export const errorHandler = (
   error: Error,

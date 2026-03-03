@@ -1,19 +1,24 @@
-import { Router } from 'express';
+import { Router, type CookieOptions } from 'express';
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 import { prisma } from '../config/database';
 import { ApiResponse } from '../types';
+import { requireAuth } from '../middleware/requireAuth';
+import { createHttpError } from '../utils/httpError';
 
 const router = Router();
 
-type HttpError = Error & {
-  statusCode: number;
+const createToken = (userId: number) => {
+  return jwt.sign({ sub: userId }, process.env.JWT_SECRET as string, { expiresIn: '7d' });
 };
 
-const createHttpError = (statusCode: number, message: string): HttpError => {
-  const error = new Error(message) as HttpError;
-  error.statusCode = statusCode;
-  return error;
-};
+const getCookieOptions = (): CookieOptions => ({
+  httpOnly: true,
+  secure: process.env.NODE_ENV === 'production',
+  sameSite: 'lax',
+  maxAge: 7 * 24 * 60 * 60 * 1000,
+  path: '/',
+});
 
 type AuthUserResponse = {
   id: number;
@@ -56,6 +61,8 @@ router.post('/register', async (req, res) => {
     },
   };
 
+  const token = createToken(user.id);
+  res.cookie('token', token, getCookieOptions());
   res.status(201).json(response);
 });
 
@@ -90,7 +97,39 @@ router.post('/login', async (req, res) => {
     },
   };
 
+  const token = createToken(user.id);
+  res.cookie('token', token, getCookieOptions());
   res.json(response);
 });
+
+router.post('/logout', async (_req, res) => {
+  res.clearCookie('token', getCookieOptions());
+  res.json({ success: true, message: 'Logged out successfully' });
+});
+
+router.get('/me', requireAuth, async (_req, res) => {
+  const userId = res.locals.userId as number;
+
+  const user = await prisma.user.findUnique({
+    where: { id: userId },
+  });
+
+  if (!user) {
+    throw createHttpError(401, 'Unauthorized');
+  }
+
+  const response: ApiResponse<AuthUserResponse> = {
+    success: true,
+    data: {
+      id: user.id,
+      email: user.email,
+      username: user.username,
+    },
+  };
+
+  res.json(response);
+});
+
+
 
 export default router;
