@@ -102,11 +102,13 @@ router.post('/login', async (req, res) => {
   res.json(response);
 });
 
+// POST /api/auth/logout - Log out the user
 router.post('/logout', async (_req, res) => {
   res.clearCookie('token', getCookieOptions());
   res.json({ success: true, message: 'Logged out successfully' });
 });
 
+// GET /api/auth/me - Get current user info
 router.get('/me', requireAuth, async (_req, res) => {
   const userId = res.locals.userId as number;
 
@@ -129,7 +131,5 @@ router.get('/me', requireAuth, async (_req, res) => {
 
   res.json(response);
 });
-
-
 
 export default router;

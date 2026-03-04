@@ -3,10 +3,12 @@ import HomePage from './pages/HomePage';
 import YearPage from './pages/YearPage';
 import MyRankPage from './pages/MyRankPage';
 import OfficialResultsPage from './pages/OfficialResultsPage';
+import { NavBar } from './components/NavBar';
 
 const App = () => {
   return (
     <BrowserRouter>
+      <NavBar></NavBar>
       <div className="min-h-screen text-white">
         <Routes>
           <Route path="/" element={<HomePage />} />

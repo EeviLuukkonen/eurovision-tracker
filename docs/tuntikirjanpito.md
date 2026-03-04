@@ -11,5 +11,6 @@
 | 1.3.   | 3h   | drag and drop ranking feature |
 | 2.3.   | 2h   | ui improvements and small additions to rank page |
 | 3.3.   | 2.5h   | auth endpoints |
+| 3.3.   | 2h   | navbar |
 
 total: 22.5
