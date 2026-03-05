@@ -4,11 +4,18 @@ import YearPage from './pages/YearPage';
 import MyRankPage from './pages/MyRankPage';
 import OfficialResultsPage from './pages/OfficialResultsPage';
 import { NavBar } from './components/NavBar';
+import { useState } from 'react';
+import { AuthModal } from './components/AuthModal';
 
 const App = () => {
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+
+  const handleOpenAuthModal = () => setAuthModalOpen(true);
+
   return (
     <BrowserRouter>
-      <NavBar></NavBar>
+      <NavBar onLoginClick={handleOpenAuthModal} />
+      <AuthModal open={authModalOpen} onOpenChange={setAuthModalOpen} />
       <div className="min-h-screen text-white">
         <Routes>
           <Route path="/" element={<HomePage />} />

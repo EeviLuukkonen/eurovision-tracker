@@ -114,6 +114,7 @@ const MyRankPage = () => {
         </SortableContext>
       </DndContext>
 
+      {/* TODO: refactor to use shadcn dialog component */}
       {activeVideoUrl && (
         <div
           className="fixed inset-0 flex items-center justify-center bg-black/70"
