@@ -8,6 +8,8 @@ import {
 import { Button } from "./ui/button";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
+import { useState } from "react";
+import { login } from "../api/auth";
 
 type AuthModalProps = {
   open: boolean;
@@ -15,44 +17,94 @@ type AuthModalProps = {
 };
 
 export const AuthModal = ({ open, onOpenChange }: AuthModalProps) => {
+  const [mode, setMode] = useState<'login' | 'register'>('login');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const email = formData.get('email') as string;
+    const password = formData.get('password') as string;
+
+    setErrorMessage(null);
+    setIsSubmitting(true);
+
+    try {
+      if (mode === 'login') {
+        await login({ email, password });
+        onOpenChange(false);
+      } else {
+        setErrorMessage('Sign up is not implemented yet.');
+      }
+    } catch (error) {
+      const message = error instanceof Error ? error.message : 'Something went wrong. Please try again.';
+      setErrorMessage(message);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleToggleMode = () => {
+    setMode(mode === 'login' ? 'register' : 'login');
+    setErrorMessage(null);
+  };
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="border-0 p-0 shadow-none sm:max-w-md">
         <Card className="p-12 shadow-none">
           <CardHeader>
-            <CardTitle className="text-xl text-center">Login to your account</CardTitle>
+            <CardTitle className="text-xl text-center">
+              {mode === 'login' ? 'Login to your account' : 'Sign up for an account'}
+            </CardTitle>
           </CardHeader>
           <CardContent>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="flex flex-col gap-5">
                 <div className="grid gap-2">
                   <Label htmlFor="email">Email</Label>
                   <Input
                     id="email"
                     type="email"
+                    name="email"
                     required
                   />
                 </div>
+
+                {mode === 'register' && (
+                  <div className="grid gap-2">
+                    <Label htmlFor="username">Username</Label>
+                    <Input id="username" type="text" name="username" required />
+                  </div>
+                )}
+                
                 <div className="grid gap-2">
                   <div className="flex items-center">
                     <Label htmlFor="password">Password</Label>
                   </div>
-                  <Input id="password" type="password" required />
+                  <Input id="password" type="password" name="password" required />
                 </div>
-                <Button type="submit" className="w-full">
-                  Login
+                
+                <Button type="submit" className="w-full" disabled={isSubmitting}>
+                  {isSubmitting ? 'Please wait...' : mode === 'login' ? 'Login' : 'Sign Up'}
                 </Button>
+
+                {errorMessage && (
+                  <p className="text-center text-sm text-destructive">{errorMessage}</p>
+                )}
 
                 <div className="flex items-center justify-center gap-3 text-sm">
                   <span className="text-muted-foreground">
-                    Don't have an account?
+                    {mode === 'login' ? "Don't have an account?" : "Already have an account?"}
                   </span>
                   <Button
                     type="button"
                     variant="link"
                     className="h-auto px-0"
+                    onClick={handleToggleMode}
                   >
-                    Sign Up
+                    {mode === 'login' ? 'Sign Up' : 'Login'}
                   </Button>
                 </div>
               </div>

@@ -7,8 +7,3 @@ export type Entry = {
   youtubeUrl: string | null;
 };
 
-export type ApiResponse<T> = {
-  success: boolean;
-  data?: T;
-  error?: string;
-};

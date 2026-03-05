@@ -1,4 +1,5 @@
-import type { ApiResponse, Entry } from '../types/entry';
+import type { Entry } from '../types/entry';
+import type { ApiResponse } from '../types/api/response';
 
 export const fetchEntriesByYear = async (year: number): Promise<Entry[]> => {
   const response = await fetch(`/api/entrys/${year}`);
