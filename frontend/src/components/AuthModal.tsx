@@ -9,7 +9,7 @@ import { Button } from "./ui/button";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { useState } from "react";
-import { login } from "../api/auth";
+import { useAuth } from "@/context/AuthContext";
 
 type AuthModalProps = {
   open: boolean;
@@ -17,6 +17,7 @@ type AuthModalProps = {
 };
 
 export const AuthModal = ({ open, onOpenChange }: AuthModalProps) => {
+  const { login, signup } = useAuth();
   const [mode, setMode] = useState<'login' | 'register'>('login');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -35,7 +36,9 @@ export const AuthModal = ({ open, onOpenChange }: AuthModalProps) => {
         await login({ email, password });
         onOpenChange(false);
       } else {
-        setErrorMessage('Sign up is not implemented yet.');
+        const username = formData.get('username') as string;
+        await signup({ email, username, password });
+        onOpenChange(false);
       }
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Something went wrong. Please try again.';
