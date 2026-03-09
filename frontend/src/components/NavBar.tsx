@@ -9,7 +9,7 @@ type NavbarProps = {
 };
 
 export const NavBar = ({ onLoginClick }: NavbarProps) => {
-  const { user, logout } = useAuth();
+  const { user, logout, isAuthLoading } = useAuth();
 
   return (
     <nav className="w-full border-b border-border bg-background/70 backdrop-blur-md sticky top-0 z-50">
@@ -21,7 +21,7 @@ export const NavBar = ({ onLoginClick }: NavbarProps) => {
           ESCoreboard
         </Link>
 
-        <div className="flex items-center gap-4">
+        <div className="flex h-9 min-w-24 items-center justify-end">
           {user ? (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -56,8 +56,10 @@ export const NavBar = ({ onLoginClick }: NavbarProps) => {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
+          ) : isAuthLoading ? (
+            <div aria-hidden className="h-9 w-18" />
           ) : (
-            <Button variant="ghost" onClick={onLoginClick}>
+            <Button variant="ghost" className="px-4" onClick={onLoginClick}>
               Login
             </Button>
           )}
