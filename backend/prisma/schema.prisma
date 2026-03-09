@@ -59,13 +59,13 @@ model Ranking {
 
 model RankingEntry {
   id           Int        @id @default(autoincrement())
-  ranking   Ranking @relation(fields: [rankingId], references: [id])
+  ranking   Ranking @relation(fields: [rankingId], references: [id], onDelete: Cascade)
   rankingId Int
   entry        Entry      @relation(fields: [entryId], references: [id])
   entryId      Int
   position     Int
 
-  @@unique([rankingId, position])
+  @@unique([rankingId, entryId, position])
 }
 model Contest {
   id       Int    @id @default(autoincrement())
