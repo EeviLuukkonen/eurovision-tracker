@@ -14,5 +14,7 @@
 | 4.3.   | 2h   | navbar |
 | 5.3.   | 3h   | login functionality to frontend |
 | 6.3.   | 2.5h | auth context |
+| 9.3.   | 2h   | ranking api endpoints get and put |
+|        | 1h   | frontend rankings module, render entrys in order if rank exists |
 
-total: 30
+total: 33
