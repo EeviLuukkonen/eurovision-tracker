@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import YearPage from './pages/YearPage';
 import MyRankPage from './pages/MyRankPage';
+import ViewRankingPage from './pages/ViewRankingPage';
 import OfficialResultsPage from './pages/OfficialResultsPage';
 import { NavBar } from './components/NavBar';
 import { useState } from 'react';
@@ -23,6 +24,7 @@ const App = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="/year/:year" element={<YearPage />} />
             <Route path="/year/:year/my-rank" element={<MyRankPage />} />
+            <Route path="/year/:year/my-rank/view" element={<ViewRankingPage />} />
             <Route path="/year/:year/official-rank" element={<OfficialResultsPage />} />
           </Routes>
         </div>

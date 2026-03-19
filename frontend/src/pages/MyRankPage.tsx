@@ -1,6 +1,8 @@
 import { fetchEntriesByYear } from '@/api/entries';
 import { getRankingByYear, saveRankingByYear } from '@/api/rankings';
 import { useAuth } from '@/context/AuthContext';
+import { Button } from '@/components/ui/button';
+import { Dialog, DialogClose, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import type { Entry } from '@/types/entry';
 import { closestCenter, DndContext, type DragEndEvent } from '@dnd-kit/core';
 import { restrictToVerticalAxis } from '@dnd-kit/modifiers';
@@ -8,7 +10,7 @@ import { arrayMove, SortableContext, verticalListSortingStrategy } from '@dnd-ki
 import { CSS } from '@dnd-kit/utilities';
 import { useSortable } from '@dnd-kit/sortable';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { EntryCard } from '../components/EntryCard';
 import { mapEntriesByRankingOrder, mapEntriesToRankingFormat } from '@/lib/rankingHelper';
 
@@ -44,8 +46,10 @@ const SortableEntryItem = ({ entry, onOpenVideo, index }: SortableEntryItemProps
 
 const MyRankPage = () => {
   const { year } = useParams<{ year: string }>();
+  const navigate = useNavigate();
   const { isAuthenticated, isAuthLoading } = useAuth();
   const [rankedEntries, setRankedEntries] = useState<Entry[]>([]);
+  const [savedEntries, setSavedEntries] = useState<Entry[]>([]);
   const [activeVideoUrl, setActiveVideoUrl] = useState<string | null>(null);
   const [activeVideoTitle, setActiveVideoTitle] = useState<string>('');
   const [isSaving, setIsSaving] = useState(false);
@@ -63,11 +67,14 @@ const MyRankPage = () => {
 
         if (!isAuthenticated) {
           setRankedEntries(data);
+          setSavedEntries(data);
           return;
         }
 
         const ranking = await getRankingByYear(parsedYear);
-        setRankedEntries(mapEntriesByRankingOrder(data, ranking.entries));
+        const initialEntries = mapEntriesByRankingOrder(data, ranking.entries);
+        setRankedEntries(initialEntries);
+        setSavedEntries(initialEntries);
       } catch (error) {
         console.error('Error fetching entries:', error);
       }
@@ -105,13 +112,18 @@ const MyRankPage = () => {
     setActiveVideoTitle('');
   };
 
+  const handleResetRankingChanges = () => {
+    setRankedEntries([...savedEntries]);
+  };
+
   const handleSaveRanking = async () => {
     setIsSaving(true);
     const entriesToSave = mapEntriesToRankingFormat(rankedEntries);
 
     try {
       await saveRankingByYear(Number(year), entriesToSave);
-      alert('Ranking saved successfully!'); // todo make better
+      setSavedEntries([...rankedEntries]);
+      navigate(`/year/${year}/my-rank/view`);
     } catch (error) {
       console.error('Error saving ranking:', error);
       alert('Failed to save ranking. Please try again.');
@@ -145,28 +157,34 @@ const MyRankPage = () => {
         </SortableContext>
       </DndContext>
 
-      {/* TODO: refactor to use shadcn dialog component */}
-      {activeVideoUrl && (
-        <div
-          className="fixed inset-0 flex items-center justify-center bg-black/70"
-          onClick={handleCloseVideo}
+      <Dialog
+        open={Boolean(activeVideoUrl)}
+        onOpenChange={(open) => {
+          if (!open) {
+            handleCloseVideo();
+          }
+        }}
+      >
+        <DialogContent
+          showCloseButton={false}
+          className="max-w-4xl border-white/20 bg-background p-5 sm:max-w-4xl"
         >
-          <div
-            className="w-full max-w-4xl rounded-lg border border-white/20 bg-background p-5"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <div className="mb-3 flex items-center justify-between gap-2">
-              <h2 className="text-lg font-semibold">{activeVideoTitle}</h2>
-              <button
+          <DialogHeader className="mb-3 flex-row items-center justify-between gap-2 space-y-0">
+            <DialogTitle>{activeVideoTitle}</DialogTitle>
+            <DialogClose asChild>
+              <Button
                 type="button"
-                onClick={handleCloseVideo}
-                className="rounded border border-white/20 px-3 py-1 text-sm hover:bg-white/10"
+                variant="outline"
+                size="sm"
+                className="border-white/20 hover:bg-white/10"
               >
                 Close
-              </button>
-            </div>
+              </Button>
+            </DialogClose>
+          </DialogHeader>
 
-            <div className="aspect-video w-full overflow-hidden rounded border border-white/20 bg-black">
+          <div className="aspect-video w-full overflow-hidden rounded border border-white/20 bg-black">
+            {activeVideoUrl && (
               <iframe
                 src={activeVideoUrl}
                 title={activeVideoTitle}
@@ -174,31 +192,36 @@ const MyRankPage = () => {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               />
-            </div>
+            )}
           </div>
-        </div>
-      )}
+        </DialogContent>
+      </Dialog>
 
-      {isAuthenticated && (
-        <div className="fixed bottom-0 right-0 border-t border-white/10 bg-background/95 backdrop-blur px-4 py-3 flex items-center justify-end gap-3">
-          <button
-            type="button"
-            onClick={() => setRankedEntries([])}
-            disabled={isSaving}
-            className="rounded border border-white/20 px-5 py-2 text-sm hover:bg-white/10 disabled:opacity-50"
-          >
-            Clear All
-          </button>
-          <button
-            type="button"
-            onClick={handleSaveRanking}
-            disabled={isSaving}
-            className="rounded bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
-          >
-            Save & View
-          </button>
-        </div>
-      )}
+      <div className="fixed bottom-0 right-0 border-t border-white/10 bg-background/95 backdrop-blur px-4 py-3 flex items-center justify-end gap-3">
+        {!isAuthenticated && (
+          <span className="text-sm text-muted-foreground mr-4">
+            Log in to save your ranking!
+          </span>
+        )}
+        <Button
+          type="button"
+          onClick={handleResetRankingChanges}
+          disabled={isSaving}
+          variant="outline"
+          size="sm"
+          className="border-white/20 hover:bg-white/10"
+        >
+          Reset All
+        </Button>
+        <Button
+          type="button"
+          onClick={handleSaveRanking}
+          disabled={isSaving || !isAuthenticated}
+          size="sm"
+        >
+          Save & View
+        </Button>
+      </div>
     </main>
   );
 };
