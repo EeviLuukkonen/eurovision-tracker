@@ -8,15 +8,16 @@ type EntryCardProps = {
   entry: Entry;
   onOpenVideo: (videoUrl: string, title: string) => void;
   index: number;
+  isRanked: boolean;
 };
 
-export const EntryCard = ({ entry, onOpenVideo, index }: EntryCardProps) => {
+export const EntryCard = ({ entry, onOpenVideo, index, isRanked }: EntryCardProps) => {
   const thumbnailUrl = getYoutubeThumbnailUrl(entry.youtubeUrl);
   const videoTitle = `${entry.artist} - ${entry.song}`;
 
   return (
     <div className="flex w-full items-center gap-6">
-      <div className="font-extrabold">{index + 1}</div>
+      <div className="w-8 text-center font-extrabold">{isRanked ? index + 1 : '—'}</div>
       <div className="shrink-0 opacity-90">
         <ReactCountryFlag
           countryCode={entry.country}
@@ -34,7 +35,11 @@ export const EntryCard = ({ entry, onOpenVideo, index }: EntryCardProps) => {
       </div>
 
       <div className="ml-auto flex shrink-0 items-center gap-12">
-        <PointsBadge index={index} />
+        {isRanked ? (
+          <PointsBadge index={index} />
+        ) : (
+          <div className="size-9" aria-hidden="true" />
+        )}
 
         {thumbnailUrl && entry.youtubeUrl && (
           <button

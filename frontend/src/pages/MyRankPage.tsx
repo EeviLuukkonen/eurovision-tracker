@@ -18,9 +18,10 @@ type SortableEntryItemProps = {
   entry: Entry;
   onOpenVideo: (videoUrl: string, title: string) => void;
   index: number;
+  isRanked: boolean;
 };
 
-const SortableEntryItem = ({ entry, onOpenVideo, index }: SortableEntryItemProps) => {
+const SortableEntryItem = ({ entry, onOpenVideo, index, isRanked }: SortableEntryItemProps) => {
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
     id: entry.id,
   });
@@ -28,7 +29,7 @@ const SortableEntryItem = ({ entry, onOpenVideo, index }: SortableEntryItemProps
   const style = {
     transform: CSS.Transform.toString(transform),
     transition,
-    opacity: isDragging ? 0.6 : 1,
+    opacity: isDragging ? 0.6 : isRanked ? 1 : 0.85,
   };
 
   return (
@@ -37,9 +38,13 @@ const SortableEntryItem = ({ entry, onOpenVideo, index }: SortableEntryItemProps
       style={style}
       {...attributes}
       {...listeners}
-      className="px-4 py-1.5 border rounded mb-1 bg-background cursor-grab active:cursor-grabbing touch-none"
+      className={`px-4 py-1.5 border rounded mb-1 cursor-grab active:cursor-grabbing touch-none transition-colors ${
+        isRanked
+          ? 'bg-background border-white/20'
+          : 'bg-background/90 border-white/10'
+      }`}
     >
-      <EntryCard entry={entry} onOpenVideo={onOpenVideo} index={index} />
+      <EntryCard entry={entry} onOpenVideo={onOpenVideo} index={index} isRanked={isRanked} />
     </div>
   );
 };
@@ -48,8 +53,13 @@ const MyRankPage = () => {
   const { year } = useParams<{ year: string }>();
   const navigate = useNavigate();
   const { isAuthenticated, isAuthLoading } = useAuth();
-  const [rankedEntries, setRankedEntries] = useState<Entry[]>([]);
+  
+  const [orderedEntries, setOrderedEntries] = useState<Entry[]>([]);
+  const [orderedCount, setOrderedCount] = useState(0);
+
   const [savedEntries, setSavedEntries] = useState<Entry[]>([]);
+  const [savedCount, setSavedCount] = useState(0);
+  
   const [activeVideoUrl, setActiveVideoUrl] = useState<string | null>(null);
   const [activeVideoTitle, setActiveVideoTitle] = useState<string>('');
   const [isSaving, setIsSaving] = useState(false);
@@ -66,15 +76,19 @@ const MyRankPage = () => {
         const data = await fetchEntriesByYear(parsedYear);
 
         if (!isAuthenticated) {
-          setRankedEntries(data);
+          setOrderedEntries(data);
           setSavedEntries(data);
           return;
         }
 
         const ranking = await getRankingByYear(parsedYear);
-        const initialEntries = mapEntriesByRankingOrder(data, ranking.entries);
-        setRankedEntries(initialEntries);
+        const { initialEntries, rankedCount } = mapEntriesByRankingOrder(data, ranking.entries);
+        console.log('Initial entries ordered by ranking:', initialEntries, 'Ranked count:', rankedCount);
+        setOrderedEntries(initialEntries);
         setSavedEntries(initialEntries);
+        setOrderedCount(rankedCount);
+        setSavedCount(rankedCount);
+
       } catch (error) {
         console.error('Error fetching entries:', error);
       }
@@ -90,15 +104,25 @@ const MyRankPage = () => {
       return;
     }
 
-    setRankedEntries((currentEntries) => {
+    setOrderedEntries((currentEntries) => {
       const oldIndex = currentEntries.findIndex((entry) => entry.id === active.id);
       const newIndex = currentEntries.findIndex((entry) => entry.id === over.id);
+      if (oldIndex === -1 || newIndex === -1) return currentEntries;
 
-      if (oldIndex === -1 || newIndex === -1) {
-        return currentEntries;
+      const wasRanked = oldIndex < orderedCount;
+      const droppedBelowBoundary = newIndex > orderedCount;
+      const droppedAtBoundary = newIndex === orderedCount;
+
+      if (droppedBelowBoundary) return currentEntries;
+      if (wasRanked && droppedAtBoundary) return currentEntries;
+
+      const nextEntries = arrayMove(currentEntries, oldIndex, newIndex);
+
+      if (!wasRanked) {
+        setOrderedCount(orderedCount +1);
       }
 
-      return arrayMove(currentEntries, oldIndex, newIndex);
+      return nextEntries;
     });
   };
 
@@ -113,16 +137,19 @@ const MyRankPage = () => {
   };
 
   const handleResetRankingChanges = () => {
-    setRankedEntries([...savedEntries]);
+    setOrderedEntries([...savedEntries]);
+    setOrderedCount(savedCount);
   };
 
   const handleSaveRanking = async () => {
     setIsSaving(true);
-    const entriesToSave = mapEntriesToRankingFormat(rankedEntries);
+    const entriesToSave = mapEntriesToRankingFormat(orderedEntries, orderedCount);
+
+    console.log('Saving ranking with entries:', entriesToSave);
 
     try {
       await saveRankingByYear(Number(year), entriesToSave);
-      setSavedEntries([...rankedEntries]);
+      setSavedEntries([...orderedEntries]);
       navigate(`/year/${year}/my-rank/view`);
     } catch (error) {
       console.error('Error saving ranking:', error);
@@ -141,16 +168,17 @@ const MyRankPage = () => {
         onDragEnd={handleDragEnd}
       >
         <SortableContext
-          items={rankedEntries.map((entry) => entry.id)}
+          items={orderedEntries.map((entry) => entry.id)}
           strategy={verticalListSortingStrategy}
         >
           <div>
-            {rankedEntries.map((entry, index) => (
+            {orderedEntries.map((entry, index) => (
               <SortableEntryItem
                 key={entry.id}
                 entry={entry}
                 onOpenVideo={handleOpenVideo}
                 index={index}
+                isRanked={index < orderedCount}
               />
             ))}
           </div>
