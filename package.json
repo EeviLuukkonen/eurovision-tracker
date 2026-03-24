@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "dev:backend": "npm --prefix backend run dev"
   },
   "author": "",

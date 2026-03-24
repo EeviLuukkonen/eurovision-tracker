@@ -9,6 +9,7 @@
     "dev": "ts-node-dev src/index.ts",
     "start": "node build/index.js",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "seed": "ts-node prisma/seed.ts"
   },
   "author": "",

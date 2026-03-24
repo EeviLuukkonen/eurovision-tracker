@@ -17,5 +17,6 @@
 | 9.3.   | 2h   | ranking api endpoints get and put |
 |        | 1h   | frontend rankings module, render entrys in order if rank exists |
 | 12.3.  | 2h   | 'save ranking' to frontend |
+| 23.3.  | 2h   | ordered and unordered, partial rankings |
 
-total: 35
+total: 37

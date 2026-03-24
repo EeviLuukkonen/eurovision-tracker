@@ -3,22 +3,14 @@ import tseslint from 'typescript-eslint';
 import stylistic from "@stylistic/eslint-plugin";
 import { defineConfig } from "eslint/config";
 
-export default defineConfig({
-  files: ['**/*.ts', '**/*.tsx'],
+const sharedTypeCheckedConfig = {
   extends: [
     eslint.configs.recommended,
     ...tseslint.configs.recommendedTypeChecked,
   ],
-  languageOptions: {
-    parserOptions: {
-      project: true,
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
   plugins: {
     "@stylistic": stylistic,
   },
-  ignores: ["build/*", "node_modules/*"],
   rules: {
     '@stylistic/semi': 'error',
     '@typescript-eslint/no-unsafe-assignment': 'error',
@@ -32,4 +24,40 @@ export default defineConfig({
       { 'argsIgnorePattern': '^_' }
     ],
   },
-});
+};
+
+export default defineConfig(
+  {
+    ignores: ['**/build/**', '**/node_modules/**'],
+  },
+  {
+    ...sharedTypeCheckedConfig,
+    files: ['backend/**/*.ts'],
+    languageOptions: {
+      parserOptions: {
+        project: ['./backend/tsconfig.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+  },
+  {
+    ...sharedTypeCheckedConfig,
+    files: ['frontend/src/**/*.{ts,tsx}'],
+    languageOptions: {
+      parserOptions: {
+        project: ['./frontend/tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+  },
+  {
+    ...sharedTypeCheckedConfig,
+    files: ['frontend/vite.config.ts'],
+    languageOptions: {
+      parserOptions: {
+        project: ['./frontend/tsconfig.node.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+  },
+);
