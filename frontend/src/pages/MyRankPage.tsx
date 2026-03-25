@@ -12,7 +12,7 @@ import { useSortable } from '@dnd-kit/sortable';
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { EntryCard } from '../components/EntryCard';
-import { mapEntriesByRankingOrder, mapEntriesToRankingFormat } from '@/lib/rankingHelper';
+import { mapEntriesByRankingOrder, mapEntriesToRankingFormat, saveDraftToLocalStorage, clearDraftFromLocalStorage, loadDraftFromLocalStorage } from '@/lib/rankingHelper';
 
 type SortableEntryItemProps = {
   entry: Entry;
@@ -52,13 +52,14 @@ const SortableEntryItem = ({ entry, onOpenVideo, index, isRanked }: SortableEntr
 const MyRankPage = () => {
   const { year } = useParams<{ year: string }>();
   const navigate = useNavigate();
-  const { isAuthenticated, isAuthLoading } = useAuth();
+  const { isAuthenticated, isAuthLoading, user } = useAuth();
+
+  const [unorderedEntries, setUnorderedEntries] = useState<Entry[]>([]);
   
   const [orderedEntries, setOrderedEntries] = useState<Entry[]>([]);
   const [orderedCount, setOrderedCount] = useState(0);
 
-  const [savedEntries, setSavedEntries] = useState<Entry[]>([]);
-  const [savedCount, setSavedCount] = useState(0);
+  const [savedState, setSavedState] = useState<{ entries: Entry[]; count: number }>({ entries: [], count: 0 });
   
   const [activeVideoUrl, setActiveVideoUrl] = useState<string | null>(null);
   const [activeVideoTitle, setActiveVideoTitle] = useState<string>('');
@@ -74,20 +75,65 @@ const MyRankPage = () => {
     const fetchEntries = async () => {
       try {
         const data = await fetchEntriesByYear(parsedYear);
+        setUnorderedEntries(data);
 
+        const guestDraft = loadDraftFromLocalStorage(parsedYear, null);
+        const userDraft = loadDraftFromLocalStorage(parsedYear, user?.id ?? null);
+
+        // guest user
         if (!isAuthenticated) {
-          setOrderedEntries(data);
-          setSavedEntries(data);
+          console.log('guest user, loading guest draft if exists');
+          const { entriesInOrder, rankedCount } = mapEntriesByRankingOrder(data, guestDraft ?? []);
+          setOrderedEntries(entriesInOrder);
+          setOrderedCount(rankedCount);
+          setSavedState({ entries: data, count: 0 });
           return;
         }
 
         const ranking = await getRankingByYear(parsedYear);
-        const { initialEntries, rankedCount } = mapEntriesByRankingOrder(data, ranking.entries);
-        console.log('Initial entries ordered by ranking:', initialEntries, 'Ranked count:', rankedCount);
-        setOrderedEntries(initialEntries);
-        setSavedEntries(initialEntries);
-        setOrderedCount(rankedCount);
-        setSavedCount(rankedCount);
+        const hasDbRanking = ranking.entries.length > 0;
+
+        // logged in user with saved ranking
+        if (hasDbRanking) {
+          const { entriesInOrder, rankedCount } = mapEntriesByRankingOrder(data, ranking.entries);
+
+          if (userDraft) {
+            const { entriesInOrder: draftEntries, rankedCount: draftCount } = mapEntriesByRankingOrder(data, userDraft);
+            setOrderedEntries(draftEntries);
+            setOrderedCount(draftCount);
+            setSavedState({ entries: entriesInOrder, count: rankedCount });
+          } else {
+            setOrderedEntries(entriesInOrder);
+            setOrderedCount(rankedCount);
+            setSavedState({ entries: entriesInOrder, count: rankedCount });
+          }
+
+          clearDraftFromLocalStorage(parsedYear, null);
+          return;
+        }
+
+        // logged in user without saved ranking
+        const draftToUse = guestDraft ?? userDraft;
+        if (draftToUse) {
+          console.log('logged in user without saved ranking but with draft, loading draft');
+          const { entriesInOrder: initialEntries, rankedCount } = mapEntriesByRankingOrder(data, draftToUse);
+          setOrderedEntries(initialEntries);
+          setOrderedCount(rankedCount);
+          setSavedState({ entries: data, count: 0 });
+
+          if (guestDraft && user?.id) {
+            saveDraftToLocalStorage(parsedYear, initialEntries, rankedCount, user.id);
+            clearDraftFromLocalStorage(parsedYear, null);
+          }
+
+          return;
+        }
+
+        // logged in user without saved ranking or drafts
+        console.log('logged in user without saved ranking or drafts, loading entries without order');
+        setOrderedEntries(data);
+        setOrderedCount(0);
+        setSavedState({ entries: data, count: 0 });
 
       } catch (error) {
         console.error('Error fetching entries:', error);
@@ -117,10 +163,10 @@ const MyRankPage = () => {
       if (wasRanked && droppedAtBoundary) return currentEntries;
 
       const nextEntries = arrayMove(currentEntries, oldIndex, newIndex);
+      const nextCount = !wasRanked ? orderedCount + 1 : orderedCount;
 
-      if (!wasRanked) {
-        setOrderedCount(orderedCount +1);
-      }
+      setOrderedCount(nextCount);
+      saveDraftToLocalStorage(Number(year), nextEntries, nextCount, user?.id ?? null);
 
       return nextEntries;
     });
@@ -137,8 +183,8 @@ const MyRankPage = () => {
   };
 
   const handleResetRankingChanges = () => {
-    setOrderedEntries([...savedEntries]);
-    setOrderedCount(savedCount);
+    setOrderedEntries([...savedState.entries]);
+    setOrderedCount(savedState.count);
   };
 
   const handleSaveRanking = async () => {
@@ -147,7 +193,8 @@ const MyRankPage = () => {
 
     try {
       await saveRankingByYear(Number(year), entriesToSave);
-      setSavedEntries([...orderedEntries]);
+      clearDraftFromLocalStorage(Number(year), user?.id ?? null);
+      setSavedState({ entries: [...orderedEntries], count: orderedCount });
       void navigate(`/year/${year}/my-rank/view`);
     } catch (error) {
       console.error('Error saving ranking:', error);
