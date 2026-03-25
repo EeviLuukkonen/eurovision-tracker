@@ -41,6 +41,14 @@ export default defineConfig(
     },
   },
   {
+    files: ['backend/prisma/**/*.ts'],
+    rules: {
+      '@typescript-eslint/no-unsafe-assignment': 'off',
+      '@typescript-eslint/no-unsafe-member-access': 'off',
+      '@typescript-eslint/no-unsafe-argument': 'off',
+    },
+  },
+  {
     ...sharedTypeCheckedConfig,
     files: ['frontend/src/**/*.{ts,tsx}'],
     languageOptions: {

@@ -26,13 +26,50 @@ type AuthUserResponse = {
   username: string;
 };
 
-// POST /api/auth/register - Register a new user
-router.post('/register', async (req, res) => {
-  const { email, username, password } = req.body;
+type RegisterBody = {
+  email: string;
+  username: string;
+  password: string;
+};
 
-  if (!email || !username || !password) {
+type LoginBody = {
+  email: string;
+  password: string;
+};
+
+const parseRegisterBody = (body: unknown): RegisterBody => {
+  if (typeof body !== 'object' || body === null) {
     throw createHttpError(400, 'Email, username and password are required');
   }
+  const { email, username, password } = body as Record<string, unknown>;
+  if (
+    typeof email !== 'string' || !email ||
+    typeof username !== 'string' || !username ||
+    typeof password !== 'string' || !password
+  ) {
+    throw createHttpError(400, 'Email, username and password are required');
+  }
+  return { email, username, password };
+};
+
+const parseLoginBody = (body: unknown): LoginBody => {
+  if (typeof body !== 'object' || body === null) {
+    throw createHttpError(400, 'Email and password are required');
+  }
+  const { email, password } = body as Record<string, unknown>;
+  if (
+    typeof email !== 'string' || !email ||
+    typeof password !== 'string' || !password
+  ) {
+    throw createHttpError(400, 'Email and password are required');
+  }
+  return { email, password };
+};
+
+// POST /api/auth/register - Register a new user
+router.post('/register', async (req, res) => {
+  const { email, username, password } = parseRegisterBody(req.body);
+
 
   const existingUser = await prisma.user.findUnique({
     where: { email },
@@ -68,11 +105,8 @@ router.post('/register', async (req, res) => {
 
 // POST /api/auth/login - Log in a user
 router.post('/login', async (req, res) => {
-  const { email, password } = req.body;
+  const { email, password } = parseLoginBody(req.body);
 
-  if (!email || !password) {
-    throw createHttpError(400, 'Email and password are required');
-  }
 
   const user = await prisma.user.findUnique({
     where: { email },
@@ -103,7 +137,7 @@ router.post('/login', async (req, res) => {
 });
 
 // POST /api/auth/logout - Log out the user
-router.post('/logout', async (_req, res) => {
+router.post('/logout', (_req, res) => {
   res.clearCookie('token', getCookieOptions());
   res.json({ success: true, message: 'Logged out successfully' });
 });

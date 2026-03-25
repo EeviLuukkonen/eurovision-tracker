@@ -94,7 +94,7 @@ const MyRankPage = () => {
       }
     };
 
-    fetchEntries();
+    void fetchEntries();
   }, [year, isAuthenticated, isAuthLoading]);
   
   const handleDragEnd = (event: DragEndEvent) => {
@@ -145,12 +145,10 @@ const MyRankPage = () => {
     setIsSaving(true);
     const entriesToSave = mapEntriesToRankingFormat(orderedEntries, orderedCount);
 
-    console.log('Saving ranking with entries:', entriesToSave);
-
     try {
       await saveRankingByYear(Number(year), entriesToSave);
       setSavedEntries([...orderedEntries]);
-      navigate(`/year/${year}/my-rank/view`);
+      void navigate(`/year/${year}/my-rank/view`);
     } catch (error) {
       console.error('Error saving ranking:', error);
       alert('Failed to save ranking. Please try again.');
@@ -243,7 +241,7 @@ const MyRankPage = () => {
         </Button>
         <Button
           type="button"
-          onClick={handleSaveRanking}
+          onClick={() => void handleSaveRanking()}
           disabled={isSaving || !isAuthenticated}
           size="sm"
         >

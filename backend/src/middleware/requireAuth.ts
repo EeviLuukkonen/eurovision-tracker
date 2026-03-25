@@ -8,8 +8,22 @@ type AuthTokenPayload = JwtPayload & {
   sub?: string | number;
 };
 
+const getTokenFromCookies = (cookies: unknown): string | null => {
+  if (typeof cookies !== 'object' || cookies === null) {
+    return null;
+  }
+
+  const token = (cookies as Record<string, unknown>).token;
+
+  if (typeof token !== 'string' || token.length === 0) {
+    return null;
+  }
+
+  return token;
+};
+
 export const requireAuth = (req: Request, res: Response, next: NextFunction) => {
-  const token = req.cookies?.token;
+  const token = getTokenFromCookies(req.cookies);
 
   if (!token) {
     return next(createHttpError(401, 'Unauthorized'));

@@ -18,5 +18,6 @@
 |        | 1h   | frontend rankings module, render entrys in order if rank exists |
 | 12.3.  | 2h   | 'save ranking' to frontend |
 | 23.3.  | 2h   | ordered and unordered, partial rankings |
+| 24.3.  | 2h   | fixing 40 lint errors after realizing lint hasn't worked until now |
 
-total: 37
+total: 39

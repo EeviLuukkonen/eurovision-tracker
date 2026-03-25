@@ -8,8 +8,8 @@ const adapter = new PrismaPg({
 
 export const prisma = new PrismaClient({ adapter });
 
-process.on('beforeExit', async () => {
-  await prisma.$disconnect();
+process.on('beforeExit', () => {
+  void prisma.$disconnect();
 });
 
 export default prisma;

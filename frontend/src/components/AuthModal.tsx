@@ -63,7 +63,7 @@ export const AuthModal = ({ open, onOpenChange }: AuthModalProps) => {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={(e) => void handleSubmit(e)}>
               <div className="flex flex-col gap-5">
                 <div className="grid gap-2">
                   <Label htmlFor="email">Email</Label>

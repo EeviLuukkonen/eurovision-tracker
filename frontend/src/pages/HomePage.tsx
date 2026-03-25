@@ -28,7 +28,7 @@ const HomePage = () => {
       }
     };
 
-    load();
+    void load();
 
     return () => {
       active = false;
