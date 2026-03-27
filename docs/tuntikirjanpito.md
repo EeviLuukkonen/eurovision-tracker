@@ -19,5 +19,6 @@
 | 12.3.  | 2h   | 'save ranking' to frontend |
 | 23.3.  | 2h   | ordered and unordered, partial rankings |
 | 24.3.  | 2h   | fixing 40 lint errors after realizing lint hasn't worked until now |
+| 25.3.  | 2h   | ranking drafts logic |
 
-total: 39
+total: 41

@@ -21,6 +21,23 @@ type SortableEntryItemProps = {
   isRanked: boolean;
 };
 
+type StartRankingDropZoneProps = {
+  enabled: boolean;
+};
+
+const StartRankingDropZone = ({ enabled }: StartRankingDropZoneProps) => {
+  if (!enabled) {
+    return null;
+  }
+
+  return (
+    <div className="mb-2 flex flex-col items-center justify-center gap-1 rounded border border-dashed border-white/20 bg-white/5 px-4 py-4 text-muted-foreground transition-colors">
+      <span className="text-sm">Drag and drop entry here to start your ranking</span>
+      <span className="text-lg leading-none">↓</span>
+    </div>
+  );
+};
+
 const SortableEntryItem = ({ entry, onOpenVideo, index, isRanked }: SortableEntryItemProps) => {
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
     id: entry.id,
@@ -53,8 +70,6 @@ const MyRankPage = () => {
   const { year } = useParams<{ year: string }>();
   const navigate = useNavigate();
   const { isAuthenticated, isAuthLoading, user } = useAuth();
-
-  const [unorderedEntries, setUnorderedEntries] = useState<Entry[]>([]);
   
   const [orderedEntries, setOrderedEntries] = useState<Entry[]>([]);
   const [orderedCount, setOrderedCount] = useState(0);
@@ -75,7 +90,6 @@ const MyRankPage = () => {
     const fetchEntries = async () => {
       try {
         const data = await fetchEntriesByYear(parsedYear);
-        setUnorderedEntries(data);
 
         const guestDraft = loadDraftFromLocalStorage(parsedYear, null);
         const userDraft = loadDraftFromLocalStorage(parsedYear, user?.id ?? null);
@@ -146,7 +160,11 @@ const MyRankPage = () => {
   const handleDragEnd = (event: DragEndEvent) => {
     const { active, over } = event;
 
-    if (!over || active.id === over.id) {
+    if (!over) {
+      return;
+    }
+
+    if (active.id === over.id && !(orderedCount === 0 && active.id === over.id)) {
       return;
     }
 
@@ -185,6 +203,7 @@ const MyRankPage = () => {
   const handleResetRankingChanges = () => {
     setOrderedEntries([...savedState.entries]);
     setOrderedCount(savedState.count);
+    clearDraftFromLocalStorage(Number(year), user?.id ?? null);
   };
 
   const handleSaveRanking = async () => {
@@ -217,6 +236,7 @@ const MyRankPage = () => {
           strategy={verticalListSortingStrategy}
         >
           <div>
+            <StartRankingDropZone enabled={orderedCount === 0} />
             {orderedEntries.map((entry, index) => (
               <SortableEntryItem
                 key={entry.id}
@@ -284,12 +304,12 @@ const MyRankPage = () => {
           size="sm"
           className="border-white/20 hover:bg-white/10"
         >
-          Reset All
+          Reset Changes
         </Button>
         <Button
           type="button"
           onClick={() => void handleSaveRanking()}
-          disabled={isSaving || !isAuthenticated}
+          disabled={isSaving || !isAuthenticated || orderedCount === 0}
           size="sm"
         >
           Save & View
