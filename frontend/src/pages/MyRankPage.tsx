@@ -31,8 +31,8 @@ const StartRankingDropZone = ({ enabled }: StartRankingDropZoneProps) => {
   }
 
   return (
-    <div className="mb-2 flex flex-col items-center justify-center gap-1 rounded border border-dashed border-white/20 bg-white/5 px-4 py-4 text-muted-foreground transition-colors">
-      <span className="text-sm">Drag and drop entry here to start your ranking</span>
+    <div className="mb-2 flex flex-col items-center justify-center gap-1 rounded border border-dashed border-white/40 bg-white/5 px-4 py-4 text-muted-foreground transition-colors">
+      <span className="text-sm">Drag and drop an entry here to start your ranking</span>
       <span className="text-lg leading-none">↓</span>
     </div>
   );
@@ -225,7 +225,10 @@ const MyRankPage = () => {
 
   return (
     <main className="max-w-4xl mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mb-8">Create Ranking - Eurovision {year}</h1>
+      <div className="mb-8">
+        <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">Eurovision {year}</p>
+        <h1 className="text-2xl font-semibold">Create Ranking</h1>
+      </div>
       <DndContext
         collisionDetection={closestCenter}
         modifiers={[restrictToVerticalAxis]}

@@ -1,4 +1,4 @@
-export const PointsBadge = ({ index }: { index: number }) => {
+export const PointsBadge = ({ index, size = "md" }: { index: number; size?: "sm" | "md" }) => {
   const indexToPoints: Record<number, string> = {
     0: '12',
     1: '10',
@@ -13,14 +13,16 @@ export const PointsBadge = ({ index }: { index: number }) => {
   };
 
   const points = indexToPoints[index];
+  const sizeClasses = size === "sm" ? "size-7 text-xs" : "size-9 text-base";
+  const spacerClasses = size === "sm" ? "size-7" : "size-9";
 
   if (!points) {
-    return <div className="size-9" aria-hidden="true" />;
+    return <div className={spacerClasses} aria-hidden="true" />;
   }
 
   return (
     <div
-      className="flex size-9 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white/90 text-base font-extrabold tabular-nums"
+      className={`flex ${sizeClasses} items-center justify-center rounded-full border border-white/20 bg-white/10 text-white/90 font-extrabold tabular-nums`}
       aria-label={`${points} points`}
     >
       {points}

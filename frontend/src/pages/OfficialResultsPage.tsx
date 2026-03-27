@@ -5,7 +5,10 @@ const OfficialResultsPage = () => {
 
   return (
     <main className="max-w-4xl mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mb-8">Official Results - Eurovision {year}</h1>
+      <div className="mb-8">
+        <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">Eurovision {year}</p>
+        <h1 className="text-2xl font-semibold">Official Results</h1>
+      </div>
 
       <div>
         <p>content coming soon...</p>

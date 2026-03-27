@@ -70,3 +70,28 @@ export const EntryCard = ({ entry, onOpenVideo, index, isRanked }: EntryCardProp
     </div>
   );
 };
+
+type RankingEntryRowProps = {
+  entry: Entry;
+  position: number;
+};
+
+export const RankingEntryRow = ({ entry, position }: RankingEntryRowProps) => {
+  const index = position - 1;
+
+  return (
+    <li className="flex items-center gap-3 border-x border-b border-white/20 bg-background pl-3 pr-4 py-2 first:rounded-t first:border-t last:rounded-b">
+      <span className="w-5 text-xs font-bold text-muted-foreground text-right tabular-nums shrink-0">
+        {position}
+      </span>
+      <ReactCountryFlag
+        countryCode={entry.country}
+        svg
+        style={{ width: '1.5rem', height: '1.1rem', objectFit: 'cover' }}
+        className="rounded-sm shadow-sm shrink-0"
+      />
+      <span className="text-sm font-medium truncate flex-1">{getCountryName(entry.country)}</span>
+      <PointsBadge index={index} size="sm" />
+    </li>
+  );
+};

@@ -37,7 +37,9 @@ const HomePage = () => {
 
   return (
     <main className="max-w-3xl mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mb-8">ESCoreboard</h1>
+      <div className="mb-8">
+        <h1 className="text-2xl font-semibold">ESCoreboard</h1>
+      </div>
       
       {isLoading && <p className="text-white/70">Loading years...</p>}
       {error && <p className="text-destructive font-medium">Error: {error}</p>}

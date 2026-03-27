@@ -15,7 +15,10 @@ const YearPage = () => {
         </Link>
       </Button>
 
-      <h1 className="text-4xl font-bold mb-8">Eurovision {year}</h1>
+      <div className="mb-8">
+        <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">Eurovision</p>
+        <h1 className="text-2xl font-semibold">{year}</h1>
+      </div>
 
       <div className="grid gap-4 md:grid-cols-2">
         <Card className="hover:border-primary transition-all cursor-pointer">

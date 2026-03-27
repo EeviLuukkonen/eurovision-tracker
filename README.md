@@ -56,4 +56,4 @@ npm run dev
 
 ## Use of AI
 
-Copilot has been used during development for brainstorming ideas, designing structures, asking questions, explaining concepts and code generation. Files and functions that have (almost) completely been generated with AI are marked with a comment. All other files may include AI generated parts but are mostly done and designed by me. Models used were mainly GPT-5.3-Codex and Claude Sonnet 4.5.
+Copilot has been used during development for brainstorming ideas, designing structures, asking questions and code generation. Files and functions that have mostly been generated with AI are marked as such with a comment. All other files may include AI generated parts but are mostly done and designed by me. Models used were mainly GPT-5.3-Codex and Claude Sonnet 4.5.
