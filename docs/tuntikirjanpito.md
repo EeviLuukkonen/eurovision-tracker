@@ -20,5 +20,7 @@
 | 23.3.  | 2h   | ordered and unordered, partial rankings |
 | 24.3.  | 2h   | fixing 40 lint errors after realizing lint hasn't worked until now |
 | 25.3.  | 2h   | ranking drafts logic |
+| 27.3.  | 4h   | view ranking page & improvements |
+| 30.3.  | 1h   | seeding official results data |
 
-total: 41
+total: 46

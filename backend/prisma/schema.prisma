@@ -38,8 +38,8 @@ model OfficialResult {
   entry          Entry  @relation(fields: [entryId], references: [id])
   entryId        Int
   rank           Int
-  juryPoints     Int
-  televotePoints Int
+  juryPoints     Int?
+  televotePoints Int?
   totalPoints    Int
 
   @@unique([entryId])

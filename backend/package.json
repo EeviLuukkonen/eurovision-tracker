@@ -10,7 +10,8 @@
     "start": "node build/index.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "seed": "ts-node prisma/seed.ts"
+    "seed": "ts-node prisma/seed.ts",
+    "seed:results": "ts-node prisma/seedOfficialResults.ts"
   },
   "author": "",
   "license": "ISC",
