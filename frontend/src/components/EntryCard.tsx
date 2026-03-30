@@ -1,6 +1,7 @@
 import { getCountryName } from "@/lib/countries";
 import { getYoutubeThumbnailUrl } from "@/lib/youtube";
 import type { Entry } from "@/types/entry";
+import type { OfficialResult } from "@/types/officialResult";
 import ReactCountryFlag from "react-country-flag";
 import { PointsBadge } from "./PointsBadge";
 
@@ -92,6 +93,37 @@ export const RankingEntryRow = ({ entry, position }: RankingEntryRowProps) => {
       />
       <span className="text-sm font-medium truncate flex-1">{getCountryName(entry.country)}</span>
       <PointsBadge index={index} size="sm" />
+    </li>
+  );
+};
+
+type OfficialResultRowProps = {
+  result: OfficialResult;
+};
+
+export const OfficialResultRow = ({ result }: OfficialResultRowProps) => {
+  return (
+    <li className="flex items-center gap-3 border-x border-b border-white/20 bg-background pl-3 pr-4 py-2 first:rounded-t first:border-t last:rounded-b">
+      <span className="w-5 text-xs font-bold text-muted-foreground text-right tabular-nums shrink-0">
+        {result.rank}
+      </span>
+      <ReactCountryFlag
+        countryCode={result.entry.country}
+        svg
+        style={{ width: '1.5rem', height: '1.1rem', objectFit: 'cover' }}
+        className="rounded-sm shadow-sm shrink-0"
+      />
+      <div className="min-w-0 flex-1">
+        <p className="text-sm font-medium truncate">
+          {result.entry.artist} - <i>{result.entry.song}</i>
+        </p>
+        <p className="text-xs text-muted-foreground truncate">{getCountryName(result.entry.country)}</p>
+      </div>
+      <div className="shrink-0 text-right tabular-nums leading-tight">
+        <p className="text-[11px] text-muted-foreground">J {result.juryPoints ?? 0}</p>
+        <p className="text-[11px] text-muted-foreground">T {result.televotePoints ?? 0}</p>
+        <p className="text-sm font-semibold">{result.totalPoints}</p>
+      </div>
     </li>
   );
 };
