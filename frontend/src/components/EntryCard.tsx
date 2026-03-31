@@ -102,28 +102,39 @@ type OfficialResultRowProps = {
 };
 
 export const OfficialResultRow = ({ result }: OfficialResultRowProps) => {
+
+const podiumClassName =
+  result.rank <= 3
+    ? `
+      relative
+      before:absolute before:left-0 before:top-0 before:h-full before:w-[3px]
+      before:bg-podium-gold before:rounded-l
+      bg-gradient-to-r from-primary/18 via-primary/8 to-transparent
+    `
+    : '';
+    
   return (
-    <li className="flex items-center gap-3 border-x border-b border-white/20 bg-background pl-3 pr-4 py-2 first:rounded-t first:border-t last:rounded-b">
-      <span className="w-5 text-xs font-bold text-muted-foreground text-right tabular-nums shrink-0">
+    <li className={`grid grid-cols-[2rem_minmax(0,1fr)_minmax(0,1.35fr)_4rem_4rem_4.5rem] items-center gap-3 border-x border-b border-white/20 bg-background px-3 py-2 first:rounded-t first:border-t last:rounded-b md:grid-cols-[2rem_minmax(0,1.05fr)_minmax(0,1.7fr)_4rem_4rem_4.5rem] ${podiumClassName}`}>
+      <span className="text-xs font-bold text-muted-foreground text-center tabular-nums">
         {result.rank}
       </span>
-      <ReactCountryFlag
-        countryCode={result.entry.country}
-        svg
-        style={{ width: '1.5rem', height: '1.1rem', objectFit: 'cover' }}
-        className="rounded-sm shadow-sm shrink-0"
-      />
+      <div className="flex min-w-0 items-center gap-3">
+        <ReactCountryFlag
+          countryCode={result.entry.country}
+          svg
+          style={{ width: '1.5rem', height: '1.1rem', objectFit: 'cover' }}
+          className="rounded-sm shadow-sm shrink-0"
+        />
+        <span className="truncate text-sm">{getCountryName(result.entry.country)}</span>
+      </div>
       <div className="min-w-0 flex-1">
         <p className="text-sm font-medium truncate">
           {result.entry.artist} - <i>{result.entry.song}</i>
         </p>
-        <p className="text-xs text-muted-foreground truncate">{getCountryName(result.entry.country)}</p>
       </div>
-      <div className="shrink-0 text-right tabular-nums leading-tight">
-        <p className="text-[11px] text-muted-foreground">J {result.juryPoints ?? 0}</p>
-        <p className="text-[11px] text-muted-foreground">T {result.televotePoints ?? 0}</p>
-        <p className="text-sm font-semibold">{result.totalPoints}</p>
-      </div>
+      <span className="text-[11px] text-center tabular-nums">{result.juryPoints ?? ''}</span>
+      <span className="text-[11px] text-center tabular-nums">{result.televotePoints ?? ''}</span>
+      <span className="text-sm font-semibold text-center tabular-nums">{result.totalPoints ?? ''}</span>
     </li>
   );
 };

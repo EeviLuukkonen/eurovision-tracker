@@ -37,11 +37,22 @@ const OfficialResultsPage = () => {
 
       {!isLoading && officialResults.length > 0 && (() => {
         return (
-          <ol className="min-w-0">
-            {officialResults.map((result) => (
+          <div className="min-w-0">
+            <div className="mb-2 grid grid-cols-[2rem_minmax(0,1fr)_minmax(0,1.35fr)_4rem_4rem_4.5rem] items-center gap-3 px-3 md:grid-cols-[2rem_minmax(0,1.05fr)_minmax(0,1.7fr)_4rem_4rem_4.5rem]">
+              <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground text-right">Pos</span>
+              <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground text-left">Country</span>
+              <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground text-left">Artist & Song</span>
+              <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground text-center">Jury</span>
+              <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground text-center">Tele</span>
+              <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground text-center">Total</span>
+            </div>
+
+            <ol className="min-w-0">
+              {officialResults.map((result) => (
               <OfficialResultRow key={result.entryId} result={result} />
-            ))}
-          </ol>
+              ))}
+            </ol>
+          </div>
         );
       })()}
     </main>
