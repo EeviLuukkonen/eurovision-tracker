@@ -1,54 +1,21 @@
 import { Router } from 'express';
-import { prisma } from '../config/database';
 import { ApiResponse } from '../types';
+import { OfficialResultResponse } from '../types';
+import { getOfficialResultsByYearData } from '../services/officialResults';
+import { createHttpError } from '../utils/httpError';
+import { FIRST_CONTEST_YEAR } from '../config/constants';
 
 const router = Router();
-
-type OfficialResultResponse = {
-  entryId: number;
-  rank: number;
-  juryPoints: number | null;
-  televotePoints: number | null;
-  totalPoints: number;
-  entry: {
-    id: number;
-    year: number;
-    country: string;
-    artist: string;
-    song: string;
-    youtubeUrl: string | null;
-  };
-};
 
 // GET /api/results/:year - Get official results for a given year
 router.get('/:year', async (req, res) => {
   const year = Number(req.params.year);
 
-  const results = await prisma.officialResult.findMany({
-    where: {
-      entry: {
-        year,
-      },
-    },
-    orderBy: { rank: 'asc' },
-    select: {
-      entryId: true,
-      rank: true,
-      juryPoints: true,
-      televotePoints: true,
-      totalPoints: true,
-      entry: {
-        select: {
-          id: true,
-          year: true,
-          country: true,
-          artist: true,
-          song: true,
-          youtubeUrl: true,
-        },
-      },
-    },
-  });
+  if (!Number.isInteger(year) || year < FIRST_CONTEST_YEAR) {
+    throw createHttpError(400, 'Invalid year parameter');
+  }
+
+  const results = await getOfficialResultsByYearData(year);
 
   const response: ApiResponse<OfficialResultResponse[]> = {
     success: true,

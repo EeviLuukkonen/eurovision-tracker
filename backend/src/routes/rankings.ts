@@ -3,6 +3,7 @@ import { prisma } from '../config/database';
 import { ApiResponse } from '../types';
 import { requireAuth } from '../middleware/requireAuth';
 import { createHttpError } from '../utils/httpError';
+import { FIRST_CONTEST_YEAR } from '../config/constants';
 
 const router = Router();
 
@@ -56,6 +57,11 @@ const parseRankingEntries = (body: unknown): RankingEntryPayload[] => {
 // GET /api/rankings/:year - Get ranking for a given year
 router.get('/:year', requireAuth, async (req, res) => {
   const year = Number(req.params.year);
+
+  if (!Number.isInteger(year) || year < FIRST_CONTEST_YEAR) {
+    throw createHttpError(400, 'Invalid year parameter');
+  }
+
   const userId = res.locals.userId as number;
 
   const ranking = await prisma.ranking.findUnique({
@@ -90,6 +96,11 @@ router.get('/:year', requireAuth, async (req, res) => {
 // PUT /api/rankings/:year - Create or update ranking for a given year
 router.put('/:year', requireAuth, async (req, res) => {
   const year = Number(req.params.year);
+
+  if (!Number.isInteger(year) || year < FIRST_CONTEST_YEAR) {
+    throw createHttpError(400, 'Invalid year parameter');
+  }
+
   const userId = res.locals.userId as number;
   const entries = parseRankingEntries(req.body);
 

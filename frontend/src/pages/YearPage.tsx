@@ -1,6 +1,4 @@
 import { Link, useParams } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 
 const YearPage = () => {
@@ -8,12 +6,6 @@ const YearPage = () => {
 
   return (
     <main className="max-w-3xl mx-auto px-4 py-8">
-      <Button variant="ghost" size="sm" asChild className="mb-6 -ml-2">
-        <Link to="/">
-          <ArrowLeft />
-          Back to years
-        </Link>
-      </Button>
 
       <div className="mb-8">
         <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">Eurovision</p>
