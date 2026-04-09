@@ -21,6 +21,8 @@
 | 24.3.  | 2h   | fixing 40 lint errors after realizing lint hasn't worked until now |
 | 25.3.  | 2h   | ranking drafts logic |
 | 27.3.  | 4h   | view ranking page & improvements |
-| 30.3.  | 1h   | seeding official results data |
+| 30.3.  | 3h   | seeding official results data, e2e results page |
+| 1.4.   | 2h   | year overview route, improve backend |
+| 9.4.   | 4h   | contest overview UI |
 
-total: 46
+total: 52
