@@ -1,39 +1,21 @@
-import { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { Loader2Icon } from 'lucide-react';
 import { fetchYears } from '../api/years';
 import type { ContestYear } from '../types/year';
 import YearButton from '../components/YearButton';
+import { ErrorAlert } from '@/components/ErrorAlert';
 
 const HomePage = () => {
-  const [years, setYears] = useState<ContestYear[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    let active = true;
-
-    const load = async () => {
-      try {
-        const data = await fetchYears();
-        if (active) {
-          setYears(data);
-        }
-      } catch (err) {
-        if (active) {
-          setError(err instanceof Error ? err.message : 'Unknown error');
-        }
-      } finally {
-        if (active) {
-          setIsLoading(false);
-        }
-      }
-    };
-
-    void load();
-
-    return () => {
-      active = false;
-    };
-  }, []);
+  const {
+    data: years = [],
+    isLoading,
+    error,
+    refetch,
+  } = useQuery<ContestYear[], Error>({
+    queryKey: ['years'],
+    queryFn: fetchYears,
+    staleTime: 1000 * 60 * 5,
+  });
 
   return (
     <main className="max-w-3xl mx-auto px-4 py-8">
@@ -41,8 +23,12 @@ const HomePage = () => {
         <h1 className="text-2xl font-semibold">ESCoreboard</h1>
       </div>
       
-      {isLoading && <p className="text-white/70">Loading years...</p>}
-      {error && <p className="text-destructive font-medium">Error: {error}</p>}
+      {isLoading && (
+        <div className="flex min-h-56 items-center justify-center">
+          <Loader2Icon className="h-12 w-12 animate-spin text-muted-foreground" />
+        </div>
+      )}
+      {error && <ErrorAlert error={error} title="Could not load years" onRetry={() => void refetch()} />}
 
       {!isLoading && !error && (
         <div className="flex flex-col gap-3">

@@ -1,49 +1,30 @@
 import { Link, useParams } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
 import { fetchYearOverview } from '@/api/years';
-import type { YearOverview } from '@/types/year';
 import { getCountryName } from '@/lib/countries';
 import ReactCountryFlag from 'react-country-flag';
-import { BarChart3Icon, ChevronRightIcon, PencilLineIcon } from 'lucide-react';
+import { BarChart3Icon, ChevronRightIcon, Loader2Icon, PencilLineIcon } from 'lucide-react';
+import { ErrorAlert } from '@/components/ErrorAlert';
 
 const YearPage = () => {
   const { year } = useParams<{ year: string }>();
-  const [overview, setOverview] = useState<YearOverview | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    let active = true;
-
-    const loadOverview = async () => {
-      try {
-        const data = await fetchYearOverview(Number(year));
-        if (active) {
-          setOverview(data);
-        }
-      } catch (err) {
-        if (active) {
-          setError(err instanceof Error ? err.message : 'Unknown error');
-        }
-      } finally {
-        if (active) {
-          setIsLoading(false);
-        }
-      }
-    };
-
-    void loadOverview();
-
-    return () => {
-      active = false;
-    };
-  }, [year]);
+  const {
+    data: overview,
+    isLoading,
+    error,
+  } = useQuery({
+    queryKey: ['yearOverview', year],
+    queryFn: () => fetchYearOverview(Number(year)),
+  });
 
   if (isLoading) {
     return (
       <main className="max-w-5xl mx-auto px-4 py-8">
-        <p className="text-muted-foreground">Loading year overview...</p>
+        <div className="flex min-h-56 items-center justify-center">
+          <Loader2Icon className="h-12 w-12 animate-spin text-muted-foreground" />
+        </div>
       </main>
     );
   }
@@ -51,7 +32,7 @@ const YearPage = () => {
   if (error || !overview) {
     return (
       <main className="max-w-5xl mx-auto px-4 py-8">
-        <p className="text-destructive">{error ?? 'Failed to load year overview'}</p>
+        <ErrorAlert error={error} title="Could not load contest overview" />
       </main>
     );
   }
@@ -102,8 +83,8 @@ const YearPage = () => {
 
                   <div className="min-w-0 flex-1">
                     <p className="truncate text-lg font-semibold uppercase">{getCountryName(entry.entry.country)}</p>
-                    <p className="truncate text-xs uppercase tracking-wide text-muted-foreground">
-                      {entry.entry.artist} - {entry.entry.song}
+                    <p className="truncate text-xs tracking-wide text-muted-foreground">
+                      {entry.entry.artist} - <i>{entry.entry.song}</i>
                     </p>
                   </div>
 
@@ -112,6 +93,58 @@ const YearPage = () => {
               ))}
             </div>
           </section>
+
+          {(overview.juryWinner || overview.televoteWinner) && (
+            <section className="space-y-3">
+              <div className="flex items-center gap-3">
+                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">VOTING WINNERS</p>
+                <div className="h-px flex-1 bg-white/10" />
+              </div>
+
+              <div className="grid gap-3 sm:grid-cols-2">
+                {overview.televoteWinner && (
+                  <div className="rounded-xl border border-white/20 bg-background p-4">
+                    <p className="text-[10px] uppercase tracking-widest text-muted-foreground">Televote Winner</p>
+                    <div className="mt-3 flex items-center gap-3">
+                      <ReactCountryFlag
+                        countryCode={overview.televoteWinner.entry.country}
+                        svg
+                        style={{ width: '2rem', height: '1.4rem' }}
+                        className="rounded-sm shadow-sm shrink-0"
+                      />
+                      <div className="min-w-0 flex-1">
+                        <p className="truncate text-base font-semibold uppercase">{getCountryName(overview.televoteWinner.entry.country)}</p>
+                        <p className="truncate text-xs tracking-wide text-muted-foreground">
+                          {overview.televoteWinner.entry.artist} - <i>{overview.televoteWinner.entry.song}</i>
+                        </p>
+                      </div>
+                    </div>
+                    <p className="mt-3 text-lg font-semibold">{overview.televoteWinner.televotePoints} pts</p>
+                  </div>
+                )}
+                {overview.juryWinner && (
+                  <div className="rounded-xl border border-white/20 bg-background p-4">
+                    <p className="text-[10px] uppercase tracking-widest text-muted-foreground">Jury Winner</p>
+                    <div className="mt-3 flex items-center gap-3">
+                      <ReactCountryFlag
+                        countryCode={overview.juryWinner.entry.country}
+                        svg
+                        style={{ width: '2rem', height: '1.4rem' }}
+                        className="rounded-sm shadow-sm shrink-0"
+                      />
+                      <div className="min-w-0 flex-1">
+                        <p className="truncate text-base font-semibold uppercase">{getCountryName(overview.juryWinner.entry.country)}</p>
+                        <p className="truncate text-xs tracking-wide text-muted-foreground">
+                          {overview.juryWinner.entry.artist} - <i>{overview.juryWinner.entry.song}</i>
+                        </p>
+                      </div>
+                    </div>
+                    <p className="mt-3 text-lg font-semibold">{overview.juryWinner.juryPoints} pts</p>
+                  </div>
+                )}
+              </div>
+            </section>
+          )}
 
           <section className="space-y-3">
             <div className="flex items-center gap-3">
@@ -136,58 +169,6 @@ const YearPage = () => {
               </div>
             </div>
           </section>
-
-          {(overview.juryWinner || overview.televoteWinner) && (
-            <section className="space-y-3">
-              <div className="flex items-center gap-3">
-                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">VOTING WINNERS</p>
-                <div className="h-px flex-1 bg-white/10" />
-              </div>
-
-              <div className="grid gap-3 sm:grid-cols-2">
-                {overview.televoteWinner && (
-                  <div className="rounded-xl border border-white/20 bg-background p-4">
-                    <p className="text-[10px] uppercase tracking-widest text-muted-foreground">Televote Winner</p>
-                    <div className="mt-3 flex items-center gap-3">
-                      <ReactCountryFlag
-                        countryCode={overview.televoteWinner.entry.country}
-                        svg
-                        style={{ width: '2rem', height: '1.4rem' }}
-                        className="rounded-sm shadow-sm shrink-0"
-                      />
-                      <div className="min-w-0 flex-1">
-                        <p className="truncate text-base font-semibold uppercase">{getCountryName(overview.televoteWinner.entry.country)}</p>
-                        <p className="truncate text-xs uppercase tracking-wide text-muted-foreground">
-                          {overview.televoteWinner.entry.artist} - {overview.televoteWinner.entry.song}
-                        </p>
-                      </div>
-                    </div>
-                    <p className="mt-3 text-lg font-semibold">{overview.televoteWinner.televotePoints} pts</p>
-                  </div>
-                )}
-                {overview.juryWinner && (
-                  <div className="rounded-xl border border-white/20 bg-background p-4">
-                    <p className="text-[10px] uppercase tracking-widest text-muted-foreground">Jury Winner</p>
-                    <div className="mt-3 flex items-center gap-3">
-                      <ReactCountryFlag
-                        countryCode={overview.juryWinner.entry.country}
-                        svg
-                        style={{ width: '2rem', height: '1.4rem' }}
-                        className="rounded-sm shadow-sm shrink-0"
-                      />
-                      <div className="min-w-0 flex-1">
-                        <p className="truncate text-base font-semibold uppercase">{getCountryName(overview.juryWinner.entry.country)}</p>
-                        <p className="truncate text-xs uppercase tracking-wide text-muted-foreground">
-                          {overview.juryWinner.entry.artist} - {overview.juryWinner.entry.song}
-                        </p>
-                      </div>
-                    </div>
-                    <p className="mt-3 text-lg font-semibold">{overview.juryWinner.juryPoints} pts</p>
-                  </div>
-                )}
-              </div>
-            </section>
-          )}
         </div>
 
         <div className="flex flex-col gap-6">
