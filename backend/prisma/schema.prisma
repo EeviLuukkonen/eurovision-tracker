@@ -41,6 +41,7 @@ model OfficialResult {
   juryPoints     Int?
   televotePoints Int?
   totalPoints    Int
+  finalist       Boolean    @default(true)
 
   @@unique([entryId])
 }

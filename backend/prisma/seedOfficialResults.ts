@@ -32,6 +32,7 @@ interface RankedEntry {
   juryPoints: number | null;
   televotePoints: number | null;
   totalPoints: number;
+  finalist: boolean;
 }
 
 const adapter = new PrismaPg({
@@ -144,6 +145,7 @@ async function seedOfficialResults() {
     const finalRankings: RankedEntry[] = finalData.performances.map((perf) => ({
       contestantId: perf.contestantId,
       place: perf.place,
+      finalist: true,
       ...extractPointsFromScores(perf.scores),
     }));
 
@@ -157,6 +159,7 @@ async function seedOfficialResults() {
           semiNonQualifiers.push({
             contestantId: perf.contestantId,
             place: perf.place,
+            finalist: false,
             ...extractPointsFromScores(perf.scores),
           });
         });
@@ -169,6 +172,7 @@ async function seedOfficialResults() {
           semiNonQualifiers.push({
             contestantId: perf.contestantId,
             place: perf.place,
+            finalist: false,
             ...extractPointsFromScores(perf.scores),
           });
         });
@@ -222,6 +226,7 @@ async function seedOfficialResults() {
             juryPoints: ranking.juryPoints,
             televotePoints: ranking.televotePoints,
             totalPoints: ranking.totalPoints,
+            finalist: ranking.finalist,
           },
         });
 

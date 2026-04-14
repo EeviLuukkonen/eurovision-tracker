@@ -7,4 +7,5 @@ export type OfficialResult = {
   televotePoints: number | null;
   totalPoints: number;
   entry: Entry;
+  finalist: boolean;
 };

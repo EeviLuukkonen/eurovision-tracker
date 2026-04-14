@@ -103,18 +103,18 @@ type OfficialResultRowProps = {
 
 export const OfficialResultRow = ({ result }: OfficialResultRowProps) => {
 
-const podiumClassName =
-  result.rank <= 3
-    ? `
-      relative
-      before:absolute before:left-0 before:top-0 before:h-full before:w-[3px]
-      before:bg-podium-gold before:rounded-l
-      bg-gradient-to-r from-primary/18 via-primary/8 to-transparent
-    `
-    : '';
+  const podiumCSS =
+    result.rank <= 3
+      ? `
+        relative
+        before:absolute before:left-0 before:top-0 before:h-full before:w-[3px]
+        before:bg-podium-gold before:rounded-l
+        bg-gradient-to-r from-primary/18 via-primary/8 to-transparent
+      `
+      : '';
     
   return (
-    <li className={`grid grid-cols-[2rem_minmax(0,1fr)_minmax(0,1.35fr)_4rem_4rem_4.5rem] items-center gap-3 border-x border-b border-white/20 bg-background px-3 py-2 first:rounded-t first:border-t last:rounded-b md:grid-cols-[2rem_minmax(0,1.05fr)_minmax(0,1.7fr)_4rem_4rem_4.5rem] ${podiumClassName}`}>
+    <li className={`grid grid-cols-[2rem_minmax(0,1fr)_minmax(0,1.35fr)_4rem_4rem_4.5rem] items-center gap-3 border-x border-b border-white/20 bg-background px-3 py-2 first:rounded-t first:border-t last:rounded-b md:grid-cols-[2rem_minmax(0,1.05fr)_minmax(0,1.7fr)_4rem_4rem_4.5rem] ${podiumCSS}`}>
       <span className="text-xs font-bold text-muted-foreground text-center tabular-nums">
         {result.rank}
       </span>
@@ -126,6 +126,11 @@ const podiumClassName =
           className="rounded-sm shadow-sm shrink-0"
         />
         <span className="truncate text-sm">{getCountryName(result.entry.country)}</span>
+        {!result.finalist && (
+          <span className="shrink-0 rounded border border-muted-foreground/40 px-1 text-[10px] font-bold leading-tight text-muted-foreground">
+            NQ
+          </span>
+        )}
       </div>
       <div className="min-w-0 flex-1">
         <p className="text-sm font-medium truncate">

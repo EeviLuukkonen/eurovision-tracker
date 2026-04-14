@@ -15,6 +15,7 @@ export const getOfficialResultsByYearData = async (year: number): Promise<Offici
       juryPoints: true,
       televotePoints: true,
       totalPoints: true,
+      finalist: true,
       entry: {
         select: {
           id: true,

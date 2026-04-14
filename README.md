@@ -46,6 +46,7 @@ This will populate the database with Eurovision entry data:
 
 ```bash
 npm run seed
+npm run seed:results
 ```
 
 ### 6. Start the Development Server
@@ -56,4 +57,4 @@ npm run dev
 
 ## Use of AI
 
-Copilot has been used during development for brainstorming ideas, designing structures, asking questions and code generation. Some files and functions (e.g. db seeding, utils) have mostly been generated with AI are those marked as such with a comment. All other files may include AI generated parts but are mostly done and designed by me. A lot of the styling and CSS was generated based on prompts describing the wanted look and then tweaking manually. Models used were mainly GPT-5.3-Codex and Claude Sonnet 4.5.
+Copilot has been used during development for brainstorming ideas, designing structures, asking questions and code generation. Some files and functions (e.g. db seeding, utils) have mostly been generated with AI, and those are marked as such with a comment. All other files may include AI generated parts but are mostly done and designed by me. A lot of the styling and CSS was generated based on prompts describing the wanted look and then tweaking manually. Models used were mainly GPT-5.3-Codex and Claude Sonnet 4.5.
