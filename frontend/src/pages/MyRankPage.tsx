@@ -13,6 +13,8 @@ import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { EntryCard } from '../components/EntryCard';
 import { mapEntriesByRankingOrder, mapEntriesToRankingFormat, saveDraftToLocalStorage, clearDraftFromLocalStorage, loadDraftFromLocalStorage } from '@/lib/rankingHelper';
+import { ErrorAlert } from '@/components/ErrorAlert';
+import { Loader2Icon } from 'lucide-react';
 
 type SortableEntryItemProps = {
   entry: Entry;
@@ -79,15 +81,32 @@ const MyRankPage = () => {
   const [activeVideoUrl, setActiveVideoUrl] = useState<string | null>(null);
   const [activeVideoTitle, setActiveVideoTitle] = useState<string>('');
   const [isSaving, setIsSaving] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    if (!year || isAuthLoading) {
+    if (isAuthLoading) {
+      return;
+    }
+
+    if (!year) {
+      setError('Invalid year parameter');
+      setIsLoading(false);
       return;
     }
 
     const parsedYear = Number(year);
 
+    if (!Number.isInteger(parsedYear)) {
+      setError('Invalid year parameter');
+      setIsLoading(false);
+      return;
+    }
+
     const fetchEntries = async () => {
+      setIsLoading(true);
+      setError(null);
+
       try {
         const data = await fetchEntriesByYear(parsedYear);
 
@@ -148,6 +167,10 @@ const MyRankPage = () => {
 
       } catch (error) {
         console.error('Error fetching entries:', error);
+        const message = error instanceof Error ? error.message : 'Something went wrong. Please try again.';
+        setError(message);
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -219,6 +242,32 @@ const MyRankPage = () => {
       setIsSaving(false);
     }
   };
+
+  if (error) {
+    return (
+      <main className="max-w-4xl mx-auto px-4 py-8">
+        <ErrorAlert error={new Error(error)} title="Failed to load entries" />
+      </main>
+    );
+  }
+
+  if (isLoading) {
+    return (
+      <main className="max-w-4xl mx-auto px-4 py-8">
+        <div className="flex min-h-50 items-center justify-center">
+          <Loader2Icon className="h-12 w-12 animate-spin text-muted-foreground" />
+        </div>
+      </main>
+    );
+  }
+
+  if (orderedEntries.length === 0) {
+    return (
+      <main className="max-w-4xl mx-auto px-4 py-8">
+        <p className="text-muted-foreground text-sm">No entries available for this year.</p>
+      </main>
+    );
+  }
 
   return (
     <main className="max-w-4xl mx-auto px-4 py-8">

@@ -9,6 +9,7 @@ import { useState } from 'react';
 import { AuthModal } from './components/AuthModal';
 import { AuthContextProvider } from './context/AuthContext';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ScrollToTop } from './components/ScrollToTop';
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <AuthContextProvider>
         <BrowserRouter>
+          <ScrollToTop />
           <NavBar onLoginClick={handleOpenAuthModal} />
           <AuthModal open={authModalOpen} onOpenChange={setAuthModalOpen} />
           <div className="min-h-screen text-white">
