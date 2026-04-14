@@ -25,6 +25,7 @@ const App = () => {
           <AuthModal open={authModalOpen} onOpenChange={setAuthModalOpen} />
           <div className="min-h-screen text-white">
             <Routes>
+              <Route path="*" element={<HomePage />} />
               <Route path="/" element={<HomePage />} />
               <Route path="/year/:year" element={<YearPage />} />
               <Route path="/year/:year/my-rank" element={<MyRankPage />} />

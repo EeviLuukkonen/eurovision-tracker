@@ -11,15 +11,20 @@ export const login = async ({ email, password }: { email: string; password: stri
     body: JSON.stringify({ email, password }),
   });
 
-  if (!response.ok) {
-    const errorJson = (await response.json()) as ApiResponse<unknown>;
-    throw new Error(errorJson.error ?? 'Failed to log in');
+  let json: ApiResponse<User> | null = null;
+
+  try {
+    json = (await response.json()) as ApiResponse<User>;
+  } catch {
+    json = null;
   }
 
-  const json = (await response.json()) as ApiResponse<User>;
+  if (!response.ok) {
+    throw new Error(json?.error ?? `Failed to log in (status ${response.status})`);
+  }
 
-  if (!json.success || !json.data) {
-    throw new Error(json.error ?? 'Failed to log in');
+  if (!json?.success || !json?.data) {
+    throw new Error(json?.error ?? 'Failed to log in');
   }
 
   return json.data;
@@ -35,15 +40,20 @@ export const signup = async ({ email, username, password }: { email: string; use
     body: JSON.stringify({ email, username, password }),
   });
 
-  if (!response.ok) {
-    const errorJson = (await response.json()) as ApiResponse<unknown>;
-    throw new Error(errorJson.error ?? 'Failed to sign up');
+  let json: ApiResponse<User> | null = null;
+
+  try {
+    json = (await response.json()) as ApiResponse<User>;
+  } catch {
+    json = null;
   }
 
-  const json = (await response.json()) as ApiResponse<User>;
+  if (!response.ok) {
+    throw new Error(json?.error ?? `Failed to sign up (status ${response.status})`);
+  }
 
-  if (!json.success || !json.data) {
-    throw new Error(json.error ?? 'Failed to sign up');
+  if (!json?.success || !json?.data) {
+    throw new Error(json?.error ?? 'Failed to sign up');
   }
 
   return json.data;
@@ -58,9 +68,16 @@ export const logout = async (): Promise<void> => {
     credentials: 'include',
   });
 
+  let json: ApiResponse<unknown> | null = null;
+
+  try {
+    json = (await response.json()) as ApiResponse<unknown>;
+  } catch {
+    json = null;
+  }
+
   if (!response.ok) {
-    const errorJson = (await response.json()) as ApiResponse<unknown>;
-    throw new Error(errorJson.error ?? 'Failed to log out');
+    throw new Error(json?.error ?? `Failed to log out (status ${response.status})`);
   }
 };
 
@@ -70,15 +87,20 @@ export const getCurrentUser = async (): Promise<User> => {
     credentials: 'include',
   });
 
-  if (!response.ok) {
-    const errorJson = (await response.json()) as ApiResponse<unknown>;
-    throw new Error(errorJson.error ?? 'Failed to fetch current user');
+  let json: ApiResponse<User> | null = null;
+
+  try {
+    json = (await response.json()) as ApiResponse<User>;
+  } catch {
+    json = null;
   }
 
-  const json = (await response.json()) as ApiResponse<User>;
+  if (!response.ok) {
+    throw new Error(json?.error ?? `Failed to fetch current user (status ${response.status})`);
+  }
 
-  if (!json.success || !json.data) {
-    throw new Error(json.error ?? 'Failed to fetch current user');
+  if (!json?.success || !json?.data) {
+    throw new Error(json?.error ?? 'Failed to fetch current user');
   }
 
   return json.data;

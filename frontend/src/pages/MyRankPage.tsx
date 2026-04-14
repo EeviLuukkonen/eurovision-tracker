@@ -96,7 +96,6 @@ const MyRankPage = () => {
 
         // guest user
         if (!isAuthenticated) {
-          console.log('guest user, loading guest draft if exists');
           const { entriesInOrder, rankedCount } = mapEntriesByRankingOrder(data, guestDraft ?? []);
           setOrderedEntries(entriesInOrder);
           setOrderedCount(rankedCount);
@@ -129,7 +128,6 @@ const MyRankPage = () => {
         // logged in user without saved ranking
         const draftToUse = guestDraft ?? userDraft;
         if (draftToUse) {
-          console.log('logged in user without saved ranking but with draft, loading draft');
           const { entriesInOrder: initialEntries, rankedCount } = mapEntriesByRankingOrder(data, draftToUse);
           setOrderedEntries(initialEntries);
           setOrderedCount(rankedCount);
@@ -144,7 +142,6 @@ const MyRankPage = () => {
         }
 
         // logged in user without saved ranking or drafts
-        console.log('logged in user without saved ranking or drafts, loading entries without order');
         setOrderedEntries(data);
         setOrderedCount(0);
         setSavedState({ entries: data, count: 0 });
