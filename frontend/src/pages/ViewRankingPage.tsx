@@ -3,8 +3,9 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useAuth } from '@/context/AuthContext';
 import { fetchEntriesByYear } from '@/api/entries';
 import { getRankingByYear } from '@/api/rankings';
-import { sortEntriesByRanking } from '@/lib/rankingHelper';
+import { sortAndPopulateEntries } from '@/lib/rankingHelper';
 import { RankingEntryRow } from '@/components/EntryCard';
+import { Button } from '@/components/ui/button';
 import type { Entry } from '@/types/entry';
 
 const ViewRankingPage = () => {
@@ -28,7 +29,7 @@ const ViewRankingPage = () => {
           fetchEntriesByYear(Number(year)),
           getRankingByYear(Number(year)),
         ]);
-        setRankedEntries(sortEntriesByRanking(entries, ranking.entries));
+        setRankedEntries(sortAndPopulateEntries(entries, ranking.entries));
       } finally {
         setIsLoading(false);
       }
@@ -39,10 +40,17 @@ const ViewRankingPage = () => {
 
   return (
     <main className="max-w-4xl mx-auto px-4 py-8">
-      <div className='mb-8'>
-        <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">Eurovision {year}</p>
-        <h1 className="text-2xl font-semibold">Your Ranking</h1>
+      <div className='mb-8 flex items-start justify-between gap-4'>
+        <div>
+          <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">Eurovision {year}</p>
+          <h1 className="text-2xl font-semibold">Your Ranking</h1>
+        </div>
+        <Button type="button" onClick={() => void navigate(`/year/${year}/compare`)}>
+          Compare with Official Results
+        </Button>
       </div>
+
+      
 
       {!isLoading && rankedEntries.length === 0 && (
         <p className="text-muted-foreground text-sm">No ranking saved yet.</p>

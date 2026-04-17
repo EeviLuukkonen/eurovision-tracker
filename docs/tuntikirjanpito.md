@@ -24,5 +24,8 @@
 | 30.3.  | 3h   | seeding official results data, e2e results page |
 | 1.4.   | 2h   | year overview route, improve backend |
 | 9.4.   | 4h   | contest overview UI |
+| 13.4.   | 2h  | react query |
+| 14.4.   | 2h  | multiple small improvements |
+| 17.4.   | 2h  | initial compare rankings page |
 
-total: 52
+total: 58
