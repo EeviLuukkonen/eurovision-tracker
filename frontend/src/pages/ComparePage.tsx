@@ -8,7 +8,7 @@ import type { Entry } from "@/types/entry";
 import type { OfficialResult } from "@/types/officialResult";
 import type { RankingByYear } from "@/types/ranking";
 import { useQuery } from "@tanstack/react-query";
-import { Loader2Icon } from "lucide-react";
+import { ArrowDownIcon, ArrowRightIcon, ArrowUpIcon, Loader2Icon } from "lucide-react";
 import ReactCountryFlag from "react-country-flag";
 import { useParams } from "react-router-dom";
 
@@ -16,9 +16,29 @@ type CompareRowProps = {
   position: number;
   countryCode: string;
   nonQualified?: boolean;
+  diff?: number;
 };
 
-const CompareRow = ({ position, countryCode, nonQualified }: CompareRowProps) => {
+const CompareRow = ({ position, countryCode, nonQualified, diff }: CompareRowProps) => {
+  const diffIndicator =
+    diff === undefined
+      ? null
+      : diff === 0
+        ? <ArrowRightIcon className="h-3.5 w-3.5 text-blue-500" />
+        : diff > 0
+          ? (
+            <span className="inline-flex items-center gap-1 text-green-500">
+              <ArrowUpIcon className="h-3.5 w-3.5" />
+              <span className="text-[10px] font-bold leading-tight tabular-nums">{diff}</span>
+            </span>
+          )
+          : (
+            <span className="inline-flex items-center gap-1 text-red-500">
+              <ArrowDownIcon className="h-3.5 w-3.5" />
+              <span className="text-[10px] font-bold leading-tight tabular-nums">{Math.abs(diff)}</span>
+            </span>
+          );
+
   return (
     <li className="flex items-center gap-3 border-x border-b border-white/20 bg-background pl-3 pr-4 py-2 first:rounded-t first:border-t last:rounded-b">
       <span className="w-5 text-xs font-bold text-muted-foreground text-right tabular-nums shrink-0">
@@ -30,13 +50,15 @@ const CompareRow = ({ position, countryCode, nonQualified }: CompareRowProps) =>
         style={{ width: "1.5rem", height: "1.1rem", objectFit: "cover" }}
         className="rounded-sm shadow-sm shrink-0"
       />
-      <span className="text-sm font-medium truncate flex-1 flex items-center gap-2">{getCountryName(countryCode)}
+      <div className="min-w-0 flex flex-1 items-center gap-2">
+        <span className="truncate text-sm font-medium">{getCountryName(countryCode)}</span>
         {nonQualified && (
           <span className="shrink-0 rounded border border-muted-foreground/40 px-1 text-[10px] font-bold leading-tight text-muted-foreground">
             NQ
           </span>
         )}
-      </span>
+      </div>
+      {diffIndicator && <span className="ml-auto flex shrink-0 items-center">{diffIndicator}</span>}
     </li>
   );
 };
@@ -73,6 +95,7 @@ const ComparePage = () => {
   const nonQualifiedEntryIds = new Set(
     officialResults.filter((result) => !result.finalist).map((result) => result.entryId)
   );
+  const officialRankLookup = new Map(officialResults.map((result) => [result.entryId, result.rank]));
 
   if (officialResultsQuery.isLoading || userRankingQuery.isLoading || entriesQuery.isLoading || isAuthLoading) {
     return (
@@ -112,6 +135,7 @@ const ComparePage = () => {
                   position={index + 1}
                   countryCode={entry.country}
                   nonQualified={nonQualifiedEntryIds.has(entry.id)}
+                  diff={officialRankLookup.has(entry.id) ? officialRankLookup.get(entry.id)! - (index + 1) : undefined}
                 />
               ))}
             </ol>
