@@ -57,20 +57,18 @@ const ViewRankingPage = () => {
       )}
 
       {!isLoading && rankedEntries.length > 0 && (() => {
-        const half = Math.ceil(rankedEntries.length / 2);
-        const left = rankedEntries.slice(0, half);
-        const right = rankedEntries.slice(half);
-
         return (
-          <div className="flex gap-4">
-            <ol className="flex-1 min-w-0">
-              {left.map((entry, i) => (
+          <div className="min-w-0">
+            <div className="mb-2 grid grid-cols-[2rem_minmax(0,1fr)_minmax(0,1.35fr)_4.5rem] items-center gap-3 px-3 md:grid-cols-[2rem_minmax(0,1.05fr)_minmax(0,1.7fr)_4.5rem]">
+              <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground text-right">Pos</span>
+              <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground text-left">Country</span>
+              <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground text-left">Artist & Song</span>
+              <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground text-center">Points</span>
+            </div>
+
+            <ol className="min-w-0">
+              {rankedEntries.map((entry, i) => (
                 <RankingEntryRow key={entry.id} entry={entry} position={i + 1} />
-              ))}
-            </ol>
-            <ol className="flex-1 min-w-0">
-              {right.map((entry, i) => (
-                <RankingEntryRow key={entry.id} entry={entry} position={half + i + 1} />
               ))}
             </ol>
           </div>

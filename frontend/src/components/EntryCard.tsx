@@ -77,22 +77,43 @@ type RankingEntryRowProps = {
   position: number;
 };
 
+const getPodiumRowClass = (rank: number) => {
+  if (rank > 3) return '';
+
+  return `
+    relative
+    before:absolute before:left-0 before:top-0 before:h-full before:w-[3px]
+    before:bg-podium-gold before:rounded-l
+    bg-gradient-to-r from-primary/18 via-primary/8 to-transparent
+  `;
+};
+
 export const RankingEntryRow = ({ entry, position }: RankingEntryRowProps) => {
   const index = position - 1;
+  const podiumCSS = getPodiumRowClass(position);
 
   return (
-    <li className="flex items-center gap-3 border-x border-b border-white/20 bg-background pl-3 pr-4 py-2 first:rounded-t first:border-t last:rounded-b">
-      <span className="w-5 text-xs font-bold text-muted-foreground text-right tabular-nums shrink-0">
+    <li className={`grid grid-cols-[2rem_minmax(0,1fr)_minmax(0,1.35fr)_4.5rem] items-center gap-3 border-x border-b border-white/20 bg-background px-3 py-1.5 first:rounded-t first:border-t last:rounded-b md:grid-cols-[2rem_minmax(0,1.05fr)_minmax(0,1.7fr)_4.5rem] ${podiumCSS}`}>
+      <span className="text-xs font-bold text-muted-foreground text-center tabular-nums">
         {position}
       </span>
-      <ReactCountryFlag
-        countryCode={entry.country}
-        svg
-        style={{ width: '1.5rem', height: '1.1rem', objectFit: 'cover' }}
-        className="rounded-sm shadow-sm shrink-0"
-      />
-      <span className="text-sm font-medium truncate flex-1">{getCountryName(entry.country)}</span>
-      <PointsBadge index={index} size="sm" />
+      <div className="flex min-w-0 items-center gap-3">
+        <ReactCountryFlag
+          countryCode={entry.country}
+          svg
+          style={{ width: '1.5rem', height: '1.1rem', objectFit: 'cover' }}
+          className="rounded-sm shadow-sm shrink-0"
+        />
+        <span className="truncate text-sm">{getCountryName(entry.country)}</span>
+      </div>
+      <div className="min-w-0">
+        <p className="text-sm font-medium truncate">
+          {entry.artist} - <i>{entry.song}</i>
+        </p>
+      </div>
+      <div className="flex justify-center">
+        <PointsBadge index={index} size="xs" />
+      </div>
     </li>
   );
 };
@@ -102,16 +123,7 @@ type OfficialResultRowProps = {
 };
 
 export const OfficialResultRow = ({ result }: OfficialResultRowProps) => {
-
-  const podiumCSS =
-    result.rank <= 3
-      ? `
-        relative
-        before:absolute before:left-0 before:top-0 before:h-full before:w-[3px]
-        before:bg-podium-gold before:rounded-l
-        bg-gradient-to-r from-primary/18 via-primary/8 to-transparent
-      `
-      : '';
+  const podiumCSS = getPodiumRowClass(result.rank);
     
   return (
     <li className={`grid grid-cols-[2rem_minmax(0,1fr)_minmax(0,1.35fr)_4rem_4rem_4.5rem] items-center gap-3 border-x border-b border-white/20 bg-background px-3 py-2 first:rounded-t first:border-t last:rounded-b md:grid-cols-[2rem_minmax(0,1.05fr)_minmax(0,1.7fr)_4rem_4rem_4.5rem] ${podiumCSS}`}>
