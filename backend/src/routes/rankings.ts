@@ -1,11 +1,10 @@
 import { Router } from 'express';
 import { prisma } from '../config/database';
-import { ApiResponse, OfficialResultResponse } from '../types';
+import { ApiResponse } from '../types';
 import { requireAuth } from '../middleware/requireAuth';
 import { createHttpError } from '../utils/httpError';
 import { FIRST_CONTEST_YEAR } from '../config/constants';
-import { generateRankingAnalysis } from '../services/rankingAnalysis';
-import { getOfficialResultsByYearData } from '../services/officialResults';
+import { getRankingAnalysisForYear, invalidateRankingAnalysisCache } from '../services/rankingAnalysisResolver';
 
 const router = Router();
 
@@ -157,6 +156,8 @@ router.put('/:year', requireAuth, async (req, res) => {
     },
   };
 
+  invalidateRankingAnalysisCache(userId, year);
+
   res.json(response);
 });
 
@@ -169,56 +170,7 @@ router.get('/:year/analysis', requireAuth, async (req, res) => {
   }
 
   const userId = res.locals.userId as number;
-
-  const ranking = await prisma.ranking.findUnique({
-    where: {
-      userId_year: {
-        userId,
-        year,
-      },
-    },
-    include: {
-      entries: {
-        orderBy: { position: 'asc' },
-        select: {
-          entryId: true,
-          position: true,
-          entry: {
-            select: {
-              country: true,
-              artist: true,
-              song: true,
-            },
-          },
-        },
-      },
-    },
-  });
-
-  if (!ranking) {
-    throw createHttpError(404, 'Ranking not found');
-  }
-
-  const userRanking = ranking.entries.map((entry) => ({
-    position: entry.position,
-    country: entry.entry.country,
-    artist: entry.entry.artist,
-    song: entry.entry.song,
-  }));
-
-  const officialResults: OfficialResultResponse[] = await getOfficialResultsByYearData(year);
-  const officialResultsForAnalysis = officialResults.map((result) => ({
-    rank: result.rank,
-    country: result.entry.country,
-    artist: result.entry.artist,
-    song: result.entry.song,
-    juryPoints: result.juryPoints,
-    televotePoints: result.televotePoints,
-    totalPoints: result.totalPoints,
-    finalist: Boolean(result.finalist),
-  }));
-
-  const analysis = await generateRankingAnalysis(year, userRanking, officialResultsForAnalysis);
+  const analysis = await getRankingAnalysisForYear(userId, year);
 
   const response: ApiResponse<{ analysis: string }> = {
     success: true,

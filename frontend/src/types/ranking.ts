@@ -7,3 +7,7 @@ export type RankingByYear = {
   year: number;
   entries: RankingEntry[];
 };
+
+export type RankingAnalysisResponse = {
+  analysis: string;
+};

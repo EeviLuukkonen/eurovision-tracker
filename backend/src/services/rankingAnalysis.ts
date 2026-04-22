@@ -57,7 +57,7 @@ export const generateRankingAnalysis = async (year: number, userRanking: UserRan
       ${officialResultsText}`;
 
   const response = await client.messages.create({
-    model: "claude-haiku-4-5",
+    model: "claude-sonnet-4-6",
     max_tokens: 320,
     temperature: 0.4,
     system: "You are a sharp and concise Eurovision ranking analyst.",

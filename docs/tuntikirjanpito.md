@@ -27,5 +27,7 @@
 | 13.4.   | 2h  | react query |
 | 14.4.   | 2h  | multiple small improvements |
 | 17.4.   | 2h  | initial compare rankings page |
+| 20.4.   | 2h  | start LLM api integration |
+| 22.4.   | 2h  | compare analysis functionality |
 
-total: 58
+total: 62
