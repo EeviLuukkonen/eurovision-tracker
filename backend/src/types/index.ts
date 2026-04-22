@@ -10,6 +10,7 @@ export type OfficialResultResponse = {
   juryPoints: number | null;
   televotePoints: number | null;
   totalPoints: number;
+  finalist: boolean;
   entry: {
     id: number;
     year: number;
