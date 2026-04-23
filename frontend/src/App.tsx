@@ -5,6 +5,7 @@ import MyRankPage from './pages/MyRankPage';
 import ViewRankingPage from './pages/ViewRankingPage';
 import OfficialResultsPage from './pages/OfficialResultsPage';
 import { NavBar } from './components/NavBar';
+import { YearSubNav } from './components/YearSubNav';
 import { useState } from 'react';
 import { AuthModal } from './components/AuthModal';
 import { AuthContextProvider } from './context/AuthContext';
@@ -25,6 +26,7 @@ const App = () => {
         <BrowserRouter>
           <ScrollToTop />
           <NavBar onLoginClick={handleOpenAuthModal} />
+          <YearSubNav />
           <AuthModal open={authModalOpen} onOpenChange={setAuthModalOpen} />
           <div className="min-h-screen text-white">
             <Routes>
