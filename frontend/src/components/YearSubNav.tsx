@@ -1,5 +1,9 @@
+import { getRankingByYear } from '@/api/rankings';
 import { buttonVariants } from '@/components/ui/button';
+import { useAuth } from '@/context/AuthContext';
 import { cn } from '@/lib/utils';
+import type { RankingByYear } from '@/types/ranking';
+import { useQuery } from '@tanstack/react-query';
 import { Link, matchPath, useLocation } from 'react-router-dom';
 
 type SubNavItem = {
@@ -16,6 +20,7 @@ const getMatchedYear = (pathname: string): string | null => {
 export const YearSubNav = () => {
   const location = useLocation();
   const currentYear = getMatchedYear(location.pathname);
+  const { isAuthenticated } = useAuth();
 
   if (!currentYear) {
     return null;
@@ -23,10 +28,20 @@ export const YearSubNav = () => {
 
   const basePath = `/year/${currentYear}`;
 
+  const { data: ranking = { entries: [] } } = useQuery<RankingByYear, Error>({
+    queryKey: ['userRanking', currentYear],
+    queryFn: () => getRankingByYear(Number(currentYear)),
+    enabled: Boolean(currentYear) && isAuthenticated,
+  });
+
+  const hasSavedRanking = ranking?.entries.length > 0;
+  const rankingBasePath = `${basePath}/my-rank`;
+  const isOnRankingRoute =
+    location.pathname === rankingBasePath || location.pathname.startsWith(`${rankingBasePath}/`);
+
   const items: SubNavItem[] = [
     { label: 'Overview', href: basePath },
-    { label: 'Rank Entries', href: `${basePath}/my-rank` },
-    { label: 'My Ranking', href: `${basePath}/my-rank/view` },
+    { label: 'Your Ranking', href: hasSavedRanking ? `${basePath}/my-rank/view` : `${basePath}/my-rank` },
     { label: 'Official Results', href: `${basePath}/official-rank` },
     { label: 'Compare', href: `${basePath}/compare` },
   ];
@@ -36,7 +51,9 @@ export const YearSubNav = () => {
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-3 md:px-6">
         <div className="flex gap-2 overflow-x-auto pb-1">
           {items.map((item) => {
-            const isActive = location.pathname === item.href;
+            const isActive = item.label === 'Your Ranking'
+              ? isOnRankingRoute
+              : location.pathname === item.href;
 
             return (
               <Link

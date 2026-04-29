@@ -5,8 +5,8 @@ import { fetchEntriesByYear } from '@/api/entries';
 import { getRankingByYear } from '@/api/rankings';
 import { sortAndPopulateEntries } from '@/lib/rankingHelper';
 import { RankingEntryRow } from '@/components/EntryCard';
-import { Button } from '@/components/ui/button';
 import type { Entry } from '@/types/entry';
+import { Button } from '@/components/ui/button';
 
 const ViewRankingPage = () => {
   const { year } = useParams<{ year: string }>();
@@ -40,17 +40,20 @@ const ViewRankingPage = () => {
 
   return (
     <main className="max-w-4xl mx-auto px-4 py-8">
-      <div className='mb-8 flex items-start justify-between gap-4'>
-        <div>
-          <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">Eurovision {year}</p>
-          <h1 className="text-2xl font-semibold">Your Ranking</h1>
-        </div>
-        <Button type="button" onClick={() => void navigate(`/year/${year}/compare`)}>
-          Compare with Official Results
-        </Button>
-      </div>
+      <div className="mb-8">
+        <p className="mb-1 text-xs uppercase tracking-widest text-muted-foreground">Eurovision {year}</p>
 
-      
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <h1 className="text-2xl font-semibold">Your Ranking</h1>
+
+          <Button
+            type="button"
+            onClick={() => void navigate(`/year/${year}/my-rank`)}
+          >
+            Edit Ranking
+          </Button>
+        </div>
+      </div>
 
       {!isLoading && rankedEntries.length === 0 && (
         <p className="text-muted-foreground text-sm">No ranking saved yet.</p>

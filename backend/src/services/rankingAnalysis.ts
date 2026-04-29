@@ -25,21 +25,20 @@ type OfficialResultEntry = {
 
 export const generateRankingAnalysis = async (year: number, userRanking: UserRankingEntry[], officialResults: OfficialResultEntry[]) => {
   const entriesText = officialResults.map(r => `${r.country} - ${r.artist} "${r.song}"`).join(", ");
-  const userRankingText = userRanking.map(e => `${e.country}(${e.position})`).join(", ");
+  const userRankingText = userRanking.map(e => `${e.position+1}. ${e.country}`).join(" ");
   const officialResultsText = officialResults.map(r =>
-    `${r.rank}. ${r.country} | ${r.juryPoints ?? 0}/${r.televotePoints ?? 0}/${r.totalPoints}${!r.finalist ? " NQ" : ""}`
-  ).join("\n");
+    `${r.rank}. ${r.country} (${r.juryPoints ?? 0}/${r.televotePoints ?? 0}/${r.totalPoints}${!r.finalist ? " NQ" : ""})`
+  ).join(" ");
 
   const prompt = `Compare user's Eurovision ${year} personal taste ranking with official results. 
     Rules: 
     - Use only provided rankings 
     - Use full country names and address user as 'you' if needed
-    - Focus ONLY on biggest differences and clear patterns 
-    - Be concise but slightly entertaining 
+    - Focus on biggest differences, similarities and clear patterns 
+    - Be concise but entertaining 
     - Output 2 short paragraphs (max 3 sentences each) 
     Include at least: 
       - Biggest positive and negative ranking gaps (with exact differences) 
-      - Top-10 overlap (count + country names, if < 6) 
       - One clear preference pattern (style/taste) 
     - Avoid: 
       - Listing too many countries 
@@ -47,14 +46,14 @@ export const generateRankingAnalysis = async (year: number, userRanking: UserRan
       - Generic statements 
     Write like a sharp Eurovision analyst, not a report.
 
-      ENTRIES:
-      ${entriesText}
-
-      USER RANKING (position: country):
-      ${userRankingText}
-
-      OFFICIAL RESULTS (rank. country | jury/televote/total | NQ if non-finalist):
-      ${officialResultsText}`;
+    USER RANKING (position. country):
+    ${userRankingText}
+    
+    OFFICIAL RESULTS (rank. country (jury/televote/total NQ if non-finalist)):
+    ${officialResultsText}
+    
+    ENTRIES:
+    ${entriesText}`;
 
   const response = await client.messages.create({
     model: "claude-sonnet-4-6",

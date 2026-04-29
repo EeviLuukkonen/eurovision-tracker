@@ -34,21 +34,6 @@ export const NavBar = ({ onLoginClick }: NavbarProps) => {
   const matchedPath = matchPath('/year/:year/*', location.pathname) ?? matchPath('/year/:year', location.pathname);
   const currentYear = matchedPath?.params.year ?? null;
 
-  const handleYearNavigation = (nextYear: number) => {
-    if (!currentYear) {
-      void navigate(`/year/${nextYear}`);
-      return;
-    }
-
-    const currentPrefix = `/year/${currentYear}`;
-    const targetPrefix = `/year/${nextYear}`;
-    const suffix = location.pathname.startsWith(currentPrefix)
-      ? location.pathname.slice(currentPrefix.length)
-      : '';
-
-    void navigate(`${targetPrefix}${suffix}`);
-  };
-
   const navButtonClassName = (active = false) => cn(
     'h-9 rounded-full border px-4 text-xs font-semibold tracking-widest uppercase',
     active
@@ -90,7 +75,7 @@ export const NavBar = ({ onLoginClick }: NavbarProps) => {
                         'cursor-pointer justify-between gap-3',
                         String(item.year) === currentYear && 'bg-white/10 text-foreground'
                       )}
-                      onSelect={() => handleYearNavigation(item.year)}
+                      onSelect={() => void navigate(`/year/${item.year}`)}
                     >
                       <span>{item.year}</span>
                       <span className="text-xs text-muted-foreground">{item.city}</span>

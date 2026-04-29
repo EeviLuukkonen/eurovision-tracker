@@ -271,10 +271,39 @@ const MyRankPage = () => {
 
   return (
     <main className="max-w-4xl mx-auto px-4 py-8">
-      <div className="mb-8">
-        <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">Eurovision {year}</p>
-        <h1 className="text-2xl font-semibold">Create Ranking</h1>
+      <div className="mb-6">
+        <p className="mb-1 text-xs uppercase tracking-widest text-muted-foreground">Eurovision {year}</p>
+
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <h1 className="text-2xl font-semibold">Create Ranking</h1>
+
+          <div className="flex items-center gap-3">
+            {!isAuthenticated && (
+              <span className="mt-2 block text-sm text-muted-foreground">
+                Log in to save your ranking!
+              </span>
+            )}
+            <Button
+              type="button"
+              onClick={handleResetRankingChanges}
+              disabled={isSaving}
+              variant="outline"
+              className="border-white/20 bg-background/55 text-foreground hover:bg-white/10"
+            >
+              Reset Changes
+            </Button>
+            <Button
+              type="button"
+              onClick={() => void handleSaveRanking()}
+              disabled={isSaving || !isAuthenticated || orderedCount === 0}
+            >
+              Save & View
+            </Button>
+          </div>
+        </div>
+
       </div>
+
       <DndContext
         collisionDetection={closestCenter}
         modifiers={[restrictToVerticalAxis]}
@@ -338,32 +367,6 @@ const MyRankPage = () => {
           </div>
         </DialogContent>
       </Dialog>
-
-      <div className="fixed bottom-0 right-0 border-t border-white/10 bg-background/95 backdrop-blur px-4 py-3 flex items-center justify-end gap-3">
-        {!isAuthenticated && (
-          <span className="text-sm text-muted-foreground mr-4">
-            Log in to save your ranking!
-          </span>
-        )}
-        <Button
-          type="button"
-          onClick={handleResetRankingChanges}
-          disabled={isSaving}
-          variant="outline"
-          size="sm"
-          className="border-white/20 hover:bg-white/10"
-        >
-          Reset Changes
-        </Button>
-        <Button
-          type="button"
-          onClick={() => void handleSaveRanking()}
-          disabled={isSaving || !isAuthenticated || orderedCount === 0}
-          size="sm"
-        >
-          Save & View
-        </Button>
-      </div>
     </main>
   );
 };
