@@ -127,7 +127,7 @@ export const NavBar = ({ onLoginClick }: NavbarProps) => {
               ) : isAuthLoading ? (
                 <div aria-hidden className="h-9 w-18" />
               ) : (
-                <Button variant="ghost" className="px-4" onClick={onLoginClick}>
+                <Button variant="ghost" className={navButtonClassName()} onClick={onLoginClick}>
                   Login
                 </Button>
               )}

@@ -80,7 +80,7 @@ const ComparePage = () => {
   const userRankingQuery = useQuery<RankingByYear, Error>({
     queryKey: ['userRanking', year],
     queryFn: () => getRankingByYear(Number(year)),
-    enabled: Boolean(year)
+    enabled: Boolean(year) && isAuthenticated,
   });
 
   const entriesQuery = useQuery<Entry[], Error>({
@@ -146,8 +146,8 @@ const ComparePage = () => {
               <BotIcon className="h-4 w-4" />
             </div>
             <div>
-              <p className="text-sm font-medium text-foreground">Want AI takeaways?</p>
-              <p className="text-xs text-muted-foreground">Get a quick read on your biggest ranking gaps and taste patterns.</p>
+              <p className="text-sm font-medium text-foreground">AI Takeaways</p>
+              <p className="text-xs text-muted-foreground">Get quick insights on your taste compared to the official results.</p>
             </div>
           </div>
 
@@ -171,7 +171,6 @@ const ComparePage = () => {
             </div>
             <div className="min-w-0">
               <h2 className="text-lg font-semibold tracking-tight text-foreground">Your Eurovision {year} Taste vs. Reality</h2>
-              <p className="text-xs text-muted-foreground">A quick AI read based on your ranking and the official results.</p>
             </div>
           </div>
 

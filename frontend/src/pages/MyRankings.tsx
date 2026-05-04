@@ -6,7 +6,7 @@ import { fetchYears } from '@/api/years';
 import type { ContestYear } from '@/types/year';
 import ReactCountryFlag from 'react-country-flag';
 import { Loader2Icon } from 'lucide-react';
-
+import { useAuth } from '@/context/AuthContext';
 interface RankingSummary {
   year: number;
   rankedCount: number;
@@ -17,15 +17,17 @@ interface RankingSummary {
 
 const MyRankingsPage = () => {
   const navigate = useNavigate();
+  const { user, isAuthenticated, isAuthLoading } = useAuth();
 
-  const { data: response, isLoading } = useQuery({
-    queryKey: ['myRankings'],
+  const { data: response, isLoading: isRankingsLoading } = useQuery({
+    queryKey: ['myRankings', user?.id ?? 'guest'],
     queryFn: getMyRankings,
+    enabled: isAuthenticated && !isAuthLoading,
   });
 
-  const rankings = response?.data ?? [];
+  const rankings = isAuthenticated ? (response?.data ?? []) : [];
 
-  const { data: years = [] } = useQuery<ContestYear[], Error>({
+  const { data: years = [], isLoading: isYearsLoading } = useQuery<ContestYear[], Error>({
     queryKey: ['allYears'],
     queryFn: fetchYears,
   });
@@ -35,7 +37,7 @@ const MyRankingsPage = () => {
   const unranked = years.filter((year) => !rankings.some((r: RankingSummary) => r.year === year.year));
   const contestByYear = new Map(years.map((contest) => [contest.year, contest]));
 
-  if (isLoading) {
+  if (isAuthLoading || isYearsLoading || (isAuthenticated && isRankingsLoading)) {
     return (
       <main className="max-w-5xl mx-auto px-4 py-8">
         <div className="flex min-h-56 items-center justify-center">
@@ -50,6 +52,12 @@ const MyRankingsPage = () => {
       <div className="mb-8 flex flex-wrap items-center justify-between gap-3">
         <h1 className="text-2xl font-semibold">My Rankings</h1>
       </div>
+
+      {!isAuthenticated && (
+        <div className='mb-5'>
+          <p className="text-muted-foreground">You are viewing this page as a guest. Log in to save, continue, and compare your rankings.</p>
+        </div>
+      )}
 
       <div className="grid grid-cols-3 gap-4">
         <div className="rounded-lg border border-white/20 bg-background p-4 backdrop-blur">
