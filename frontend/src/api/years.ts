@@ -1,8 +1,9 @@
 import type { ContestYear, YearOverview } from '../types/year';
 import type { ApiResponse } from '../types/api/response';
+import { API_BASE } from './base';
 
 export const fetchYears = async (): Promise<ContestYear[]> => {
-  const response = await fetch('/api/years');
+  const response = await fetch(`${API_BASE}/api/years`);
   let json: ApiResponse<ContestYear[]> | null = null;
 
   try {
@@ -23,7 +24,7 @@ export const fetchYears = async (): Promise<ContestYear[]> => {
 };
 
 export const fetchYearOverview = async (year: number): Promise<YearOverview> => {
-  const response = await fetch(`/api/years/${year}`);
+  const response = await fetch(`${API_BASE}/api/years/${year}`);
   let json: ApiResponse<YearOverview> | null = null;
 
   try {

@@ -1,8 +1,9 @@
 import type { User } from '../types/user';
 import type { ApiResponse } from '../types/api/response';
+import { API_BASE } from './base';
 
 export const login = async ({ email, password }: { email: string; password: string }): Promise<User> => {
-  const response = await fetch('/api/auth/login', {
+  const response = await fetch(`${API_BASE}/api/auth/login`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -31,7 +32,7 @@ export const login = async ({ email, password }: { email: string; password: stri
 };
 
 export const signup = async ({ email, username, password }: { email: string; username: string; password: string }): Promise<User> => {
-  const response = await fetch('/api/auth/register', {
+  const response = await fetch(`${API_BASE}/api/auth/register`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -60,7 +61,7 @@ export const signup = async ({ email, username, password }: { email: string; use
 };
 
 export const logout = async (): Promise<void> => {
-  const response = await fetch('/api/auth/logout', {
+  const response = await fetch(`${API_BASE}/api/auth/logout`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -82,7 +83,7 @@ export const logout = async (): Promise<void> => {
 };
 
 export const getCurrentUser = async (): Promise<User> => {
-  const response = await fetch('/api/auth/me', {
+  const response = await fetch(`${API_BASE}/api/auth/me`, {
     method: 'GET',
     credentials: 'include',
   });

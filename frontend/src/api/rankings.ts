@@ -1,8 +1,9 @@
 import type { ApiResponse } from '../types/api/response';
 import type { RankingByYear, RankingAnalysisResponse, MyRankingSummary } from '../types/ranking';
+import { API_BASE } from './base';
 
 export const getMyRankings = async (): Promise<ApiResponse<MyRankingSummary[]>> => {
-  const response = await fetch('/api/rankings/me', {
+  const response = await fetch(`${API_BASE}/api/rankings/me`, {
     method: 'GET',
     credentials: 'include',
   });
@@ -21,7 +22,7 @@ export const getMyRankings = async (): Promise<ApiResponse<MyRankingSummary[]>> 
 };
 
 export const getRankingByYear = async (year: number): Promise<RankingByYear> => {
-  const response = await fetch(`/api/rankings/${year}`, {
+  const response = await fetch(`${API_BASE}/api/rankings/${year}`, {
     method: 'GET',
     credentials: 'include',
   });
@@ -40,7 +41,7 @@ export const getRankingByYear = async (year: number): Promise<RankingByYear> => 
 };
 
 export const saveRankingByYear = async (year: number, entries: { entryId: number; position: number }[]): Promise<void> => {
-  const response = await fetch(`/api/rankings/${year}`, {
+  const response = await fetch(`${API_BASE}/api/rankings/${year}`, {
     method: 'PUT',
     credentials: 'include',
     headers: {
@@ -61,7 +62,7 @@ export const saveRankingByYear = async (year: number, entries: { entryId: number
 };
 
 export const getRankingAnalysisByYear = async (year: number): Promise<string> => {
-  const response = await fetch(`/api/rankings/${year}/analysis`, {
+  const response = await fetch(`${API_BASE}/api/rankings/${year}/analysis`, {
     method: 'GET',
     credentials: 'include',
   });

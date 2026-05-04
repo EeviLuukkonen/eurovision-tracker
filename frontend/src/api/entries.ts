@@ -1,8 +1,9 @@
 import type { Entry } from '../types/entry';
 import type { ApiResponse } from '../types/api/response';
+import { API_BASE } from './base';
 
 export const fetchEntriesByYear = async (year: number): Promise<Entry[]> => {
-  const response = await fetch(`/api/entrys/${year}`);
+  const response = await fetch(`${API_BASE}/api/entrys/${year}`);
 
   let json: ApiResponse<Entry[]> | null = null;
 

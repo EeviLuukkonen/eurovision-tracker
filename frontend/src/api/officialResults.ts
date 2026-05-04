@@ -1,9 +1,9 @@
 import type { ApiResponse } from "../types/api/response";
 import type { OfficialResult } from "../types/officialResult";
-
+import { API_BASE } from './base';
 
 export const getOfficialResultsByYear = async (year: number): Promise<OfficialResult[]> => {
-  const response = await fetch(`/api/results/${year}`, {
+  const response = await fetch(`${API_BASE}/api/results/${year}`, {
     method: 'GET',
     credentials: 'include',
   });
