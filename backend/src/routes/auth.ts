@@ -1,12 +1,21 @@
 import { Router, type CookieOptions } from 'express';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
+import rateLimit from 'express-rate-limit';
 import { prisma } from '../config/database';
 import { ApiResponse } from '../types';
 import { requireAuth } from '../middleware/requireAuth';
 import { createHttpError } from '../utils/httpError';
 
 const router = Router();
+
+const authLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  limit: 10,
+  message: { success: false, error: 'Too many attempts, please try again later.' },
+  standardHeaders: true,
+  legacyHeaders: false,
+});
 
 const createToken = (userId: number) => {
   return jwt.sign({ sub: userId }, process.env.JWT_SECRET as string, { expiresIn: '7d' });
@@ -49,6 +58,12 @@ const parseRegisterBody = (body: unknown): RegisterBody => {
   ) {
     throw createHttpError(400, 'Email, username and password are required');
   }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    throw createHttpError(400, 'Invalid email address');
+  }
+  if (password.length < 8) {
+    throw createHttpError(400, 'Password must be at least 8 characters');
+  }
   return { email, username, password };
 };
 
@@ -67,7 +82,7 @@ const parseLoginBody = (body: unknown): LoginBody => {
 };
 
 // POST /api/auth/register - Register a new user
-router.post('/register', async (req, res) => {
+router.post('/register', authLimiter, async (req, res) => {
   const { email, username, password } = parseRegisterBody(req.body);
 
 
@@ -104,9 +119,8 @@ router.post('/register', async (req, res) => {
 });
 
 // POST /api/auth/login - Log in a user
-router.post('/login', async (req, res) => {
+router.post('/login', authLimiter, async (req, res) => {
   const { email, password } = parseLoginBody(req.body);
-
 
   const user = await prisma.user.findUnique({
     where: { email },

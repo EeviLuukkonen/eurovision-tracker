@@ -1,4 +1,5 @@
 import express from 'express';
+import helmet from 'helmet';
 import cookieParser from 'cookie-parser';
 import yearsRouter from './routes/years';
 import entrysRouter from './routes/entrys';
@@ -6,9 +7,16 @@ import authRouter from './routes/auth';
 import rankingsRouter from './routes/rankings';
 import resultsRouter from './routes/results';
 import { errorHandler } from './middleware/errorHandler';
+import cors from 'cors';
 
 const app = express();
-app.use(express.json());
+
+app.use(helmet());
+app.use(cors({
+  origin: process.env.FRONTEND_URL,
+  credentials: true,
+}));
+app.use(express.json({ limit: '10kb' }));
 app.use(cookieParser());
 
 const PORT = process.env.PORT || 3000;
