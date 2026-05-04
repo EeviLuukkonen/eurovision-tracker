@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx prisma generate && tsc",
     "tsc": "tsc",
     "dev": "ts-node-dev src/index.ts",
     "start": "node build/index.js",
@@ -16,7 +17,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@prisma/client": "^7.4.1",
     "@types/bcrypt": "^6.0.0",
     "@types/cookie-parser": "^1.4.10",
     "@types/cors": "^2.8.19",
@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.90.0",
+    "@prisma/client": "^7.4.1",
     "@prisma/adapter-pg": "^7.3.0",
     "bcrypt": "^6.0.0",
     "cookie-parser": "^1.4.7",
