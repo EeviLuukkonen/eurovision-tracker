@@ -84,7 +84,7 @@ export const NavBar = ({ onLoginClick }: NavbarProps) => {
                 </DropdownMenuContent>
               </DropdownMenu>
 
-              <Button type="button" variant="ghost" size="sm" className={navButtonClassName()} onClick={() => console.log('TODO MY RANKINGS')}>
+              <Button type="button" variant="ghost" size="sm" className={navButtonClassName()} onClick={() => void navigate('/my-rankings')}>
                 <span>My Rankings</span>
               </Button>
             </div>

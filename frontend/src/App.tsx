@@ -12,6 +12,7 @@ import { AuthContextProvider } from './context/AuthContext';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ScrollToTop } from './components/ScrollToTop';
 import ComparePage from './pages/ComparePage';
+import MyRankingsPage from './pages/MyRankings';
 
 const queryClient = new QueryClient();
 
@@ -37,6 +38,7 @@ const App = () => {
               <Route path="/year/:year/my-rank/view" element={<ViewRankingPage />} />
               <Route path="/year/:year/official-rank" element={<OfficialResultsPage />} />
               <Route path="/year/:year/compare" element={<ComparePage />} />
+              <Route path="/my-rankings" element={<MyRankingsPage />} />
             </Routes>
           </div>
         </BrowserRouter>

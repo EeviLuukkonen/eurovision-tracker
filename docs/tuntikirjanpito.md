@@ -29,5 +29,7 @@
 | 17.4.   | 2h  | initial compare rankings page |
 | 20.4.   | 2h  | start LLM api integration |
 | 22.4.   | 2h  | compare analysis functionality |
+| 23.4.   | 3h  | new navigation logic |
+| 4.5.   | 4h  | my rankings page e2e |
 
-total: 62
+total: 69

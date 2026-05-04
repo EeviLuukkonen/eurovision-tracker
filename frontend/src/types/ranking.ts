@@ -11,3 +11,11 @@ export type RankingByYear = {
 export type RankingAnalysisResponse = {
   analysis: string;
 };
+
+export type MyRankingSummary = {
+  year: number;
+  rankedCount: number;
+  totalEntries: number;
+  isComplete: boolean;
+  updatedAt: string;
+};

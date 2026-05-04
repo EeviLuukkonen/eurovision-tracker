@@ -5,6 +5,7 @@ import { requireAuth } from '../middleware/requireAuth';
 import { createHttpError } from '../utils/httpError';
 import { FIRST_CONTEST_YEAR } from '../config/constants';
 import { getRankingAnalysisForYear, invalidateRankingAnalysisCache } from '../services/rankingAnalysisResolver';
+import { getMyRankingsResponse, type MyRankingSummary } from '../services/rankings';
 
 const router = Router();
 
@@ -54,6 +55,15 @@ const parseRankingEntries = (body: unknown): RankingEntryPayload[] => {
     return { entryId, position };
   });
 };
+
+// GET /api/rankings/me - Get all rankings for the authenticated user
+router.get('/me', requireAuth, async (_req, res) => {
+  const userId = res.locals.userId as number;
+
+  const response: ApiResponse<MyRankingSummary[]> = await getMyRankingsResponse(userId);
+
+  res.json(response);
+});
 
 // GET /api/rankings/:year - Get ranking for a given year
 router.get('/:year', requireAuth, async (req, res) => {
