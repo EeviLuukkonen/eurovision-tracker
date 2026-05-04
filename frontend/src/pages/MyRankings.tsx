@@ -260,12 +260,6 @@ const MyRankingsPage = () => {
           </div>
         </div>
       )}
-
-      {rankings.length === 0 && unranked.length === 0 && (
-        <div className="rounded-lg border border-white/20 bg-background/80 p-8 text-center backdrop-blur">
-          <p className="text-muted-foreground">No rankings yet. Create your first one!</p>
-        </div>
-      )}
     </main>
   );
 };
