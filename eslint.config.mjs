@@ -33,6 +33,7 @@ export default defineConfig(
   {
     ...sharedTypeCheckedConfig,
     files: ['backend/src/**/*.ts'],
+    ignores: ['**/*.test.ts'],
     languageOptions: {
       parserOptions: {
         project: ['./backend/tsconfig.json'],
@@ -42,6 +43,9 @@ export default defineConfig(
   },
   {
     files: ['backend/**/*.test.ts'],
+    languageOptions: {
+      parser: tseslint.parser,
+    },
     rules: {
       '@typescript-eslint/unbound-method': 'off',
       '@typescript-eslint/no-unsafe-member-access': 'off',
