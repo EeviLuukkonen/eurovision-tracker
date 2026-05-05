@@ -44,8 +44,8 @@ const loadDraftFromLocalStorage = (year: number, userId: number | null): Ranking
   const stored = localStorage.getItem(key);
   if (!stored) return null;
   try {
-    const parsed = JSON.parse(stored);
-    return parsed.rankedEntryIds || null;
+    const parsed = JSON.parse(stored) as { rankedEntryIds?: RankingEntry[] };
+    return parsed.rankedEntryIds ?? null;
   } catch {
     return null;
   }
