@@ -30,6 +30,7 @@
 | 20.4.   | 2h  | start LLM api integration |
 | 22.4.   | 2h  | compare analysis functionality |
 | 23.4.   | 3h  | new navigation logic |
-| 4.5.   | 4h  | my rankings page e2e |
+| 29.4.   | 4h  | my rankings page e2e |
+| 4.5.   | 6h  | deploying to production |
 
-total: 69
+total: 75
