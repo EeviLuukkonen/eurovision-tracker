@@ -49,6 +49,13 @@ export default defineConfig(
     },
   },
   {
+    files: ['backend/**/*.test.ts'],
+    rules: {
+      '@typescript-eslint/unbound-method': 'off',
+      '@typescript-eslint/no-unsafe-member-access': 'off',
+    },
+  },
+  {
     ...sharedTypeCheckedConfig,
     files: ['frontend/src/**/*.{ts,tsx}'],
     languageOptions: {
