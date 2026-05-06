@@ -14,7 +14,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { EntryCard } from '../components/EntryCard';
 import { mapEntriesByRankingOrder, mapEntriesToRankingFormat, saveDraftToLocalStorage, clearDraftFromLocalStorage, loadDraftFromLocalStorage } from '@/lib/rankingHelper';
 import { ErrorAlert } from '@/components/ErrorAlert';
-import { Loader2Icon } from 'lucide-react';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { InfoIcon, Loader2Icon } from 'lucide-react';
 
 type SortableEntryItemProps = {
   entry: Entry;
@@ -275,7 +276,27 @@ const MyRankPage = () => {
         <p className="mb-1 text-xs uppercase tracking-widest text-muted-foreground">Eurovision {year}</p>
 
         <div className="flex flex-wrap items-center justify-between gap-3">
-          <h1 className="text-2xl font-semibold">Create Ranking</h1>
+          <div className="flex items-center gap-2">
+            <h1 className="text-2xl font-semibold">Create Ranking</h1>
+            <Popover>
+              <PopoverTrigger asChild>
+                <button
+                  type="button"
+                  aria-label="How to use"
+                >
+                  <InfoIcon className="h-4 w-4" />
+                </button>
+              </PopoverTrigger>
+              <PopoverContent side="bottom" align="start">
+                <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-muted-foreground">How it works</p>
+                <ul className="mt-2 space-y-1.5 text-sm text-foreground/80">
+                  <li>Drag and drop entries into your preferred order.</li>
+                  <li>Click an entry's thumbnail to watch its performance video.</li>
+                  <li>Only ranked entries are saved — unranked ones stay at the bottom.</li>
+                </ul>
+              </PopoverContent>
+            </Popover>
+          </div>
 
           <div className="flex items-center gap-3">
             {!isAuthenticated && (

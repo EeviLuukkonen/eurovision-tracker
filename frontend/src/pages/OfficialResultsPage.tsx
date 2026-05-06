@@ -1,9 +1,10 @@
 import { getOfficialResultsByYear } from '@/api/officialResults';
 import { OfficialResultRow } from '@/components/EntryCard';
 import { ErrorAlert } from '@/components/ErrorAlert';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import type { OfficialResult } from '@/types/officialResult';
 import { useQuery } from '@tanstack/react-query';
-import { Loader2Icon } from 'lucide-react';
+import { InfoIcon, Loader2Icon } from 'lucide-react';
 import { useParams } from 'react-router-dom';
 
 const OfficialResultsPage = () => {
@@ -51,7 +52,25 @@ const OfficialResultsPage = () => {
     <main className="max-w-4xl mx-auto px-4 py-8">
       <div className="mb-8">
         <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">Eurovision {year}</p>
-        <h1 className="text-2xl font-semibold">Official Results</h1>
+        <div className="flex items-center gap-2">
+          <h1 className="text-2xl font-semibold">Official Results</h1>
+          <Popover>
+            <PopoverTrigger asChild>
+              <button
+                type="button"
+                aria-label="About this scoreboard"
+              >
+                <InfoIcon className="h-4 w-4" />
+              </button>
+            </PopoverTrigger>
+            <PopoverContent side="bottom" align="start">
+              <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Note</p>
+              <p className="mt-2 text-sm text-foreground/80">
+                Grand Final entries are shown with their official final results. Non-qualified entries never competed in the final — their placement here is based on semi-final points, so their points are not directly comparable to the finalists.
+              </p>
+            </PopoverContent>
+          </Popover>
+        </div>
       </div>
 
       {officialResults.length === 0 && (

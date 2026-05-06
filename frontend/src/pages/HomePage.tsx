@@ -22,7 +22,7 @@ const FEATURES = [
   {
     icon: TrophyIcon,
     title: 'Explore',
-    description: 'Browse contests and explore the scoreboards across the years.',
+    description: 'Browse contest data and explore the scoreboards across the years.',
   },
 ];
 
