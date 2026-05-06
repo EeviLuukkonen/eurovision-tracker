@@ -54,6 +54,10 @@ export const NavBar = ({ onLoginClick }: NavbarProps) => {
 
           <div className="ml-auto flex items-center gap-5">
             <div className="flex items-center gap-1">
+              <Button type="button" variant="ghost" size="sm" className={navButtonClassName()} onClick={() => void navigate('/')}>
+                <span>Home</span>
+              </Button>
+              
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button type="button" variant="ghost" size="sm" className={navButtonClassName(Boolean(currentYear))}>

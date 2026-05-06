@@ -32,5 +32,7 @@
 | 23.4.   | 3h  | new navigation logic |
 | 29.4.   | 4h  | my rankings page e2e |
 | 4.5.   | 6h  | deploying to production |
+| 5.5.   | 3h  | writing tests, creating CI, fixing bugs |
+| 6.5.   | 2h  | new homepage |
 
-total: 75
+total: 80
