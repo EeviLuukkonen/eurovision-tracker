@@ -6,7 +6,7 @@ import { fetchYears, fetchYearOverview } from '../api/years';
 import { getCountryName } from '@/lib/countries';
 import { Button } from '@/components/ui/button';
 import { ErrorAlert } from '@/components/ErrorAlert';
-import type { ContestYear, YearOverview } from '../types/year';
+import type { ContestYear } from '../types/year';
 
 const FEATURES = [
   {
