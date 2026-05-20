@@ -171,6 +171,34 @@ router.put('/:year', requireAuth, async (req, res) => {
   res.json(response);
 });
 
+// DELETE /api/rankings/:year - Delete ranking for a given year
+router.delete('/:year', requireAuth, async (req, res) => {
+  const year = Number(req.params.year);
+
+  if (!Number.isInteger(year) || year < FIRST_CONTEST_YEAR) {
+    throw createHttpError(400, 'Invalid year parameter');
+  }
+
+  const userId = res.locals.userId as number;
+
+  const ranking = await prisma.ranking.findUnique({
+    where: { userId_year: { userId, year } },
+  });
+
+  if (!ranking) {
+    throw createHttpError(404, 'Ranking not found');
+  }
+
+  await prisma.ranking.delete({
+    where: { id: ranking.id },
+  });
+
+  invalidateRankingAnalysisCache(userId, year);
+
+  const response: ApiResponse<null> = { success: true, data: null };
+  res.json(response);
+});
+
 // GET /api/rankings/:year/analysis - Get AI analysis for a given year's ranking vs official results
 router.get('/:year/analysis', requireAuth, async (req, res) => {
   const year = Number(req.params.year);

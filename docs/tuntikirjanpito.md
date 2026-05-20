@@ -34,5 +34,6 @@
 | 4.5.   | 6h  | deploying to production |
 | 5.5.   | 3h  | writing tests, creating CI, fixing bugs |
 | 6.5.   | 2h  | new homepage |
+| 8.5.   | 2h  | graphics, bugfixing |
 
-total: 80
+total: 82

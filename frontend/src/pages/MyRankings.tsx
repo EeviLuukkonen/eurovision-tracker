@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useQuery } from '@tanstack/react-query';
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { Button } from '@/components/ui/button';
-import { getMyRankings } from '@/api/rankings';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from '@/components/ui/dialog';
+import { getMyRankings, deleteRankingByYear } from '@/api/rankings';
 import { fetchYears } from '@/api/years';
 import type { ContestYear } from '@/types/year';
 import ReactCountryFlag from 'react-country-flag';
@@ -17,7 +19,17 @@ interface RankingSummary {
 
 const MyRankingsPage = () => {
   const navigate = useNavigate();
+  const queryClient = useQueryClient();
   const { user, isAuthenticated, isAuthLoading } = useAuth();
+  const [yearToDelete, setYearToDelete] = useState<number | null>(null);
+
+  const deleteMutation = useMutation({
+    mutationFn: deleteRankingByYear,
+    onSuccess: () => {
+      setYearToDelete(null);
+      void queryClient.invalidateQueries({ queryKey: ['myRankings'] });
+    },
+  });
 
   const { data: response, isLoading: isRankingsLoading } = useQuery({
     queryKey: ['myRankings', user?.id ?? 'guest'],
@@ -130,7 +142,7 @@ const MyRankingsPage = () => {
                       variant="outline"
                       className="border-red-300/20 text-xs text-red-100 hover:bg-red-400/10"
                       onClick={() => {
-                        console.log('todo');
+                        setYearToDelete(ranking.year);
                       }}
                     >
                       Delete
@@ -205,7 +217,7 @@ const MyRankingsPage = () => {
                         variant="outline"
                         className="border-red-300/20 text-xs text-red-100 hover:bg-red-400/10"
                         onClick={() => {
-                          console.log('todo');
+                          setYearToDelete(ranking.year);
                         }}
                       >
                         Delete
@@ -260,6 +272,29 @@ const MyRankingsPage = () => {
           </div>
         </div>
       )}
+      <Dialog open={yearToDelete !== null} onOpenChange={(open) => { if (!open) setYearToDelete(null); }}>
+        <DialogContent showCloseButton={false}>
+          <DialogHeader>
+            <DialogTitle>Delete ranking</DialogTitle>
+            <DialogDescription>
+              Are you sure you want to delete your Eurovision {yearToDelete} ranking? This cannot be undone.
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setYearToDelete(null)}>
+              Cancel
+            </Button>
+            <Button
+              variant="outline"
+              className="border-red-300/20 text-red-100 hover:bg-red-400/10"
+              disabled={deleteMutation.isPending}
+              onClick={() => { if (yearToDelete !== null) deleteMutation.mutate(yearToDelete); }}
+            >
+              {deleteMutation.isPending ? 'Deleting...' : 'Delete'}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </main>
   );
 };

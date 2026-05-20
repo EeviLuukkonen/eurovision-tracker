@@ -61,6 +61,17 @@ export const saveRankingByYear = async (year: number, entries: { entryId: number
   }
 };
 
+export const deleteRankingByYear = async (year: number): Promise<void> => {
+  const response = await fetch(`${API_BASE}/api/rankings/${year}`, {
+    method: 'DELETE',
+    credentials: 'include',
+  });
+
+  if (!response.ok) {
+    throw new Error(`Request failed with status ${response.status}`);
+  }
+};
+
 export const getRankingAnalysisByYear = async (year: number): Promise<string> => {
   const response = await fetch(`${API_BASE}/api/rankings/${year}/analysis`, {
     method: 'GET',
