@@ -1,9 +1,12 @@
+import { useState } from 'react';
 import { fetchYears } from '@/api/years';
+import { deleteAccount } from '@/api/auth';
 import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from '@/components/ui/dialog';
 import { useAuth } from '@/context/AuthContext';
 import { cn } from '@/lib/utils';
 import type { ContestYear } from '@/types/year';
-import { useQuery } from '@tanstack/react-query';
+import { useQuery, useMutation } from '@tanstack/react-query';
 import { ChevronDownIcon } from 'lucide-react';
 import { Link, matchPath, useLocation, useNavigate } from 'react-router-dom';
 import { Avatar, AvatarFallback } from './ui/avatar';
@@ -24,6 +27,16 @@ export const NavBar = ({ onLoginClick }: NavbarProps) => {
   const location = useLocation();
   const navigate = useNavigate();
   const { user, logout, isAuthLoading } = useAuth();
+  const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
+
+  const deleteAccountMutation = useMutation<void, Error>({
+    mutationFn: deleteAccount,
+    onSuccess: async () => {
+      setDeleteDialogOpen(false);
+      await logout();
+      void navigate('/');
+    },
+  });
 
   const { data: years = [] } = useQuery<ContestYear[], Error>({
     queryKey: ['years'],
@@ -95,6 +108,7 @@ export const NavBar = ({ onLoginClick }: NavbarProps) => {
 
             <div className="flex h-9 min-w-24 items-center justify-end">
               {user ? (
+                <>
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <button
@@ -126,8 +140,42 @@ export const NavBar = ({ onLoginClick }: NavbarProps) => {
                     >
                       Log out
                     </DropdownMenuItem>
+
+                    <DropdownMenuSeparator />
+
+                    <DropdownMenuItem
+                      className="cursor-pointer text-red-100 focus:bg-red-400/10 focus:text-red-100"
+                      onClick={() => setDeleteDialogOpen(true)}
+                    >
+                      Delete my account
+                    </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
+
+                <Dialog open={deleteDialogOpen} onOpenChange={(open) => { if (!open) setDeleteDialogOpen(false); }}>
+                  <DialogContent showCloseButton={false}>
+                    <DialogHeader>
+                      <DialogTitle>Delete account</DialogTitle>
+                      <DialogDescription>
+                        Are you sure you want to delete your account? All your rankings will be permanently removed and this cannot be undone.
+                      </DialogDescription>
+                    </DialogHeader>
+                    <DialogFooter>
+                      <Button variant="outline" onClick={() => setDeleteDialogOpen(false)}>
+                        Cancel
+                      </Button>
+                      <Button
+                        variant="outline"
+                        className="border-red-300/20 text-red-100 hover:bg-red-400/10"
+                        disabled={deleteAccountMutation.isPending}
+                        onClick={() => deleteAccountMutation.mutate()}
+                      >
+                        {deleteAccountMutation.isPending ? 'Deleting...' : 'Delete my account'}
+                      </Button>
+                    </DialogFooter>
+                  </DialogContent>
+                </Dialog>
+                </>
               ) : isAuthLoading ? (
                 <div aria-hidden className="h-9 w-18" />
               ) : (

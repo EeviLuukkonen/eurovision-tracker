@@ -82,6 +82,19 @@ export const logout = async (): Promise<void> => {
   }
 };
 
+export const deleteAccount = async (): Promise<void> => {
+  const response = await fetch(`${API_BASE}/api/auth/me`, {
+    method: 'DELETE',
+    credentials: 'include',
+  });
+
+  if (!response.ok) {
+    let json: ApiResponse<unknown> | null = null;
+    try { json = (await response.json()) as ApiResponse<unknown>; } catch { json = null; }
+    throw new Error(json?.error ?? `Failed to delete account (status ${response.status})`);
+  }
+};
+
 export const getCurrentUser = async (): Promise<User> => {
   const response = await fetch(`${API_BASE}/api/auth/me`, {
     method: 'GET',

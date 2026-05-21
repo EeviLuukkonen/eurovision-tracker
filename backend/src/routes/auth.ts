@@ -180,4 +180,17 @@ router.get('/me', requireAuth, async (_req, res) => {
   res.json(response);
 });
 
+// DELETE /api/auth/me - Delete the authenticated user's account
+router.delete('/me', requireAuth, async (_req, res) => {
+  const userId = res.locals.userId as number;
+
+  await prisma.$transaction(async (tx) => {
+    await tx.ranking.deleteMany({ where: { userId } });
+    await tx.user.delete({ where: { id: userId } });
+  });
+
+  res.clearCookie('token', getCookieOptions());
+  res.json({ success: true });
+});
+
 export default router;
