@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import rateLimit from 'express-rate-limit';
 import { prisma } from '../config/database';
 import { ApiResponse } from '../types';
 import { requireAuth } from '../middleware/requireAuth';
@@ -8,6 +9,14 @@ import { getRankingAnalysisForYear, invalidateRankingAnalysisCache } from '../se
 import { getMyRankingsResponse, type MyRankingSummary } from '../services/rankings';
 
 const router = Router();
+
+const analysisLimiter = rateLimit({
+  windowMs: 60 * 60 * 1000,
+  limit: 10,
+  message: { success: false, error: 'Too many analysis requests, please try again later.' },
+  standardHeaders: true,
+  legacyHeaders: false,
+});
 
 type RankingEntryPayload = {
   entryId: number;
@@ -200,7 +209,7 @@ router.delete('/:year', requireAuth, async (req, res) => {
 });
 
 // GET /api/rankings/:year/analysis - Get AI analysis for a given year's ranking vs official results
-router.get('/:year/analysis', requireAuth, async (req, res) => {
+router.get('/:year/analysis', requireAuth, analysisLimiter, async (req, res) => {
   const year = Number(req.params.year);
 
   if (!Number.isInteger(year) || year < FIRST_CONTEST_YEAR) {
