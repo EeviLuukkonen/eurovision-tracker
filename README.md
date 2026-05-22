@@ -1,10 +1,10 @@
-# ESCoreboard -- Eurovision ranking app
+# ESCoreboard - Eurovision ranking app
 
-My full stack project for ranking and viewing Eurovision Song Contest entries.
+My full stack project for ranking, viewing and comparing Eurovision Song Contest entries.
+
+App is running on [escoreboard.vercel.app](https://escoreboard.vercel.app).
 
 You can browse contest years from 2015 to 2026, look at official result data and create your own yearly rankings. By creating an account, you can save your rankings and compare your scoreboard with the official one. You can get an AI analysis (by Claude) of how your opinions differ from official results.
-
-App is running on [escoreboard.vercel.app](escoreboard.vercel.app).
 
 [Timesheet](https://github.com/EeviLuukkonen/eurovision-tracker/blob/main/docs/tuntikirjanpito.md)
 
@@ -61,14 +61,15 @@ npm run dev
 
 ## Use of AI
 
-Copilot has been used during development for brainstorming ideas, designing structures, asking questions and code generation. Some files and functions (e.g. db seeding, utils) have mostly been generated with AI, and those are marked as such with a comment. All other files may include AI generated parts but are mostly done and designed by me. A lot of the styling and CSS was generated based on prompts describing the wanted look and then tweaking manually. Models used were mainly GPT-5.3-Codex and Claude Sonnet 4.5.
+Copilot has been used during development for brainstorming ideas, designing structures, asking questions and code generation. Some files and functions (e.g. db seeding, utils) have mostly been generated with AI, and those are marked as such with a comment. All other files may include some AI generated parts but are mostly done and designed by me. A lot of the styling and CSS was generated based on prompts describing the wanted look and then tweaking manually. Models used were mainly GPT-5.3-Codex and Claude Sonnet 4.5.
 
 ## Future development
 
-Here are some TODOs that will leave to do maybe-someday-but-probably-never-will:
+Here are some TODOs that I will leave to do-maybe-someday-but-probably-never-will:
 
 * Distinction between semi finals and finals
 * Possibility to create multiple rankings of same year and compare them (e.g. before and after live shows)
 * Custom rankings based on different criteria: rank winners, by country, by your own winners etc.
 * Search other people's rankings and compare with yours
 * See community ranking
+* Better testing protocol, I was not very test driven and relied on AI on the tests while focusing on features more
